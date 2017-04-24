@@ -1,16 +1,52 @@
-<div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-        <form class="form" name="loginForm" novalidate ng-submit="register()">
-            <div ng-repeat="error in errors">{{error.error}}</div>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="email" class="form-control" ng-model="user.email" required placeholder="Email Address">
+<div class="container register_container">
+    <div class="row">
+        <div class="offset-m3 col m6">
+            <div class="row">
+                <img class="col offset-s3 offset-m4 logo_register" src="/../img/logo_orange.png" alt="">
             </div>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" ng-model="user.password" required placeholder="Password">
+            <h2 class="center-align">Register</h2>
+            <div class="row">
+                <form class="col s12 form" name="loginForm" novalidate ng-submit="register()">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" ng-model="user.name" required>
+                            <label for="name">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" ng-model="user.email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="pass" type="password" class="validate" ng-model="user.password" required>
+                            <label for="pass">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="odyssey" type="text" class="validate" ng-model="user.odyssey" required>
+                            <label for="odyssey">Odyssey Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="groupe" type="text" class="validate" ng-model="user.groupe" required>
+                            <label for="groupe">Groupe</label>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                            <p class="center-align">
+                                <button class="btn btn-large waves-effect waves-light orange" type="submit" name="action">Register</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
+        </div>
     </div>
 </div>

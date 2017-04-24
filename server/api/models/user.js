@@ -25,6 +25,14 @@ const userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    name: {
+        type: String,
+        default:""
+    },
+    odyssey: {
+        type: String,
+        default: ""
     }
 });
 

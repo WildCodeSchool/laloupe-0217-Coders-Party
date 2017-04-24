@@ -1,0 +1,13 @@
+/*REGISTER*/
+.register_container{
+  margin-top: 5%;
+}
+.logo_register {
+  height: 50%;
+  width: 50%;
+}
+
+body {
+  background-color: #e6e6e6;
+  color: grey;
+}
