@@ -1,20 +1,10 @@
-<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarController">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-            <a class="navbar-brand" href="#"></a>
-        </div>
+<nav class="nav-wrapper" role="navigation" ng-controller="NavbarController">
+    <div class="nav-wrapper">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active"><a ui-sref="anon.home">Home</a></li>
-
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <li ui-sref-active="active"><a ui-sref="anon.login" ng-hide="auth.isAuthenticated()">Login</a></li>
                     <li ui-sref-active="active"><a ui-sref="anon.register" ng-hide="auth.isAuthenticated()">Register</a></li>
