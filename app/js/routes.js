@@ -54,7 +54,7 @@ angular.module('app')
                         controller: 'NavbarController'
                     },
                     'footer@': {
-                      templateUrl: 'user/navbar.html',
+                      templateUrl: 'user/footer.html',
                       controller: 'FooterController'
                     }
                 },
