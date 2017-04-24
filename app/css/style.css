@@ -17,8 +17,16 @@
   margin-top: 5%;
   }
 
+.button_newaccount {
+  width: 100%;
+}
+
+/*FOOTER*/
+.built_with {
+  
+}
+
 body {
   background-color: #e6e6e6;
   color: grey;
   }
-
