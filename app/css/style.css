@@ -1,9 +1,24 @@
+
+/*REGISTER*/
+.register_container{
+  margin-top: 5%;
+}
+.logo_register {
+  height: 50%;
+  width: 50%;
+}
+
 /*LOGIN*/
 .logo_login {
   height: 50%;
   width: 50%;
 }
-
 .login_container {
   margin-top: 5%;
-}
+  }
+
+body {
+  background-color: #e6e6e6;
+  color: grey;
+  }
+
