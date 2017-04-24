@@ -5,4 +5,8 @@ angular.module('app')
                 $state.go('anon.home');
             });
         };
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+
     });
