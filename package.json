@@ -1,0 +1,18 @@
+{
+  "name": "mean-lineman",
+  "description": "Just another MEAN Stack",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Jean-Baptiste Pasquier",
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci",
+    "production": "lineman clean build && node production.js"
+  },
+  "dependencies": {
+    "express": "",
+    "lineman": "~0.37.0",
+    "lineman-angular": "^0.3.0",
+    "lineman-less": "^0.1.0"
+  }
+}

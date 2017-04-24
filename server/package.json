@@ -1,0 +1,27 @@
+{
+    "name": "mean-lineman-server",
+    "description": "Just another MEAN Stack",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Jean-Baptiste Pasquier",
+    "main": "index.js",
+    "scripts": {
+        "start": "babel-node index.js",
+        "createAdmin": "babel-node ./api/userCreation.js"
+    },
+    "dependencies": {
+        "bcrypt": "",
+        "body-parser": "",
+        "cors": "",
+        "express": "",
+        "jsonwebtoken": "",
+        "method-override": "",
+        "mongoose": "",
+        "morgan": ""
+    },
+    "devDependencies": {
+        "babel-cli": "^6.9.0",
+        "babel-core": "^6.9.0",
+        "babel-preset-es2015": "^6.9.0"
+    }
+}
