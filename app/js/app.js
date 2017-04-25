@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router', 'ngMaterial']);
+angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate']);
