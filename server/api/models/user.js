@@ -28,11 +28,20 @@ const userSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        default:""
+        match: /^[a-zA-Z0-9-_]+$/,
+        default:"",
+        required: true,
+        unique: true
     },
     odyssey: {
         type: String,
-        default: ""
+        match: /^[a-zA-Z0-9-_]+$/,
+        default: "",
+        unique: true
+    },
+    groupe: {
+      type: String,
+      default: ""
     }
 });
 
