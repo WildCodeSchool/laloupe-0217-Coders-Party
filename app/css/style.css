@@ -88,6 +88,10 @@
     font-size: xx-large;
 }
 
+.icon_profil {
+  margin-top: 2%;
+}
+
 body {
     background-color: #e6e6e6;
     color: grey;
