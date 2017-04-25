@@ -1,5 +1,5 @@
 /*!
- * Materialize v0.98.2 (http://materializecss.com)
+ * Materialize v0.98.1 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
@@ -505,10 +505,8 @@ if (jQuery) {
       }
 
       // Open collapsible. object: .collapsible-header
-      function collapsibleOpen(object, noToggle) {
-        if (!noToggle) {
-          object.toggleClass('active');
-        }
+      function collapsibleOpen(object) {
+        object.toggleClass('active');
 
         if (options.accordion || collapsible_type === "accordion" || collapsible_type === undefined) { // Handle Accordion
           accordionOpen(object);
@@ -554,20 +552,11 @@ if (jQuery) {
         return object.closest('li > .collapsible-header');
       }
 
-
-      // Turn off any existing event handlers
-      function removeEventHandlers() {
-        $this.off('click.collapse', '> li > .collapsible-header');
-      }
-
       /*****  End Helper Functions  *****/
 
 
       // Methods
-      if (methodName === 'destroy') {
-        removeEventHandlers();
-        return;
-      } else if (methodParam >= 0 &&
+      if (methodParam >= 0 &&
           methodParam < $panel_headers.length) {
         var $curr_header = $panel_headers.eq(methodParam);
         if ($curr_header.length &&
@@ -580,7 +569,9 @@ if (jQuery) {
       }
 
 
-      removeEventHandlers();
+      // Turn off any existing event handlers
+      $this.off('click.collapse', '> li > .collapsible-header');
+      $panel_headers.off('click.collapse');
 
 
       // Add click handler to only direct collapsible header children
@@ -597,11 +588,11 @@ if (jQuery) {
 
       // Open first active
       if (options.accordion || collapsible_type === "accordion" || collapsible_type === undefined) { // Handle Accordion
-        collapsibleOpen($panel_headers.filter('.active').first(), true);
+        collapsibleOpen($panel_headers.filter('.active').first());
 
       } else { // Handle Expandables
         $panel_headers.filter('.active').each(function() {
-          collapsibleOpen($(this), true);
+          collapsibleOpen($(this));
         });
       }
 
@@ -789,12 +780,12 @@ if (jQuery) {
           .animate( {opacity: 1}, {queue: false, duration: curr_options.inDuration, easing: 'easeOutSine'});
 
         // Add click close handler to document
-        setTimeout(function() {
-          $(document).bind('click.'+ activates.attr('id'), function (e) {
+        $(document).bind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'), function (e) {
+          if (!activates.is(e.target) && !origin.is(e.target) && (!activates.find(e.target).length) ) {
             hideDropdown();
-            $(document).unbind('click.'+ activates.attr('id'));
-          });
-        }, 0);
+            $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
+          }
+        });
       }
 
       function hideDropdown() {
@@ -803,7 +794,7 @@ if (jQuery) {
         activates.fadeOut(curr_options.outDuration);
         activates.removeClass('active');
         origin.removeClass('active');
-        $(document).unbind('click.'+ activates.attr('id'));
+        $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
         setTimeout(function() { activates.css('max-height', ''); }, curr_options.outDuration);
       }
 
@@ -855,7 +846,7 @@ if (jQuery) {
             // If origin is clicked and menu is open, close menu
             else if (origin.hasClass('active')) {
               hideDropdown();
-              $(document).unbind('click.'+ activates.attr('id'));
+              $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
             }
           }
         });
@@ -1408,11 +1399,8 @@ if (jQuery) {
         responsiveThreshold: Infinity, // breakpoint for swipeable
       };
       options = $.extend(defaults, options);
-      var namespace = Materialize.objectSelectorString($(this));
 
-      return this.each(function(i) {
-
-      var uniqueNamespace = namespace+i;
+      return this.each(function() {
 
       // For each set of tabs, we want to keep track of
       // which tab is active and its associated content
@@ -1434,13 +1422,13 @@ if (jQuery) {
       // Finds right attribute for indicator based on active tab.
       // el: jQuery Object
       var calcRightPos = function(el) {
-        return Math.ceil($tabs_width - el.position().left - el.outerWidth() - $this.scrollLeft());
+        return $tabs_width - el.position().left - el.outerWidth() - $this.scrollLeft();
       };
 
       // Finds left attribute for indicator based on active tab.
       // el: jQuery Object
       var calcLeftPos = function(el) {
-        return Math.floor(el.position().left + $this.scrollLeft());
+        return el.position().left + $this.scrollLeft();
       };
 
       // Animates Indicator to active tab.
@@ -1503,7 +1491,7 @@ if (jQuery) {
           $indicator.css({"left": calcLeftPos($active) });
         }, 0);
       }
-      $(window).off('resize.tabs-'+uniqueNamespace).on('resize.tabs-'+uniqueNamespace, function () {
+      $(window).off('resize.tabs').on('resize.tabs', function () {
         $tabs_width = $this.width();
         $tab_width = Math.max($tabs_width, $this[0].scrollWidth) / $links.length;
         if (index < 0) {
@@ -3106,31 +3094,14 @@ if (jQuery) {
         hiddenDiv.css('width', $(window).width()/2);
       }
 
-      /**
-       * Resize if the new height is greater than the
-       * original height of the textarea
-       */
-      if ($textarea.data("original-height") <= hiddenDiv.height()) {
-        $textarea.css('height', hiddenDiv.height());
-      } else if ($textarea.val().length < $textarea.data("previous-length")) {
-        /**
-         * In case the new height is less than original height, it
-         * means the textarea has less text than before
-         * So we set the height to the original one
-         */
-        $textarea.css('height', $textarea.data("original-height"));
-      }
-      $textarea.data("previous-length", $textarea.val().length);
+      $textarea.css('height', hiddenDiv.height());
     }
 
     $(text_area_selector).each(function () {
       var $textarea = $(this);
-      /**
-       * Instead of resizing textarea on document load,
-       * store the original height and the original length
-       */
-      $textarea.data("original-height", $textarea.height());
-      $textarea.data("previous-length", $textarea.val().length);
+      if ($textarea.val().length) {
+        textareaAutoResize($textarea);
+      }
     });
 
     $('body').on('keyup keydown autoresize', text_area_selector, function () {
@@ -3163,35 +3134,27 @@ if (jQuery) {
       $(this).after(thumb);
     });
 
-    var showRangeBubble = function(thumb) {
-      var paddingLeft = parseInt(thumb.parent().css('padding-left'));
-      var marginLeft = (-7 + paddingLeft) + 'px';
-      thumb.velocity({ height: "30px", width: "30px", top: "-30px", marginLeft: marginLeft}, { duration: 300, easing: 'easeOutExpo' });
-    };
-
-    var calcRangeOffset = function(range) {
-      var width = range.width() - 15;
-      var max = parseFloat(range.attr('max'));
-      var min = parseFloat(range.attr('min'));
-      var percent = (parseFloat(range.val()) - min) / (max - min);
-      return percent * width;
-    }
-
     var range_wrapper = '.range-field';
     $(document).on('change', range_type, function(e) {
       var thumb = $(this).siblings('.thumb');
       thumb.find('.value').html($(this).val());
+      var max = $(this).attr('max');
+      var width = $(this).width() - 15;
+      var paddingSide = ($(this).parent('.range-field').outerWidth() - width) || 0;
+      var offsetLeft = $(this).val() * (width / max);
 
       if (!thumb.hasClass('active')) {
-        showRangeBubble(thumb);
+        thumb.velocity({ height: "30px", width: "30px", top: "-30px", marginLeft: "5px"}, { duration: 300, easing: 'easeOutExpo' });
       }
-
-      var offsetLeft = calcRangeOffset($(this));
       thumb.addClass('active').css('left', offsetLeft);
     });
 
     $(document).on('mousedown touchstart', range_type, function(e) {
       var thumb = $(this).siblings('.thumb');
+      var max = $(this).attr('max');
+      var width = $(this).width() - 15;
+      var paddingSide = ($(this).parent('.range-field').outerWidth() - width) || 0;
+      var offsetLeft = $(this).val() * (width / max);
 
       // If thumb indicator does not exist yet, create it
       if (thumb.length <= 0) {
@@ -3206,11 +3169,10 @@ if (jQuery) {
       $(this).addClass('active');
 
       if (!thumb.hasClass('active')) {
-        showRangeBubble(thumb);
+        thumb.velocity({ height: "30px", width: "30px", top: "-30px", marginLeft: "5px"}, { duration: 300, easing: 'easeOutExpo' });
       }
 
       if (e.type !== 'input') {
-        var offsetLeft = calcRangeOffset($(this));
         thumb.addClass('active').css('left', offsetLeft);
       }
     });
@@ -3224,13 +3186,15 @@ if (jQuery) {
       var thumb = $(this).children('.thumb');
       var left;
       var input = $(this).find(range_type);
+      var max = input.attr('max');
+      var width = input.width() - 15;
+      var paddingSide = ($(this).outerWidth() - width) || 0;
+      var offsetLeft = input.val() * (width / max);
 
       if (range_mousedown) {
         if (!thumb.hasClass('active')) {
-          showRangeBubble(thumb);
+          thumb.velocity({ height: "30px", width: "30px", top: "-30px", marginLeft: "5px"}, { duration: 300, easing: 'easeOutExpo' });
         }
-
-        var offsetLeft = calcRangeOffset(input);
         thumb.addClass('active').css('left', offsetLeft);
         thumb.find('.value').html(thumb.siblings(range_type).val());
       }
@@ -3240,11 +3204,9 @@ if (jQuery) {
       if (!range_mousedown) {
 
         var thumb = $(this).children('.thumb');
-        var paddingLeft = parseInt($(this).css('padding-left'));
-        var marginLeft = (7 + paddingLeft) + 'px';
 
         if (thumb.hasClass('active')) {
-          thumb.velocity({ height: '0', width: '0', top: '10px', marginLeft: marginLeft}, { duration: 100 });
+          thumb.velocity({ height: '0', width: '0', top: '10px', marginLeft: '15px'}, { duration: 100 });
         }
         thumb.removeClass('active');
       }
@@ -3558,7 +3520,7 @@ if (jQuery) {
       $newSelect.after(options);
       // Check if section element is disabled
       if (!$select.is(':disabled')) {
-        $newSelect.dropdown({'hover': false});
+        $newSelect.dropdown({'hover': false, 'closeOnClick': false});
       }
 
       // Copy tabindex
@@ -7621,53 +7583,40 @@ Picker.extend( 'pickadate', DatePicker )
 
         var uniqueNamespace = namespace+i;
         var images, item_width, item_height, offset, center, pressed, dim, count,
-            reference, referenceY, amplitude, target, velocity, scrolling,
+            reference, referenceY, amplitude, target, velocity,
             xform, frame, timestamp, ticker, dragged, vertical_dragged;
         var $indicators = $('<ul class="indicators"></ul>');
-        var scrollingTimeout = null;
 
 
         // Initialize
         var view = $(this);
         var showIndicators = view.attr('data-indicators') || options.indicators;
 
+        // Don't double initialize.
+        if (view.hasClass('initialized')) {
+          // Redraw carousel.
+          $(this).trigger('carouselNext', [0.000001]);
+          return true;
+        }
+
 
         // Options
-        var setCarouselHeight = function() {
-          var firstImage = view.find('.carousel-item img').first();
-          if (firstImage.length) {
-            if (firstImage.prop('complete')) {
-              view.css('height', firstImage.height());
-            } else {
-              firstImage.on('load', function(){
-                view.css('height', $(this).height());
-              });
-            }
-          } else {
-            var imageHeight = view.find('.carousel-item').first().height();
-            view.css('height', imageHeight);
-          }
-        };
-
         if (options.fullWidth) {
           options.dist = 0;
-          setCarouselHeight();
+          var firstImage = view.find('.carousel-item img').first();
+          if (firstImage.length) {
+            imageHeight = firstImage.on('load', function(){
+              view.css('height', $(this).height());
+            });
+          } else {
+            imageHeight = view.find('.carousel-item').first().height();
+            view.css('height', imageHeight);
+          }
 
           // Offset fixed items when indicators.
           if (showIndicators) {
             view.find('.carousel-fixed-item').addClass('with-indicators');
           }
-        }
-
-
-        // Don't double initialize.
-        if (view.hasClass('initialized')) {
-          // Recalculate variables
-          $(window).trigger('resize');
-
-          // Redraw carousel.
-          $(this).trigger('carouselNext', [0.000001]);
-          return true;
         }
 
 
@@ -7744,20 +7693,6 @@ Picker.extend( 'pickadate', DatePicker )
         }
 
         function scroll(x) {
-          // Track scrolling state
-          scrolling = true;
-          if (!view.hasClass('scrolling')) {
-            view.addClass('scrolling');
-          }
-          if (scrollingTimeout != null) {
-            window.clearTimeout(scrollingTimeout);
-          }
-          scrollingTimeout = window.setTimeout(function() {
-            scrolling = false;
-            view.removeClass('scrolling');
-          }, options.duration);
-
-          // Start actual scroll
           var i, half, delta, dir, tween, el, alignment, xTranslation;
           var lastCenter = center;
 
@@ -8035,7 +7970,7 @@ Picker.extend( 'pickadate', DatePicker )
         });
 
 
-        $(window).off('resize.carousel-'+uniqueNamespace).on('resize.carousel-'+uniqueNamespace, function() {
+        $(window).off('resize.'+uniqueNamespace).on('resize.'+uniqueNamespace, function() {
           if (options.fullWidth) {
             item_width = view.find('.carousel-item').first().innerWidth();
             item_height = view.find('.carousel-item').first().innerHeight();
@@ -8169,11 +8104,6 @@ Picker.extend( 'pickadate', DatePicker )
           closeTapTarget();
           $(document).off('click.tapTarget');
         });
-
-        var throttledCalc = Materialize.throttle(function() {
-          calculateTapTarget();
-        }, 200);
-        $(window).off('resize.tapTarget').on('resize.tapTarget', throttledCalc);
       }, 0);
     };
 
@@ -8186,7 +8116,6 @@ Picker.extend( 'pickadate', DatePicker )
       tapTargetWrapper.removeClass('open');
       tapTargetOriginEl.off('click.tapTarget')
       $(document).off('click.tapTarget');
-      $(window).off('resize.tapTarget');
     };
 
     // Pre calculate
