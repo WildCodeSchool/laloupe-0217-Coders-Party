@@ -1,17 +1,28 @@
-<nav class="nav-wrapper orange" role="navigation" ng-controller="NavbarController">
-    <div class="nav-wrapper">
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav">
-                <li ui-sref-active="active"><a ui-sref="anon.home">Home</a></li>
-            </ul>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
-                    <li ui-sref-active="active"><a ui-sref="anon.login" ng-hide="auth.isAuthenticated()">Login</a></li>
-                    <li ui-sref-active="active"><a ui-sref="anon.register" ng-hide="auth.isAuthenticated()">Register</a></li>
-                    <li ui-sref-active="active"><a ui-sref="user.dashboard" ng-show="auth.isAuthenticated()">Dashboard</a></li>
-                    <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Logout</a></li>
-                </li>
-            </ul>
-        </div>
+<nav>
+    <div class="nav-wrapper navbar">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><img class="logo_navbar" src="/../img/logo_orange.png" /></a>
+        <ul class="right hide-on-med-and-down ">
+            <li ui-sref-active="active"><a ui-sref="anon.home">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="anon.login">Login</a></li>
+            <li ui-sref-active="active"><a ui-sref="anon.register">Register</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li>
+                <div class="background_sidenav">
+                    <img src="/../img/logo_orange.png" alt="">
+                </div>
+            </li>
+            <li ui-sref-active="active"><a ui-sref="anon.home">Home</a></li>
+            <div class="divider divider_sidebar"></div>
+            <li ui-sref-active="active"><a ui-sref="anon.login">Login</a></li>
+            <div class="divider divider_sidebar"></div>
+            <li ui-sref-active="active"><a ui-sref="anon.register">Register</a></li>
+            <div class="divider divider_sidebar"></div>
+        </ul>
     </div>
 </nav>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.button-collapse').sideNav();
+    });
+</script>
