@@ -1,78 +1,133 @@
 /*NAVBAR*/
+
 .logo_navbar {
-  margin-top: 5%;
-  height: 90%;
-  width: auto;
+    margin-top: 5%;
+    height: 90%;
+    width: auto;
 }
-.navbar{
-  background-color: #e6e6e6;
+
+.navbar {
+    background-color: #e6e6e6;
 }
+
 .navbar a {
-  color: grey;
+    color: grey;
 }
-.background_sidenav img{
-  width: 25%;
-  height: auto;
+
+.background_sidenav img {
+    width: 25%;
+    height: auto;
 }
-.side-nav{
-  background-color: #e6e6e6;
+
+.side-nav {
+    background-color: #e6e6e6;
 }
-.side-nav li>a{
-font-size: 30px;
-color: grey;
+
+.side-nav li>a {
+    font-size: 30px;
+    color: grey;
 }
-.divider_sidebar{
-  height: 3px;
-  overflow: hidden;
-  background-color: #e0e0e0;
+
+.divider_sidebar {
+    height: 3px;
+    overflow: hidden;
+    background-color: #e0e0e0;
 }
+
+
 /*REGISTER*/
-.register_container{
-  margin-top: 5%;
+
+.register_container {
+    margin-top: 5%;
 }
+
 .logo_register {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
+
 
 /*LOGIN*/
+
 .logo_login {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
+
 .login_container {
-  margin-top: 5%;
-  }
+    margin-top: 5%;
+}
 
 .button_newaccount {
-  width: 100%;
+    width: 100%;
 }
+
 
 /*FOOTER*/
-.built_with {
 
-}
+.built_with {}
+
 
 /*PROFILPICTURE*/
 
 .image_profil {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 100%;
-  height: 30%;
-  width: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 100%;
+    height: 30%;
+    width: 30%;
 }
+
 
 /*PROFIL PAGE*/
 
 .descritpion_profil {
-  background: white;
-  text-align: center;
-  height: 60px;
-  font-size: xx-large;
+    background: white;
+    text-align: center;
+    height: 60px;
+    font-size: xx-large;
 }
 
 body {
-  background-color: #e6e6e6;
-  color: grey;
-  }
+    background-color: #e6e6e6;
+    color: grey;
+}
+
+
+/*USER HOMEPAGE*/
+
+.title_home {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.divider_title {
+    height: 2px;
+    overflow: hidden;
+    background-color: grey;
+    width: 25%;
+}
+
+.logo_event {
+    width: 55%;
+    padding-left: 5%;
+}
+
+.event_home {
+    background-color: white;
+    float: left;
+    max-width: 900px;
+}
+.event_home p {
+  font-size: 1.75em;
+}
+.info_event {
+    font-size: 1.2em;
+    line-height: 0.75em;
+    float: right;
+    text-align: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+}
