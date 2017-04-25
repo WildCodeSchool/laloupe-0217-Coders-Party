@@ -10,15 +10,9 @@
     "production": "lineman clean build && node production.js"
   },
   "dependencies": {
-    "angular": "^1.6.4",
-    "angular-animate": "^1.6.4",
-    "angular-aria": "^1.6.4",
-    "angular-material": "^1.1.4",
-    "angular-messages": "^1.6.4",
     "express": "",
     "lineman": "~0.37.0",
     "lineman-angular": "^0.3.0",
-    "lineman-less": "^0.1.0",
-    "mdi": "^1.9.33"
+    "lineman-less": "^0.1.0"
   }
 }
