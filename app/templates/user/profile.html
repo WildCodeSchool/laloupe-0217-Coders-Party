@@ -17,10 +17,10 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4>Choisis le nom de ton groupe</h4>
-                <input type="text" class="validate" ng-model="user.groupe" required>
+                <input type="text" class="validate" ng-model="newGroup" required>
             </div>
             <div class="modal-footer">
-                <a class=" modal-action modal-close waves-effect waves-green btn-flat">ok</a>
+                <a class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="updateGroup()">ok</a>
             </div>
         </div>
         <!--Modal End -->

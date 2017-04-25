@@ -35,13 +35,8 @@
                         <div class="input-field col s12">
                             <select ng-model="user.groupe">
                                <optgroup label="WCS">
-                                <option value="WCS La Loupe">WCS La Loupe</option>
-                                <option value="WCS Orléans">WCS Orléans</option>
-                                <option value="WCS Toulouse">WCS Toulouse</option>
-                                <option value="WCS Lyon">WCS Lyon</option>
-                                <option value="WCS Fontainebleau">WCS Fontainebleau</option>
-                                <option value="WCS Bordeaux">WCS Bordeaux</option>
-                                 </optgroup>
+                                <option ng-repeat="group in groups">{{group.name}}</option>
+                              </optgroup>!
                                  <optgroup label="Autres">
                                   <option value="Autre groupe">Autre groupe</option>
                                    </optgroup>
