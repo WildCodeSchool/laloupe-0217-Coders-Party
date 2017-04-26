@@ -42,8 +42,20 @@
                                    </optgroup>
                               </select>
                             <label>Groupe</label>
+                            <button data-target="modal1" class="btn modal-trigger grey group_register">créer un Groupe</button>
                         </div>
                     </div>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Choisis le nom de ton groupe</h4>
+                            <input type="text" class="validate" ng-model="newGroup" required>
+                        </div>
+                        <div class="modal-footer">
+                            <a class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="updateGroup()">ok</a>
+                        </div>
+                    </div>
+                    <!--Modal End -->
                     <div class="row">
                         <div class="col offset-s4 s4 m12">
                             <p class="center-align">
