@@ -1,38 +1,17 @@
 <h1>Création évènement<h1>
-  <div class="row">
-     <form class="col s12">
-        <div class="row">
-           <label>Date de début : </label>
-           <input type="date" class="datepicker">
-        </div>
-     </form>
+
+<div class="container">
+  <div layout-gt-xs="row">
+    <div flex-gt-xs>
+      <md-datepicker ng-model="ctrl.myStartDate" md-placeholder="Date de début"></md-datepicker>
+    </div>
   </div>
-  <div class="row">
-      <div class="input-field col s12">
-          <label for="timepicker_ampm_dark">Time am/pm ( dark theme )</label>
-          <input id="timepicker" data-default="14:20:00" class="timepicker" type="time">
-      </div>
+</div>
+
+<div class="container">
+  <div layout-gt-xs="row">
+    <div flex-gt-xs>
+      <md-datepicker ng-model="ctrl.myEndDate" md-placeholder="Date de fin"></md-datepicker>
+    </div>
   </div>
-  <div class="row">
-     <form class="col s12">
-        <div class="row">
-           <label>Date de début : </label>
-           <input type="date" class="datepicker">
-        </div>
-     </form>
-  </div>
-  <div class="row">
-      <div class="input-field col s12">
-          <label for="timepicker_ampm_dark">Time am/pm ( dark theme )</label>
-          <input id="timepicker" data-default="14:20:00" class="timepicker" type="time">
-      </div>
-  </div>
-  <script>
-    $('#timepicker').pickatime({
-      autoclose: false,
-      twelvehour: false,
-      afterDone: function(Element, Time) {
-          console.log(Element, Time);
-      }
-    });
-  </script>
+</div>
