@@ -45,7 +45,11 @@
     height: 50%;
     width: 50%;
 }
-
+.group_register{
+  float: right;
+  width: 150px;
+  font-size: 9px;
+}
 
 /*LOGIN*/
 
@@ -90,10 +94,6 @@
 
 .icon_profil {
   margin-top: 2%;
-}
-
-.group_profile{
-  float: right;
 }
 
 .validate_profil {
