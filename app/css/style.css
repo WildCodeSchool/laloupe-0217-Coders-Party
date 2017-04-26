@@ -96,6 +96,9 @@
   float: right;
 }
 
+.validate_profil {
+  margin-bottom: 2%;
+}
 body {
     background-color: #e6e6e6;
     color: grey;
