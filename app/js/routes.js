@@ -89,6 +89,15 @@ angular.module('app')
                     }
                 }
             })
+            .state('user.createevent', {
+              url: '/createevent',
+              views: {
+                'content@': {
+                  templateUrl: 'user/createevent.html',
+                  controller: 'CreateEventController'
+                }
+              }
+            })
             .state('user.profile', {
                 url: '/profile',
                 views: {
