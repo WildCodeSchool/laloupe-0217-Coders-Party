@@ -9,7 +9,7 @@ angular.module('app')
             $('select').material_select();
         });
         GroupService.getAll().then(function(res) {
-                $scope.groups = res.data
+                $scope.groups = res.data;
 
             console.log($scope.groups);
         });
