@@ -92,6 +92,10 @@
   margin-top: 2%;
 }
 
+.group_profile{
+  float: right;
+}
+
 body {
     background-color: #e6e6e6;
     color: grey;

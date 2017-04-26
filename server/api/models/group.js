@@ -8,53 +8,24 @@ const hashCode = (s) => s.split("").reduce((a, b) => {
     a & a;
 }, 0);
 
-const userSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: [true, 'Email address is required'],
-        validate: [function(email) {
-            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-        }, 'Please fill a valid email address'],
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    },
+const groupSchema = new mongoose.Schema({
     name: {
         type: String,
-        match: /^[a-zA-Z0-9-_]+$/,
-        default:"",
-        required: true,
-        unique: true
-    },
-    odyssey: {
-        type: String,
-        match: /^[a-zA-Z0-9-_]+$/,
-        default: "",
-        unique: true
-    },
-    groupe: {
-      type: String,
-      default: "null"
+        default: '',
+        required: true
     }
 });
 
-userSchema.methods.comparePassword = function(pwd, cb) {
+groupSchema.methods.comparePassword = function(pwd, cb) {
     bcrypt.compare(pwd, this.password, function(err, isMatch) {
         if (err) cb(err);
         cb(null, isMatch);
     });
 };
 
-let model = mongoose.model('User', userSchema);
+let model = mongoose.model('Group', groupSchema);
 
-export default class User {
+export default class Group {
 
     connect(req, res) {
         if (!req.body.email) {
@@ -64,22 +35,22 @@ export default class User {
         } else {
             model.findOne({
                 email: req.body.email
-            }, (err, user) => {
-                if (err || !user) {
+            }, (err, group) => {
+                if (err || !group) {
                     res.sendStatus(403);
                 } else {
-                    user.comparePassword(req.body.password, (err, isMatch) => {
+                    group.comparePassword(req.body.password, (err, isMatch) => {
                         if (err) {
                             res.status(400).send(err);
                         } else {
                             if (isMatch) {
-                                user.password = null;
-                                let tk = jsonwebtoken.sign(user, token, {
+                                group.password = null;
+                                let tk = jsonwebtoken.sign(group, token, {
                                     expiresIn: "24h"
                                 });
                                 res.json({
                                     success: true,
-                                    user: user,
+                                    group: group,
                                     token: tk
                                 });
                             } else {
@@ -95,11 +66,11 @@ export default class User {
     findAll(req, res) {
         model.find({}, {
             password: 0
-        }, (err, users) => {
-            if (err || !users) {
+        }, (err, groups) => {
+            if (err || !groups) {
                 res.sendStatus(403);
             } else {
-                res.json(users);
+                res.json(groups);
             }
         });
     }
@@ -107,35 +78,24 @@ export default class User {
     findById(req, res) {
         model.findById(req.params.id, {
             password: 0
-        }, (err, user) => {
-            if (err || !user) {
+        }, (err, group) => {
+            if (err || !group) {
                 res.sendStatus(403);
             } else {
-                res.json(user);
+                res.json(group);
             }
         });
     }
 
     create(req, res) {
-        if (req.body.password) {
-            var salt = bcrypt.genSaltSync(10);
-            req.body.password = bcrypt.hashSync(req.body.password, salt);
-        }
         model.create(req.body,
-            (err, user) => {
-                if (err || !user) {
-                    if (err.code === 11000 || err.code === 11001) {
-                        err.message = "Email " + req.body.email + " already exist";
-                    }
-                    res.status(500).send(err.message);
+            (err, group) => {
+                if (err || !group) {
+                    res.status(400).send(err.message);
                 } else {
-                    let tk = jsonwebtoken.sign(user, token, {
-                        expiresIn: "24h"
-                    });
                     res.json({
                         success: true,
-                        user: user,
-                        token: tk
+                        group
                     });
                 }
             });
@@ -144,16 +104,16 @@ export default class User {
     update(req, res) {
         model.update({
             _id: req.params.id
-        }, req.body, (err, user) => {
-            if (err || !user) {
+        }, req.body, (err, group) => {
+            if (err || !group) {
                 res.status(500).send(err.message);
             } else {
-                let tk = jsonwebtoken.sign(user, token, {
+                let tk = jsonwebtoken.sign(group, token, {
                     expiresIn: "24h"
                 });
                 res.json({
                     success: true,
-                    user: user,
+                    group: group,
                     token: tk
                 });
             }
