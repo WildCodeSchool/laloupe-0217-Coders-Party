@@ -13,6 +13,7 @@
     "express": "",
     "lineman": "~0.37.0",
     "lineman-angular": "^0.3.0",
-    "lineman-less": "^0.1.0"
+    "lineman-less": "^0.1.0",
+    "octicons": "^5.0.1"
   }
 }
