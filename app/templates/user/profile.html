@@ -1,7 +1,7 @@
 <div class="container">
     <form class="col s12 form" name="loginForm" novalidate ng-submit="createGroup()">
         <div class="row">
-            <img class="col offset-s3 offset-m3 col m6 image_profil" src="https://avatars.githubusercontent.com/{{user.odyssey}}?s=460" alt="image_profil">
+            <img class="offset-s3 col s6 offset-m3 col m6 image_profil" src="https://avatars.githubusercontent.com/{{user.odyssey}}?s=460" alt="image_profil">
         </div>
         <div class="row">
             <div class="col s12 description_profil"><i class="small material-icons left icon_profil">perm_identity</i>{{user.name}}</div>
@@ -29,6 +29,6 @@
         </div>
         <div class="col offset-s4 s4 m12">
             <p class="center-align">
-                <button class="btn btn-large waves-effect waves-light orange" type="submit" name="action">Valider</button>
+                <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" name="action">Valider</button>
             </p>
         </div>
