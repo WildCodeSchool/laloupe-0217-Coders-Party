@@ -12,8 +12,6 @@ module.exports = (app) => {
 
     var group = new Group();
 
-    app.post('/login', group.connect);
-
     router.get('/', group.findAll);
 
     router.get('/:id', Auth.hasAuthorization, group.findById);
