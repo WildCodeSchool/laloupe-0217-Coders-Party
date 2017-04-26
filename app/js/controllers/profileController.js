@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('ProfileController', function($scope, CurrentUser, UserService, GroupService) {
+    .controller('ProfileController', function($scope, $state, CurrentUser, UserService, GroupService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
@@ -20,10 +20,8 @@ angular.module('app')
             GroupService.create({
                 name: $scope.newGroup
             });
-            UserService.update($scope.user._id, $scope.user);
-            GroupService.getAll().then(function(res) {
-                $scope.groups = res.data;
-                console.log($scope.groups);
+            UserService.update($scope.user._id, $scope.user).then(function() {
+                $state.go('user.home');
             });
         };
 
