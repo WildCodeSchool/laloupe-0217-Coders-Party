@@ -71,6 +71,15 @@ angular.module('app')
                     }
                 }
             })
+            .state('user.agenda', {
+                url: '/agenda',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/agenda.html',
+                        controller: 'AgendaController'
+                    }
+                }
+            })
             .state('user.home', {
                 url: '/home',
                 views: {
