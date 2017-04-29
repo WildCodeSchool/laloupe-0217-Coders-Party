@@ -31,31 +31,26 @@
                             <label for="odyssey">GitHub Username</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" ng-hide="hideme">
                         <div class="input-field col s12">
                             <select ng-model="user.groupe">
-                               <optgroup label="WCS">
+                               <optgroup label="Choisis ton groupe">
                                 <option ng-repeat="group in groups">{{group.name}}</option>
-                              </optgroup>!
-                                 <optgroup label="Autres">
-                                  <option value="Autre groupe">Autre groupe</option>
-                                   </optgroup>
+                              </optgroup>
                               </select>
                             <label>Groupe</label>
-                            <button data-target="modal1" class="btn modal-trigger grey group_register">créer un Groupe</button>
                         </div>
                     </div>
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>Choisis le nom de ton groupe</h4>
-                            <input type="text" class="validate" ng-model="newGroup" required>
-                        </div>
-                        <div class="modal-footer">
-                            <a class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="updateGroup()">ok</a>
-                        </div>
+                    <div class="row" ng-show="showme" >
+                      <div class="input-field col s12">
+                        <input id="newgroup" type="text" class="validate" ng-model="user.groupe" required>
+                        <label for="newgroup">nouveau groupe</label>
+                      </div>
                     </div>
-                    <!--Modal End -->
+                    <div class="row">
+                      <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">créer un Groupe</button>
+                      <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
+                    </div>
                     <div class="row">
                         <div class="col offset-s4 s4 m12">
                             <p class="center-align">

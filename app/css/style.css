@@ -46,11 +46,17 @@
     width: 50%;
 }
 .group_register{
+  float: left;
+  width: 150px;
+  font-size: 9px;
+  margin-bottom: 2em;
+}
+.groupbis_register{
   float: right;
   width: 150px;
   font-size: 9px;
+  margin-bottom: 2em;
 }
-
 /*LOGIN*/
 
 .logo_login {
