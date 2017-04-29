@@ -1,11 +1,16 @@
 /*NAVBAR*/
 
 .logo_navbar {
-    margin-top: 5%;
-    height: 90%;
+    margin-left: -100%;
+    height: 72%;
     width: auto;
 }
-
+.menu_navbar{
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 25%;
+}
 .navbar {
     background-color: #e6e6e6;
 }
