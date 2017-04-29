@@ -112,8 +112,30 @@
 }
 
 body {
-    background-color: #e6e6e6;
-    color: grey;
+  background-color: #e6e6e6;
+  color: grey;
+  height:100%;
+  position: relative;
+}
+
+html{
+  height:100%;
+}
+
+#wrap{
+  min-height:100%;
+  position: relative;
+}
+
+#main{
+  position relative;
+  padding-bottom: 100px;
+}
+#footer{
+  /*height: 100px;*/
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 
