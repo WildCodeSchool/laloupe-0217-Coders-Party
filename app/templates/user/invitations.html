@@ -1,11 +1,20 @@
 <div class="container">
   <h1>Invitations</h1>
-<div class="">
-  <form action="#">
-    <p ng-repeat="group in groups">
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">{{group.name}}</label>
-    </p>
+<div class="row" ng-repeat="group in groups track by $index">
+  <form action="#" ng-model="events">
+  <div class="input-field col s12">
+    <input  ng-model="group.selected"  type="checkbox" id="{{group._id}}" />
+    <label class=" invitations_liste" for="{{group._id}}">{{group.name}}</label>
+  </div>
+
   </form>
+</div>
+<div class="col offset-s4 s4 m12">
+    <p class="center-align">
+        <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" ng-click="valider()" name="action">Valider</button>
+    </p>
+</div>
+<div ng-hide="groupok" class="">
+  <p>Je ne selectionne que des participants</p>
 </div>
 </div>

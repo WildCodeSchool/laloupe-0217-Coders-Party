@@ -154,3 +154,10 @@ body {
     margin-top: 0%;
     margin-bottom: 5%;
 }
+/*INVITATIONS*/
+label.invitations_liste{
+  height: 3rem;
+  margin-left: 5%;
+  display: inline-block;
+  font-size: 2rem;
+}
