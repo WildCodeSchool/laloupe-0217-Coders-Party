@@ -6,9 +6,16 @@ angular.module('app')
         GroupService.getAll().then(function(res) {
             $scope.groups = res.data;
             console.log($scope.groups);
-        });
         $scope.events = {};
         $scope.events.list = [];
+        $scope.groupok = function() {
+            for (var i = 0; i < $scope.groups.length; i++) {
+                if ($scope.groups[i].selected === true) {
+                    return true;
+                }
+            }
+        };
+      });
         $scope.valider = function() {
             for (var i = 0; i < $scope.groups.length; i++) {
                 if ($scope.groups[i].selected === true) {

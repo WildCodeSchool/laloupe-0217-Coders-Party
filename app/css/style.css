@@ -161,3 +161,10 @@ label.invitations_liste{
   display: inline-block;
   font-size: 2rem;
 }
+label.invitations_nogroup{
+margin-top: 15px;
+  height: 3rem;
+  margin-left: 6.5%;
+  display: inline-block;
+  font-size: 2rem;
+}
