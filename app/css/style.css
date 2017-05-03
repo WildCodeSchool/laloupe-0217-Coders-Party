@@ -102,7 +102,10 @@
     height: 60px;
     font-size: xx-large;
 }
-
+.github_logo{
+  width: 25px;
+  margin-left: 3px;
+}
 .icon_profil {
   margin-top: 2%;
 }
@@ -175,4 +178,18 @@ html{
     padding-right: 10%;
     margin-top: 0%;
     margin-bottom: 5%;
+}
+/*INVITATIONS*/
+label.invitations_liste{
+  height: 3rem;
+  margin-left: 5%;
+  display: inline-block;
+  font-size: 2rem;
+}
+label.invitations_nogroup{
+margin-top: 15px;
+  height: 3rem;
+  margin-left: 6.5%;
+  display: inline-block;
+  font-size: 2rem;
 }
