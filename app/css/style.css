@@ -157,3 +157,17 @@ body {
     margin-top: 0%;
     margin-bottom: 5%;
 }
+/*INVITATIONS*/
+label.invitations_liste{
+  height: 3rem;
+  margin-left: 5%;
+  display: inline-block;
+  font-size: 2rem;
+}
+label.invitations_nogroup{
+margin-top: 15px;
+  height: 3rem;
+  margin-left: 6.5%;
+  display: inline-block;
+  font-size: 2rem;
+}
