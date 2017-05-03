@@ -10,14 +10,16 @@
 </head>
 
 <body>
+  <div id='wrap'>
 
     <div ui-view='navbar'></div>
-    <div ui-view='content'></div>
+    <div id='main' ui-view='content'></div>
 
     <script type="text/javascript" src="<%= js %>"></script>
-  <footer>
-    <div ui-view='footer'></div>
-  </footer>
+    <footer>
+      <div id='footer' ui-view='footer'></div>
+    </footer>
+  </div>
 </body>
 
 </html>
