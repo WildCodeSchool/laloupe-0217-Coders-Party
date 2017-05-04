@@ -107,6 +107,15 @@ angular.module('app')
                 }
               }
             })
+            .state('user.invitationsuite', {
+              url: '/invitationsuite',
+              views: {
+                'content@': {
+                  templateUrl: 'user/invitationsuite.html',
+                  controller: 'InvitationsuiteController'
+                }
+              }
+            })
             .state('user.profile', {
                 url: '/profile',
                 views: {

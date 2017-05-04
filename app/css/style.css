@@ -193,3 +193,8 @@ margin-top: 15px;
   display: inline-block;
   font-size: 2rem;
 }
+.list_image {
+    border-radius: 100%;
+    height: 100%;
+    margin-bottom: -21px;
+}

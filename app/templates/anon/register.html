@@ -33,7 +33,7 @@
                     </div>
                     <div class="row" ng-hide="hideme">
                         <div class="input-field col s12">
-                            <select ng-model="user.groupe">
+                            <select ng-model="newGroup">
                                <optgroup label="Choisis ton groupe">
                                 <option ng-repeat="group in groups">{{group.name}}</option>
                               </optgroup>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="row" ng-show="showme" >
                       <div class="input-field col s12">
-                        <input id="newgroup" type="text" class="validate" ng-model="user.groupe" required>
+                        <input id="newgroup" type="text" class="validate" ng-model="newGroup" required>
                         <label for="newgroup">nouveau groupe</label>
                       </div>
                     </div>
