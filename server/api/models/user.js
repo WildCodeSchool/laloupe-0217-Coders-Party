@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
     },
     odyssey: {
         type: String,
-        default: "TChristal",
+        default: "ùmlmkm",
     },
     groupe: {
       type: String,
