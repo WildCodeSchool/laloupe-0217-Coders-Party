@@ -1,17 +1,15 @@
-<h1>Création évènement<h1>
+<div class="container" layout-padding>
 
-<div class="container">
-  <div layout-gt-xs="row">
-    <div flex-gt-xs>
-      <md-datepicker ng-model="ctrl.myStartDate" md-placeholder="Date de début"></md-datepicker>
-    </div>
-  </div>
-</div>
+  <h1>Création évènement<h1>
 
-<div class="container">
   <div layout-gt-xs="row">
-    <div flex-gt-xs>
-      <md-datepicker ng-model="ctrl.myEndDate" md-placeholder="Date de fin"></md-datepicker>
-    </div>
-  </div>
+    <form class="col s12" name="dateForm" novalidate ng-submit="validateDate()">
+      <div flex-gt-xs>
+        <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus></md-datepicker>
+      </div>
+      <div flex-gt-xs>
+        <md-datepicker ng-model="endDate" md-placeholder="Date de fin"></md-datepicker>
+      </div>
+       <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
+     </form>
 </div>
