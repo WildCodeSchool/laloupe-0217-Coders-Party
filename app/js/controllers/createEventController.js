@@ -1,8 +1,5 @@
 angular.module('app')
   .controller('CreateEventController', function($scope, CurrentUser, EventService) {
-    $scope.validate = false;
-    this.myDate = new Date();
-    this.isOpen = false;
     $scope.validateDate = function() {
       if ($scope.dateForm.$valid) {
         var event = {

@@ -15,18 +15,15 @@ const eventSchema = new mongoose.Schema({
     },
     liste: {
       type: Array,
-      default: ''
     },
     invitations: {
       type: Array,
-      default: ''
     },
     image: {
       type: String,
-      default: ''
     },
     startDate: {
-      type: String,
+      type: Date,
       default: ''
     },
     startTime: {
@@ -34,7 +31,7 @@ const eventSchema = new mongoose.Schema({
       default: ''
     },
     endDate: {
-      type: String,
+      type: Date,
       default: ''
     },
     endTime: {
@@ -43,7 +40,7 @@ const eventSchema = new mongoose.Schema({
     },
     createDate: {
       type: Date,
-      default: new Date()
+      default: Date.now
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
@@ -89,8 +86,8 @@ export default class Event {
     create(req, res) {
         model.create(req.body,
             (err, event) => {
-                if (err) {
-                    res.status(500).send(err.message);
+                if (err || !event) {
+                    res.status(400).send(err.message);
                 } else {
                     res.json({
                         success: true,

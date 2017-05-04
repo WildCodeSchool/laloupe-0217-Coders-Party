@@ -1,4 +1,4 @@
-<div class="container" layout-padding>
+<div class="container">
 
   <h1>Création évènement</h1>
 
@@ -16,7 +16,7 @@
           <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required></md-datepicker>
         </div>
         <div class="col s6 col l6">
-          <input type="time" ng-model="startTime">
+          <input type="time" ng-model="startTime" required>
         </div>
       </div>
       <div class="row">
@@ -24,7 +24,7 @@
           <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required></md-datepicker>
         </div>
         <div class="col s6 col l6">
-          <input type="time" ng-model="endTime">
+          <input type="time" ng-model="endTime" required>
         </div>
       </div>
       <div class="row col s12 col l12">
