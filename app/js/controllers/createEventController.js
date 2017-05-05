@@ -13,7 +13,8 @@ angular.module('app')
           endTime: $scope.endTime,
           author: CurrentUser.user()._id
         };
-        EventService.create(event).then(function(res) {});
+        EventService.create(event).then(function(res) {
+        });
       }
     };
   });
