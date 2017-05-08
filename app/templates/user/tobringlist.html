@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Ce que tu peux apporter</h1>
+    <div class="input-field col s12">
+      <form ng-submit="addElement()">
+        <input ng-model="newElement" type="text" class="validate" id="{{event.element._id}}">
+        <label for="{{event.element._id}}">Elément à apporter</label>
+      </form>
+    </div>
+    <div class="row" ng-repeat="element in event.elements track by $index">
+        <p class="tobringlist_element"> -  {{element}}</p>
+
+    </div>
+
+    <div class="col offset-s4 s4 m12">
+        <p class="center-align">
+            <button class="btn btn-large waves-effect waves-light orange validate_profil" ng-click="valider()" name="action">Valider</button>
+        </p>
+    </div>
+</div>

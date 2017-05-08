@@ -198,3 +198,9 @@ margin-top: 15px;
     height: 100%;
     margin-bottom: -21px;
 }
+/*TOBRINGLIST*/
+.tobringlist_element{
+  margin-left: 2em;
+  font-size: 25px;
+  line-height: 25px;
+}

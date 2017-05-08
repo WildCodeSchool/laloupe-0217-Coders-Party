@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('InvitationsController', function($scope, CurrentUser, UserService, GroupService, InvitationService) {
+    .controller('InvitationsController', function($scope, CurrentUser, UserService, GroupService, LocalService, InvitationService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
