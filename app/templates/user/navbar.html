@@ -2,10 +2,10 @@
     <div class="nav-wrapper navbar">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><img class="logo_navbar" src="/../img/logo_orange.png" /></a>
         <ul class="right hide-on-med-and-down ">
-            <li ui-sref-active="active"><a ui-sref="user.home">Home</a></li>
-            <li ui-sref-active="active"><a ui-sref="user.profile" ng-show="auth.isAuthenticated()">Profile</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.home">Accueil</a></li>
             <li ui-sref-active="active"><a ui-sref="user.agenda">Agenda</a></li>
-            <li ui-sref-active="active"><a ui-sref="user.dashboard" ng-show="auth.isAuthenticated()">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.profile" ng-show="auth.isAuthenticated()">Mon profil</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes événements</a></li>
             <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Logout</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -15,7 +15,7 @@
                 </div>
             </li>
             <div class="divider divider_sidebar"></div>
-            <li ui-sref-active="active"><a ui-sref="user.home">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.home">Accueil</a></li>
             <div class="divider divider_sidebar"></div>
             <li ui-sref-active="active"><a ui-sref="user.agenda">Agenda</a></li>
             <div class="divider divider_sidebar"></div>
@@ -25,7 +25,7 @@
       <div class="divider divider_sidebar"></div> -->
             <!-- <li ui-sref-active="active"><a ui-sref="">Création</a></li>
       <div class="divider divider_sidebar"></div> -->
-            <li ui-sref-active="active"><a ui-sref="user.dashboard" ng-show="auth.isAuthenticated()">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes événements</a></li>
             <div class="divider divider_sidebar"></div>
             <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Logout</a></li>
             <div class="divider divider_sidebar"></div>
