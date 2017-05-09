@@ -22,6 +22,9 @@ const eventSchema = new mongoose.Schema({
     },
     image: {
       type: String
+    },
+    elements: {
+      type: Array
     }
 });
 

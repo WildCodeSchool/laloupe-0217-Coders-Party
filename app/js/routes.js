@@ -116,6 +116,15 @@ angular.module('app')
                 }
               }
             })
+            .state('user.tobringlist', {
+              url: '/tobringlist',
+              views: {
+                'content@': {
+                  templateUrl: 'user/tobringlist.html',
+                  controller: 'TobringlistController'
+                }
+              }
+            })
             .state('user.profile', {
                 url: '/profile',
                 views: {
