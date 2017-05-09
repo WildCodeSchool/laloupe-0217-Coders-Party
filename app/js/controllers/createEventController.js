@@ -1,13 +1,11 @@
 angular.module('app')
-  .controller('CreateEventController', function($scope, CurrentUser, EventService) {
+  .controller('CreateEventController', function($scope, CurrentUser, EventService, LocalService) {
     $scope.validateDate = function() {
       $scope.myDate = new Date();
-
       $scope.minDate = new Date(
         $scope.myDate.getFullYear(),
         $scope.myDate.getMonth() - 2,
         $scope.myDate.getDate());
-
       $scope.maxDate = new Date(
         $scope.myDate.getFullYear(),
         $scope.myDate.getMonth() + 2,
@@ -25,6 +23,7 @@ angular.module('app')
           author: CurrentUser.user()._id
         };
         EventService.create(event).then(function(res) {
+          LocalService.set('eventId', res.data.event._id);
         });
       }
     };
