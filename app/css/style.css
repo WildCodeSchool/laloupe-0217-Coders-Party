@@ -5,12 +5,14 @@
     height: 72%;
     width: auto;
 }
-.menu_navbar{
-  float: left;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 25%;
+
+.menu_navbar {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25%;
 }
+
 .navbar {
     background-color: #e6e6e6;
 }
@@ -50,18 +52,22 @@
     height: 50%;
     width: 50%;
 }
-.group_register{
-  float: left;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+
+.group_register {
+    float: left;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
-.groupbis_register{
-  float: right;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+
+.groupbis_register {
+    float: right;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
+
+
 /*LOGIN*/
 
 .logo_login {
@@ -102,43 +108,46 @@
     height: 60px;
     font-size: xx-large;
 }
-.github_logo{
-  width: 25px;
-  margin-left: 3px;
+
+.github_logo {
+    width: 25px;
+    margin-left: 3px;
 }
+
 .icon_profil {
-  margin-top: 2%;
+    margin-top: 2%;
 }
 
 .validate_profil {
-  margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 body {
-  background-color: #e6e6e6;
-  color: grey;
-  height:100%;
-  position: relative;
+    background-color: #e6e6e6;
+    color: grey;
+    height: 100%;
+    position: relative;
 }
 
-html{
-  height:100%;
+html {
+    height: 100%;
 }
 
-#wrap{
-  min-height:100%;
-  position: relative;
+#wrap {
+    min-height: 100%;
+    position: relative;
 }
 
-#main{
-  position relative;
-  padding-bottom: 100px;
+#main {
+    position relative;
+    padding-bottom: 100px;
 }
-#footer{
-  /*height: 100px;*/
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+
+#footer {
+    /*height: 100px;*/
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -166,9 +175,11 @@ html{
     float: left;
     max-width: 900px;
 }
+
 .event_home p {
-  font-size: 1.75em;
+    font-size: 1.75em;
 }
+
 .info_event {
     font-size: 1.2em;
     line-height: 0.75em;
@@ -179,28 +190,49 @@ html{
     margin-top: 0%;
     margin-bottom: 5%;
 }
+
+
 /*INVITATIONS*/
-label.invitations_liste{
-  height: 3rem;
-  margin-left: 5%;
-  display: inline-block;
-  font-size: 2rem;
+
+label.invitations_liste {
+    height: 3rem;
+    margin-left: 5%;
+    display: inline-block;
+    font-size: 2rem;
 }
-label.invitations_nogroup{
-margin-top: 15px;
-  height: 3rem;
-  margin-left: 6.5%;
-  display: inline-block;
-  font-size: 2rem;
+
+label.invitations_nogroup {
+    margin-top: 15px;
+    height: 3rem;
+    margin-left: 6.5%;
+    display: inline-block;
+    font-size: 2rem;
 }
+
 .list_image {
     border-radius: 100%;
     height: 100%;
     margin-bottom: -21px;
 }
+
+
 /*TOBRINGLIST*/
-.tobringlist_element{
-  margin-left: 2em;
-  font-size: 25px;
-  line-height: 25px;
+
+.tobringlist_element {
+    margin-left: 2em;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+
+/*HAPPYEVENT*/
+
+.happy_event {
+  border-radius: 70%;
+  border: solid 1px;
+  width: 50%;
+  margin: 2em auto;
+}
+.happy_text {
+  font-size: 3em;
 }
