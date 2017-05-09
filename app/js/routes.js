@@ -116,6 +116,15 @@ angular.module('app')
                 }
               }
             })
+            .state('user.happyEvent', {
+              url: '/happyEvent',
+              views: {
+                'content@': {
+                  templateUrl: 'user/happyEvent.html',
+                  controller: 'HappyEventController'
+                }
+              }
+            })
             .state('user.tobringlist', {
               url: '/tobringlist',
               views: {
