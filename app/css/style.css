@@ -252,7 +252,7 @@ label.invitations_nogroup {
 
 .logo_agenda {
     width: 45%;
-    margin-top: 5%;
+    margin-top: 0%;
     padding-left: 5%;
 }
 
@@ -261,11 +261,16 @@ label.invitations_nogroup {
     text-align: right;
     width: 45%;
     padding-right: 10%;
-    margin-top: 5%;
+    margin-top: 0%;
     margin-bottom: 5%;
 }
 
 .info_agenda p {
     font-size: 2em;
     line-height: 1.5em;
+}
+
+.location_agenda {
+    font-size: 40px;
+    padding: 1.5em 1.5em 0 0;
 }
