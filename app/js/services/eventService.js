@@ -7,6 +7,7 @@ angular.module('app')
             getOne: function(id) {
                 return $http.get('/events/' + id);
             },
+
             update: function(id, event) {
                 return $http.put('/events/' + id, event);
             },
@@ -14,7 +15,7 @@ angular.module('app')
                 return $http.delete('/events/' + id);
             },
             create: function(event) {
-                return $http.post('/events', group);
+                return $http.post('/events/newevent', event);
             }
         };
     });

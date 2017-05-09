@@ -1,17 +1,35 @@
-<h1>Création évènement<h1>
-
 <div class="container">
-  <div layout-gt-xs="row">
-    <div flex-gt-xs>
-      <md-datepicker ng-model="ctrl.myStartDate" md-placeholder="Date de début"></md-datepicker>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <div layout-gt-xs="row">
-    <div flex-gt-xs>
-      <md-datepicker ng-model="ctrl.myEndDate" md-placeholder="Date de fin"></md-datepicker>
-    </div>
+  <h1>Création évènement</h1>
+
+  <div class="container">
+    <form name="dateForm" novalidate ng-submit="validateDate()">
+      <div class="row">
+        <div class="input-field col s12 col l12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" ng-model="name" class="materialize-textarea" required></textarea>
+          <label for="icon_prefix2">Nom de l'évènement</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 col l6">
+          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required></md-datepicker>
+        </div>
+        <div class="col s6 col l6">
+          <input type="time" ng-model="startTime" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 col l6">
+          <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required></md-datepicker>
+        </div>
+        <div class="col s6 col l6">
+          <input type="time" ng-model="endTime" required>
+        </div>
+      </div>
+      <div class="row col s12 col l12">
+      <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
+      </div>
+    </form>
   </div>
 </div>

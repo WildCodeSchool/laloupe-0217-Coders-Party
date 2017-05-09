@@ -12,16 +12,39 @@ const eventSchema = new mongoose.Schema({
     name: {
         type: String,
         default: '',
-        required: true
     },
     liste: {
-      type: Array
+      type: Array,
     },
     invitations: {
-      type: Array
+      type: Array,
     },
     image: {
-      type: String
+      type: String,
+    },
+    startDate: {
+      type: Date,
+      default: ''
+    },
+    startTime: {
+      type: String,
+      default: ''
+    },
+    endDate: {
+      type: Date,
+      default: ''
+    },
+    endTime: {
+      type: String,
+      default: ''
+    },
+    createDate: {
+      type: Date,
+      default: Date.now
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
     },
     elements: {
       type: Array
@@ -71,7 +94,7 @@ export default class Event {
                 } else {
                     res.json({
                         success: true,
-                        event
+                        event: event,
                     });
                 }
             });

@@ -12,11 +12,11 @@ module.exports = (app) => {
 
     var event = new Event();
 
-    router.get('/', event.findAll);
+    router.post('/newevent', Auth.hasAuthorization, event.create);
+
+    router.get('/', Auth.hasAuthorization, event.findAll);
 
     router.get('/:id', Auth.hasAuthorization, event.findById);
-
-    router.post('/', event.create);
 
     router.put('/:id', Auth.hasAuthorization, event.update);
 
