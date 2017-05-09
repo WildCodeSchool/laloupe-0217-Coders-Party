@@ -1,20 +1,24 @@
 angular.module('app')
-    .controller('InvitationsuiteController', function($scope, CurrentUser, UserService, GroupService, LocalService, InvitationService) {
-            UserService.getOne(CurrentUser.user()._id).then(function(res) {
-                $scope.user = res.data;
-            });
-            UserService.getAll().then(function(res) {
-                    $scope.users = res.data;
-                    console.log($scope.users);
-                    $scope.events = {};
-                    $scope.events.list = [];
-                $scope.valider = function() {
-                    for (var i = 0; i < $scope.users.length; i++) {
-                        if ($scope.users[i].selected === true) {
-                            $scope.events.list.push($scope.users[i]);
-                        }
+    .controller('InvitationsuiteController', function($scope, $state, CurrentUser, UserService, GroupService, LocalService, EventService) {
+        UserService.getOne(CurrentUser.user()._id).then(function(res) {
+            $scope.user = res.data;
+        });
+        UserService.getAll().then(function(res) {
+            $scope.users = res.data;
+            console.log($scope.users);
+            $scope.event = {};
+            $scope.event.invitations = [];
+
+            var id = LocalService.get('eventId');
+            $scope.valider = function() {
+                for (var i = 0; i < $scope.users.length; i++) {
+                    if ($scope.users[i].selected === true) {
+                        $scope.event.invitations.push($scope.users[i]);
                     }
-                    console.log($scope.events);
-                };
-              });
-            });
+                }
+                EventService.update(id, $scope.event).then(function() {
+                    $state.go('user.tobringlist');
+                });
+            };
+        });
+    });
