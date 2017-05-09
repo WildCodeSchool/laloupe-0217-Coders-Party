@@ -1,7 +1,7 @@
 angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate'])
 .config(function($mdDateLocaleProvider) {
   $mdDateLocaleProvider.months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre'];
-  $mdDateLocaleProvider.shortMonths = ['janv', 'févr', 'mars', 'avri', 'mai', 'juin', 'juil', 'aout', 'sept', 'octo', 'nove', 'dece'];
+  $mdDateLocaleProvider.shortMonths = ['janv', 'févr', 'mars', 'avri', 'mai', 'juin', 'juil', 'aout', 'sept', 'oct', 'nov', 'dec'];
   $mdDateLocaleProvider.days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
   $mdDateLocaleProvider.shortDays = ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'];
   $mdDateLocaleProvider.msgCalendar = 'Calendrier';
@@ -21,7 +21,7 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate'])
   $mdDateLocaleProvider.weekNumberFormatter = function(weekNumber) {
     return 'Semaine ' + weekNumber;
   };
-  
+
   $mdDateLocaleProvider.formatDate = function(date) {
     return moment(date).format('DD/MM/YYYY');
   };
