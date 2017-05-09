@@ -26,7 +26,7 @@ angular.module('app')
                     LocalService.set('eventId', res.data.event._id);
                 }).then(function() {
                     $state.go('user.invitations');
-                });;
+                });
             }
         };
     });

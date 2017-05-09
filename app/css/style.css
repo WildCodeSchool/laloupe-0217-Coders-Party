@@ -85,9 +85,15 @@
 
 
 /*FOOTER*/
-
-.built_with {}
-
+.modalDesc {
+  width: 232px;
+  height: 300px;
+  border: 1px solid grey;
+}
+.modalPics {
+  height: 40px;
+  width: 40px;
+}
 
 /*PROFILPICTURE*/
 
@@ -98,7 +104,6 @@
     height: 30%;
     width: 30%;
 }
-
 
 /*PROFIL PAGE*/
 
