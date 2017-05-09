@@ -124,8 +124,9 @@
 
 body {
     background-color: #e6e6e6;
+    background-size: cover;
     color: grey;
-    height: 100%;
+    height: auto;
     position: relative;
 }
 
