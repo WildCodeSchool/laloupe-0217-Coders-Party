@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Invitations de participants</h1>
+<div class="row" ng-repeat="user in users track by $index">
+  <form action="#" ng-model="events" >
+  <div class="input-field col s12">
+    <input  ng-model="user.selected"  type="checkbox" id="{{user._id}}" />
+    <label class=" invitations_liste" for="{{user._id}}"><img class="list_image" src="https://avatars.githubusercontent.com/{{user.odyssey}}?s=460"/> {{user.name}} - {{user.groupe}}</label>
+  </div>
+
+  </form>
+</div>
+
+<div class="col offset-s4 s4 m12">
+    <p class="center-align">
+        <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" ng-click="valider()" name="action">Valider</button>
+    </p>
+</div>
+</div>

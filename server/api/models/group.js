@@ -13,6 +13,9 @@ const groupSchema = new mongoose.Schema({
         type: String,
         default: '',
         required: true
+    },
+    members: {
+        type: Array,
     }
 });
 

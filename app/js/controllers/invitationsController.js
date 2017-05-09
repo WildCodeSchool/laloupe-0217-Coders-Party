@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('InvitationsController', function($scope, CurrentUser, UserService, GroupService, InvitationService) {
+    .controller('InvitationsController', function($scope, CurrentUser, UserService, GroupService, LocalService, InvitationService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
@@ -19,7 +19,7 @@ angular.module('app')
         $scope.valider = function() {
             for (var i = 0; i < $scope.groups.length; i++) {
                 if ($scope.groups[i].selected === true) {
-                    $scope.events.list.push($scope.groups[i].name);
+                    $scope.events.list.push($scope.groups[i]);
                 }
             }
             console.log($scope.events);
