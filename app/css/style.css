@@ -228,11 +228,49 @@ label.invitations_nogroup {
 /*HAPPYEVENT*/
 
 .happy_event {
-  border-radius: 70%;
-  border: solid 1px;
-  width: 50%;
-  margin: 2em auto;
+    border-radius: 70%;
+    border: solid 1px;
+    width: 50%;
+    margin: 2em auto;
 }
+
 .happy_text {
-  font-size: 3em;
+    font-size: 3em;
+}
+
+
+/*AGENDA*/
+
+.event_agenda {
+    cursor: pointer;
+    border: solid 1px grey;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    box-shadow: 2px 5px lightgrey;
+}
+
+.logo_agenda {
+    width: 45%;
+    margin-top: 0%;
+    padding-left: 5%;
+}
+
+.info_agenda {
+    float: right;
+    text-align: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+}
+
+.info_agenda p {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+.location_agenda {
+    font-size: 40px;
+    padding: 1.5em 1.5em 0 0;
 }
