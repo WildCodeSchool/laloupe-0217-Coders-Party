@@ -13,9 +13,6 @@ const eventSchema = new mongoose.Schema({
         type: String,
         default: '',
     },
-    liste: {
-      type: Array,
-    },
     invitations: {
       type: Array,
     },

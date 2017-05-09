@@ -3,7 +3,7 @@ angular.module('app')
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
-        
+
         $scope.event = {};
         $scope.event.elements = [];
         $scope.newElement = "";
@@ -11,12 +11,10 @@ angular.module('app')
             $scope.event.elements.push($scope.newElement);
             $scope.newElement = "";
         }
-
+        var id = LocalService.get('eventId');
         $scope.valider = function() {
-          Event.udpate(id, $scope.event).then(function() {
-              $state.go('user.happyParty');
-          });
-            console.log($scope.events);
+            EventService.update(id, $scope.event)
+            console.log($scope.event);
 
         };
     });
