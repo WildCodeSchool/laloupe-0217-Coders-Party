@@ -6,7 +6,7 @@ angular.module('app')
             if ($scope.loginForm.$valid) {
                 $scope.errors = [];
                 Auth.login($scope.user).then(function(result) {
-                    $state.go('user.profile');
+                    $state.go('user.home');
                 }).catch(function(err) {
                     $scope.errors.push(err);
                 });
