@@ -11,5 +11,5 @@ angular.module('app')
                     $scope.myEvents.push($scope.allEvents[i]);
                 }
             }
-        })
+        });
     });
