@@ -2,8 +2,12 @@ angular.module('app')
     .controller('ProfileController', function($scope, $state, CurrentUser, UserService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
+            $scope.move = function() {
+                $state.go('user.home');
+            };
+            if ($scope.user.odyssey === "ùmlmkm") {
+                $scope.user.odyssey = "Aucun compte";
+            };
+            console.log($scope.user);
         });
-        $scope.move = function() {
-            $state.go('user.home');
-        };
     });
