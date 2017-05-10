@@ -10,7 +10,7 @@ angular.module('app')
         $scope.addElement = function() {
             $scope.event.elements.push($scope.newElement);
             $scope.newElement = "";
-        }
+        };
         var id = LocalService.get('eventId');
         $scope.valider = function() {
             EventService.update(id, $scope.event).then(function() {
