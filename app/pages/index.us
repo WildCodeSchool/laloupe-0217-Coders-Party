@@ -5,7 +5,7 @@
     <title>
         <%= pkg.name %>
     </title>
-
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
 </head>
 
