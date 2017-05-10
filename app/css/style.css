@@ -175,6 +175,7 @@ html {
     background-color: white;
     float: left;
     max-width: 900px;
+    font-size: 1.75em;
 }
 
 .event_home p {
