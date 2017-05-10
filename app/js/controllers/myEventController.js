@@ -11,5 +11,10 @@ angular.module('app')
                     $scope.myEvents.push($scope.allEvents[i]);
                 }
             }
+            $scope.showingMessage = function() {
+                if ($scope.myEvents.length === 0) {
+                    return true;
+                }
+            };
         });
     });
