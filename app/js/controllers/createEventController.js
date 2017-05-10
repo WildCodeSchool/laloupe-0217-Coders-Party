@@ -30,7 +30,6 @@ angular.module('app')
                 }).then(function() {
                     $state.go('user.invitations');
                 });
-
             }
         };
     });
