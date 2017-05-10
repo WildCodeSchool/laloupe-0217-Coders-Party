@@ -27,6 +27,17 @@
           <input type="time" ng-model="endTime" required>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field">
+          <select ng-model="typeEvent">
+            <option value="" disabled selected>Choisir type évènement</option>
+            <option>Sportif</option>
+            <option>Projection</option>
+            <option>Jeux</option>
+          </select>
+          <label>Selection type évènement</label>
+        </div>
+      </div>
       <div class="row col s12 col l12">
       <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
       </div>

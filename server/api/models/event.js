@@ -16,7 +16,7 @@ const eventSchema = new mongoose.Schema({
     invitations: {
       type: Array,
     },
-    image: {
+    categorie: {
       type: String,
     },
     startDate: {
