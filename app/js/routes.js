@@ -22,7 +22,7 @@ angular.module('app')
                 views: {
                     'content@': {
                         templateUrl: 'anon/home.html',
-                        controller: 'MainController'
+                        controller: 'AnonMainController'
                     }
                 }
             })
