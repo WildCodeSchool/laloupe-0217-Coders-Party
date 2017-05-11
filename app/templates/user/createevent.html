@@ -13,20 +13,22 @@
       </div>
       <div class="row">
         <div class="col s6 col l6">
-          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required></md-datepicker>
+          <input type="date" ng-model="startDate" show-xs show-sm hide-md hide-lg hide-xl value="Entrez une date">
+          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
         </div>
         <div class="col s6 col l6">
-          <input type="time" ng-model="startTime" required>
+          <input type="time" ng-model="startTime" required placeholder="Entrez une heure">
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col s6 col l6">
-          <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required></md-datepicker>
+          <input type="date" ng-model="endDate" show-xs show-sm hide-md hide-lg hide-xl>
+          <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
         </div>
         <div class="col s6 col l6">
           <input type="time" ng-model="endTime" required>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="input-field">
           <select ng-model="typeEvent">
