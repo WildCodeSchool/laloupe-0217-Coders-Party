@@ -1,1 +1,35 @@
-<h1>Hello World</h1>
+<div class="row">
+    <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}}</h1>
+
+
+    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+</div>
+
+<div class="row">
+    <div class="col s12 m12">
+        <p class="center-align">
+            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="anon.login">REJOINDRE UN EVENEMENT</button>
+        </p>
+    </div>
+</div>
+<div class="row center-align" ng-click="">
+    <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda">
+      <p class="event_home">Evènement à venir :</p>
+        <div class="row">
+            <i class="material-icons right location_agenda">location_on</i>
+        </div>
+        <img class="logo_agenda" src="/../img/{{lastEvent.categorie}}.png" alt="">
+        <div class="info_agenda">
+            <p>{{lastEvent.startDate | date:' dd-MM-yyyy'}}</p>
+            <p>GYMNASE</p>
+            <p>{{lastEvent.name | uppercase}}</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12">
+        <p class="center-align">
+            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="anon.login">CREER UN EVENEMENT</button>
+        </p>
+    </div>
+</div>
