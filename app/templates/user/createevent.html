@@ -13,35 +13,39 @@
       </div>
       <div class="row">
         <div class="col s6 col l6">
-          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required></md-datepicker>
+          <input type="date" ng-model="startDate" class="dateclass placeholderclass" show-xs show-sm hide-md hide-lg hide-xl placeholder="Date" onClick="$(this).removeClass('placeholderclass')">
+          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
         </div>
         <div class="col s6 col l6">
-          <input type="time" ng-model="startTime" required>
+          <input type="time" ng-model="startTime" class="dateclass placeholderclass" required placeholder="Entrez une heure" onClick="$(this).removeClass('placeholderclass')">
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col s6 col l6">
-          <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required></md-datepicker>
+          <input type="date" ng-model="endDate" show-xs show-sm hide-md hide-lg hide-xl>
+          <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
         </div>
         <div class="col s6 col l6">
           <input type="time" ng-model="endTime" required>
         </div>
-      </div>
+      </div> -->
       <div class="row">
-        <div class="input-field">
-          <select ng-model="typeEvent">
-            <option value="" disabled selected>Choisir type évènement</option>
-            <option>Sportif</option>
-            <option>Projection</option>
-            <option>Jeux</option>
-            <option>Anniversaire</option>
-            <option>Marche</option>
-          </select>
-          <label>Selection type évènement</label>
+        <div class="col s12 col l12">
+          <div class="input-field">
+            <select ng-model="typeEvent">
+              <option value="" disabled selected>Choisir type évènement</option>
+              <option>Sportif</option>
+              <option>Projection</option>
+              <option>Jeux</option>
+              <option>Anniversaire</option>
+              <option>Marche</option>
+            </select>
+            <label>Selection type évènement</label>
+          </div>
         </div>
       </div>
       <div class="row col s12 col l12">
-      <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
+        <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
       </div>
     </form>
   </div>

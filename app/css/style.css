@@ -363,3 +363,19 @@ label.invitations_nogroup {
   font-size: 2em;
   color: #3F51B5;
 }
+
+/* PLACEHOLDER DATE AND TIME */
+
+.dateclass{
+    width:100%;
+}
+
+.dateclass.placeholderclass::before{
+    width:100%;
+    content:attr(placeholder);
+}
+
+.dateclass.placeholderclass:hover::before{
+    width:0%;
+    content:"";
+}

@@ -27,14 +27,6 @@ const eventSchema = new mongoose.Schema({
       type: String,
       default: ''
     },
-    endDate: {
-      type: Date,
-      default: ''
-    },
-    endTime: {
-      type: String,
-      default: ''
-    },
     createDate: {
       type: Date,
       default: Date.now
