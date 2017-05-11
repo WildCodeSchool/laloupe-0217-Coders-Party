@@ -80,6 +80,15 @@ angular.module('app')
                     }
                 }
             })
+            .state('user.event', {
+                url: '/event',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/event.html',
+                        controller: 'EventController'
+                    }
+                }
+            })
             .state('user.home', {
                 url: '/home',
                 views: {

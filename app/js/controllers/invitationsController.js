@@ -16,17 +16,19 @@ angular.module('app')
                     }
                 }
             };
-        var id = LocalService.get('eventId');
-        console.log(id);
-        $scope.valider = function() {
-            for (var i = 0; i < $scope.groups.length; i++) {
-                if ($scope.groups[i].selected === true) {
-                    $scope.event.invitations.push($scope.groups[i]);
+            var id = LocalService.get('eventId');
+            console.log(id);
+            $scope.valider = function() {
+                for (var i = 0; i < $scope.groups.length; i++) {
+                    if ($scope.groups[i].selected === true) {
+                        for (var g = 0; g < $scope.groups[i].members.length; g++) {
+                            $scope.event.invitations.push($scope.groups[i].members[g]);
+                        }
+                    }
                 }
-            }
-            EventService.update(id, $scope.event).then(function() {
-                $state.go('user.tobringlist');
-            });
-        };
+                EventService.update(id, $scope.event).then(function() {
+                    $state.go('user.tobringlist');
+                });
+            };
+        });
     });
-  });
