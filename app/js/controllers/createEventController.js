@@ -21,8 +21,6 @@ angular.module('app')
           categorie: $scope.typeEvent,
           startDate: $scope.startDate,
           startTime: $scope.startTime,
-          endDate: $scope.endDate,
-          endTime: $scope.endTime,
           author: CurrentUser.user()._id
         };
         EventService.create(event).then(function(res) {
