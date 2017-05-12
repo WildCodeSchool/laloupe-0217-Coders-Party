@@ -1,290 +1,290 @@
 /*NAVBAR*/
 
 .logo_navbar {
-  margin-left: -100%;
-  height: 72%;
-  width: auto;
+    margin-left: -100%;
+    height: 72%;
+    width: auto;
 }
 
 .menu_navbar {
-  float: left;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 25%;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25%;
 }
 
 .navbar {
-  background-color: #e6e6e6;
+    background-color: #e6e6e6;
 }
 
 .navbar a {
-  color: grey;
+    color: grey;
 }
 
 .background_sidenav img {
-  width: 25%;
-  height: auto;
+    width: 25%;
+    height: auto;
 }
 
 .side-nav {
-  background-color: #e6e6e6;
-  width: 70%;
+    background-color: #e6e6e6;
+    width: 70%;
 }
 
 .side-nav li>a {
-  font-size: 30px;
-  color: grey;
+    font-size: 30px;
+    color: grey;
 }
 
 .divider_sidebar {
-  height: 3px;
-  overflow: hidden;
-  background-color: #e0e0e0;
+    height: 3px;
+    overflow: hidden;
+    background-color: #e0e0e0;
 }
 
 
 /*REGISTER*/
 
 .register_container {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 .logo_register {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
 
 .group_register {
-  float: left;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+    float: left;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
 
 .groupbis_register {
-  float: right;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+    float: right;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
 
 
 /*LOGIN*/
 
 .logo_login {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
 
 .login_container {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 .button_newaccount {
-  width: 100%;
+    width: 100%;
 }
 
 
 /*FOOTER*/
 
 .modalDesc {
-  width: 232px;
-  height: 300px;
-  border: 1px solid grey;
+    width: 232px;
+    height: 300px;
+    border: 1px solid grey;
 }
 
 .modalPics {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 
 /*PROFILPICTURE*/
 
 .image_profil {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 100%;
-  height: 30%;
-  width: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 100%;
+    height: 30%;
+    width: 30%;
 }
 
 
 /*PROFIL PAGE*/
 
 .description_profil {
-  background: white;
-  text-align: center;
-  height: 60px;
-  font-size: xx-large;
+    background: white;
+    text-align: center;
+    height: 60px;
+    font-size: xx-large;
 }
 
 .github_logo {
-  width: 25px;
-  margin-left: 3px;
+    width: 25px;
+    margin-left: 3px;
 }
 
 .icon_profil {
-  margin-top: 2%;
+    margin-top: 2%;
 }
 
 .validate_profil {
-  margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 body {
-  background-color: #e6e6e6;
-  background-size: cover;
-  color: grey;
-  height: auto;
-  position: relative;
+    background-color: #e6e6e6;
+    background-size: cover;
+    color: grey;
+    height: auto;
+    position: relative;
 }
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 #wrap {
-  min-height: 100%;
-  position: relative;
+    min-height: 100%;
+    position: relative;
 }
 
 #main {
-  position relative;
-  padding-bottom: 100px;
+    position relative;
+    padding-bottom: 100px;
 }
 
 #footer {
-  /*height: 100px;*/
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+    /*height: 100px;*/
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 
 /*USER HOMEPAGE*/
 
 .title_home {
-  font-size: 30px;
-  font-weight: 600;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .divider_title {
-  height: 2px;
-  overflow: hidden;
-  background-color: grey;
-  width: 25%;
+    height: 2px;
+    overflow: hidden;
+    background-color: grey;
+    width: 25%;
 }
 
 .logo_event {
-  width: 55%;
-  padding-left: 5%;
+    width: 55%;
+    padding-left: 5%;
 }
 
 .event_home {
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  font-size: 1.75em;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    font-size: 1.75em;
 }
 
 .event_home p {
-  font-size: 1.75em;
+    font-size: 1.75em;
 }
 
 .info_event {
-  font-size: 1.2em;
-  line-height: 0.75em;
-  float: right;
-  text-align: right;
-  width: 45%;
-  padding-right: 10%;
-  margin-top: 0%;
-  margin-bottom: 5%;
+    font-size: 1.2em;
+    line-height: 0.75em;
+    float: right;
+    text-align: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
 }
 
 
 /*INVITATIONS*/
 
 label.invitations_liste {
-  height: 3rem;
-  margin-left: 5%;
-  display: inline-block;
-  font-size: 2rem;
+    height: 3rem;
+    margin-left: 5%;
+    display: inline-block;
+    font-size: 2rem;
 }
 
 label.invitations_nogroup {
-  margin-top: 15px;
-  height: 3rem;
-  margin-left: 6.5%;
-  display: inline-block;
-  font-size: 2rem;
+    margin-top: 15px;
+    height: 3rem;
+    margin-left: 6.5%;
+    display: inline-block;
+    font-size: 2rem;
 }
 
 .list_image {
-  border-radius: 100%;
-  height: 100%;
-  margin-bottom: -21px;
+    border-radius: 100%;
+    height: 100%;
+    margin-bottom: -21px;
 }
 
 
 /*TOBRINGLIST*/
 
 .tobringlist_element {
-  margin-left: 2em;
-  font-size: 25px;
-  line-height: 25px;
+    margin-left: 2em;
+    font-size: 25px;
+    line-height: 25px;
 }
 
 
 /*HAPPYEVENT*/
 
 .happy_event {
-  border-radius: 70%;
-  border: solid 1px;
-  width: 20%;
-  margin: 2em auto;
+    border-radius: 70%;
+    border: solid 1px;
+    width: 20%;
+    margin: 2em auto;
 }
 
 .happy_text {
-  font-size: 3em;
+    font-size: 3em;
 }
 
 
 /*AGENDA*/
 
 .event_agenda {
-  cursor: pointer;
-  border: solid 1px grey;
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  box-shadow: 2px 5px lightgrey;
+    cursor: pointer;
+    border: solid 1px grey;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    box-shadow: 2px 5px lightgrey;
 }
 
 .logo_agenda {
-  width: 45%;
-  margin-top: 0%;
-  padding-left: 5%;
+    width: 45%;
+    margin-top: 0%;
+    padding-left: 5%;
 }
 
 .info_agenda {
-  float: right;
-  text-align: right;
-  width: 45%;
-  padding-right: 10%;
-  margin-top: 0%;
-  margin-bottom: 5%;
+    float: right;
+    text-align: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
 }
 
 .info_agenda p {
-  font-size: 2em;
-  line-height: 1.5em;
+    font-size: 2em;
+    line-height: 1.5em;
 }
 
 .location_agenda {
-  font-size: 40px;
-  padding: 1.5em 1.5em 0 0;
+    font-size: 40px;
+    padding: 1.5em 1.5em 0 0;
 }
 
 
@@ -292,143 +292,164 @@ label.invitations_nogroup {
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
 .teamPics {
-  height: 190px;
-  width: 190px;
-  /*border-radius: 100%;*/
+    height: 190px;
+    width: 190px;
+    /*border-radius: 100%;*/
 }
 
 .teamTitle {
-  text-align: center;
+    text-align: center;
 }
 
 .card {
-  /*background-color: #f4f4f4;*/
-  width: 300px;
-  margin: 10px auto;
-  /*box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);*/
+    /*background-color: #f4f4f4;*/
+    width: 300px;
+    margin: 10px auto;
+    /*box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);*/
 }
 
 .card-header {
-  overflow: hidden;
-  width: 100%;
-  max-height: 200px;
+    overflow: hidden;
+    width: 100%;
+    max-height: 200px;
 }
 
 .card-header img {
-  width: 100%;
+    width: 100%;
 }
 
 .card-content {
-  border-top: solid 1px #B6B6B6;
-  width: 85%;
-  margin: 35px auto;
+    border-top: solid 1px #B6B6B6;
+    width: 85%;
+    margin: 35px auto;
 }
 
 .card-content h3 {
-  font-size: 25px;
-  margin-bottom: 0;
-  color: #303F9F;
-  font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-bottom: 0;
+    color: #303F9F;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-content h4 {
-  font-size: 14px;
-  margin-top: 0;
-  color: #FF5252;
-  font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-top: 0;
+    color: #FF5252;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-content p {
-  color: #727272;
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
+    color: #727272;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .card-footer {
-  border-top: solid 1px #B6B6B6;
-  padding: 5px;
+    border-top: solid 1px #B6B6B6;
+    padding: 5px;
 }
 
 .card-footer ul {
-  padding: 0;
-  width: 90%;
-  margin: auto;
-  text-align: center;
+    padding: 0;
+    width: 90%;
+    margin: auto;
+    text-align: center;
 }
 
 .card-footer ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 5px;
+    display: inline-block;
+    list-style: none;
+    margin: 5px;
 }
 
 .card-footer ul li i {
-  font-size: 2em;
-  color: #3F51B5;
+    font-size: 2em;
+    color: #3F51B5;
 }
 
 
 /* PLACEHOLDER DATE AND TIME */
 
 .dateclass {
-  width: 100%;
+    width: 100%;
 }
 
 .dateclass.placeholderclass::before {
-  width: 100%;
-  content: attr(placeholder);
+    width: 100%;
+    content: attr(placeholder);
 }
 
 .dateclass.placeholderclass:hover::before {
-  width: 0%;
-  content: "";
+    width: 0%;
+    content: "";
 }
 
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 360px) {
-  .info_agenda p {
-    font-size: 1em !important;
-  }
-  .btn_login {
-    margin-left: -25% !important;
-  }
+    .info_agenda p {
+        font-size: 1em !important;
+    }
+    .btn_login {
+        margin-left: -25% !important;
+    }
 }
 
 
 /* EVENT */
 
 .image_event {
-  height: 70px;
+    height: 70px;
 }
 
 .image_event img {
-  margin-top: 9px;
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
 }
 
 .logo_agenda_event {
-  width: 45%;
-  margin-top: 5%;
-  padding-left: 5%;
+    width: 45%;
+    margin-top: 5%;
+    padding-left: 5%;
 }
 
 .event_agenda_page_event {
-  border: solid 1px grey;
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  box-shadow: 2px 5px lightgrey;
+    border: solid 1px grey;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    box-shadow: 2px 5px lightgrey;
 }
 
 .info_page_event {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .desc_page_event {
-  font-size: 1.1em;
-  text-align: left;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+
+/* MODAL_EVENT */
+
+.modal_event {
+  width: 300px;
+    text-align: left;
+}
+
+.button_event {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 9px;
+}
+.member_div {
+  height: 80px;
+}
+.member_name {
+margin: auto auto auto 10px;
 }

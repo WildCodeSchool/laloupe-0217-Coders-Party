@@ -8,7 +8,7 @@ angular.module('app')
             $scope.event = res.data;
             $scope.members = [];
             for (var i = 0; i < $scope.event.invitations.length; i++) {
-                $scope.members.push($scope.event.invitations[i].odyssey);
+                $scope.members.push($scope.event.invitations[i]);
             }
             console.log($scope.members);
 
