@@ -80,6 +80,15 @@ angular.module('app')
                     }
                 }
             })
+            .state('user.event', {
+                url: '/event',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/event.html',
+                        controller: 'EventController'
+                    }
+                }
+            })
             .state('user.home', {
                 url: '/home',
                 views: {
@@ -101,7 +110,7 @@ angular.module('app')
             .state('user.invitations', {
               url: '/invitations',
               views: {
-                'content@': {
+                'slide@': {
                   templateUrl: 'user/invitations.html',
                   controller: 'InvitationsController'
                 }
@@ -110,7 +119,7 @@ angular.module('app')
             .state('user.invitationsuite', {
               url: '/invitationsuite',
               views: {
-                'content@': {
+                'slide@': {
                   templateUrl: 'user/invitationsuite.html',
                   controller: 'InvitationsuiteController'
                 }
@@ -119,7 +128,7 @@ angular.module('app')
             .state('user.happyEvent', {
               url: '/happyEvent',
               views: {
-                'content@': {
+                'slide@': {
                   templateUrl: 'user/happyEvent.html',
                   controller: 'HappyEventController'
                 }
@@ -128,7 +137,7 @@ angular.module('app')
             .state('user.tobringlist', {
               url: '/tobringlist',
               views: {
-                'content@': {
+                'slide@': {
                   templateUrl: 'user/tobringlist.html',
                   controller: 'TobringlistController'
                 }

@@ -392,3 +392,15 @@ label.invitations_nogroup {
     margin-left: -25% !important;
   }
 }
+
+/* EVENT */
+.image_event {
+height: 70px;
+}
+
+.image_event img{
+  margin-top: 9px;
+border-radius: 50%;
+height: 70px;
+width: 70px;
+}
