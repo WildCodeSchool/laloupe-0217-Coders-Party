@@ -379,3 +379,16 @@ label.invitations_nogroup {
     width:0%;
     content:"";
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 360px) {
+
+  .info_agenda p {
+    font-size: 1em !important;
+  }
+
+  .btn_login {
+    margin-left: -25% !important;
+  }
+}
