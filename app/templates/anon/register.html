@@ -9,14 +9,16 @@
                 <form class="col s12 form" name="loginForm" novalidate ng-submit="register()">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="name" type="text" class="validate" ng-model="user.name" required>
+                            <input id="name" name="name" type="text" class="validate" ng-model="user.name" required>
                             <label for="name">Nom d'utilisateur</label>
+                            </div>
                         </div>
-                    </div>
+
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" ng-model="user.email" required>
+                            <input id="email" name="email" type="email" class="validate" ng-model="user.email" required>
                             <label for="email">Email</label>
+                            <div ng-show="show(user.email)" style="color:maroon" role="alert">Cet email existe déjà</div>
                         </div>
                     </div>
                     <div class="row">
@@ -41,15 +43,15 @@
                             <label>Groupe</label>
                         </div>
                     </div>
-                    <div class="row" ng-show="showme" >
-                      <div class="input-field col s12">
-                        <input id="newgroup" type="text" class="validate" ng-model="newGroup" required>
-                        <label for="newgroup">Nouveau groupe</label>
-                      </div>
+                    <div class="row" ng-show="showme">
+                        <div class="input-field col s12">
+                            <input id="newgroup" type="text" class="validate" ng-model="newGroup" required>
+                            <label for="newgroup">Nouveau groupe</label>
+                        </div>
                     </div>
                     <div class="row">
-                      <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">Créer un Groupe</button>
-                      <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
+                        <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">Créer un Groupe</button>
+                        <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
                     </div>
                     <div class="row">
                         <div class="col offset-s4 s4 m12">

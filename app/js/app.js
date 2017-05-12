@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate'])
+angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate', 'ngMessages'])
 .config(function($mdDateLocaleProvider) {
   $mdDateLocaleProvider.months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre'];
   $mdDateLocaleProvider.shortMonths = ['janv', 'févr', 'mars', 'avri', 'mai', 'juin', 'juil', 'aout', 'sept', 'oct', 'nov', 'dec'];
