@@ -18,7 +18,7 @@
         </div>
         <div class="divider"></div>
         <div class="row image_event">
-            <div class="col s1" ng-repeat="member in members">
+            <div class="col s1" ng-repeat="member in members | limitTo:12">
                 <img src="https://avatars.githubusercontent.com/{{member}}?s=460" alt="">
             </div>
         </div>
