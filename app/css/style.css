@@ -379,10 +379,25 @@ label.invitations_nogroup {
     width:0%;
     content:"";
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 360px) {
+
+  .info_agenda p {
+    font-size: 1em !important;
+  }
+
+  .btn_login {
+    margin-left: -25% !important;
+  }
+}
+
 /* EVENT */
 .image_event {
 height: 70px;
 }
+
 .image_event img{
   margin-top: 9px;
 border-radius: 50%;
