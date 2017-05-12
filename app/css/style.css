@@ -87,6 +87,10 @@
 
 /*FOOTER*/
 
+.built_with {
+  cursor: pointer;
+}
+
 .modalDesc {
     width: 232px;
     height: 300px;
