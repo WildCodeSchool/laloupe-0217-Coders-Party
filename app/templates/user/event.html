@@ -1,46 +1,52 @@
 <div class="row">
-  <h1 class="title_home center-align">{{event.name | uppercase}}</h1>
-  <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+    <h1 class="title_home center-align">{{event.name | uppercase}}</h1>
+    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
 </div>
 <div class="row center-align">
-  <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda_page_event hoverable">
-    <div class="row">
-      <img class="logo_agenda_event" src="/../img/{{event.categorie}}.png" alt="">
-      <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
-    </div>
-    <div class="row">
-      <div class="col s6">
-        <p class="info_page_event">{{event.lieu}}</p>
-      </div>
-      <div class="col s6">
-        <p class="info_page_event">{{event.startDate | date:' dd-MM-yyyy'}}</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="row image_event">
-      <div class="col s1" ng-repeat="member in members | limitTo:10">
-        <img src="https://avatars.githubusercontent.com/{{member.odyssey}}?s=460" alt="">
-      </div>
-      <button class="waves-effect waves-light btn orange right button_event" data-target='demoModal' modal>+</button>
-
-      <!-- Modal Structure -->
-      <div id="demoModal" class="modal modal_event">
-        <div class="modal-content ">
-          <h4>Participants</h4>
-          <div class="divider"></div>
-          <div class="row left" ng-repeat="member in members">
-            <div class="col s12 member_div">
-              <img src="https://avatars.githubusercontent.com/{{member.odyssey}}?s=460" alt="">
-              <p class="member_name">{{member.name}}</p>
-            </div>
-          </div>
+    <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda_page_event hoverable">
+        <div class="row">
+            <img class="logo_agenda_event" src="/../img/{{event.categorie}}.png" alt="">
+            <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
         </div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <p class="desc_page_event">Description :</p>
-    <p class="desc_page_event">{{event.description}}</p>
-    <div class="divider"></div>
-    <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
-  </div>
-</div>
+        <div class="row">
+            <div class="col s6">
+                <p class="info_page_event">{{event.lieu}}</p>
+            </div>
+            <div class="col s6">
+                <p class="info_page_event">{{event.startDate | date:' dd-MM-yyyy'}}</p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row image_event">
+            <div class="col s1" ng-repeat="participation in event.participations | limitTo:10">
+                <img src="https://avatars.githubusercontent.com/{{participation.odyssey}}?s=460" alt="">
+            </div>
+            <button class="waves-effect waves-light btn orange right button_event" data-target='demoModal' modal>+</button>
+
+            <!-- Modal Structure -->
+            <div id="demoModal" class="modal modal_event">
+                <div class="modal-content ">
+                    <h4>Participants</h4>
+                    <div class="divider"></div>
+                    <div class="row left" ng-repeat="participation in event.participations">
+                        <div class="col s12 member_div">
+                            <img src="https://avatars.githubusercontent.com/{{participation.odyssey}}?s=460" alt="">
+                            <p class="member_name">{{participation.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <p class="desc_page_event">Description :</p>
+            <p class="desc_page_event">{{event.description}}</p>
+            <div class="divider"></div>
+            <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
+            <div class="divider"></div>
+            <div class="center-align">
+                <button ng-show="showGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
+                <button ng-show="showRed()" class="waves-effect waves-light btn red buttonBis_event" ng-click="dontGo()">-</button>
+            </div>
+            <div class="center-align buttonBisTextDiv_event ">
+                <span ng-show="showGreen()" class="buttonBisText_event">J'y vais</span>
+                <span ng-show="showRed()" class="buttonBisText_event">Je n'y vais pas</span>
+            </div>

@@ -14,29 +14,32 @@ const eventSchema = new mongoose.Schema({
         default: '',
     },
     invitations: {
-      type: Array,
+        type: Array,
+    },
+    participations: {
+        type: Array,
     },
     categorie: {
-      type: String,
+        type: String,
     },
     startDate: {
-      type: Date,
-      default: ''
+        type: Date,
+        default: ''
     },
     startTime: {
-      type: String,
-      default: ''
+        type: String,
+        default: ''
     },
     createDate: {
-      type: Date,
-      default: Date.now
+        type: Date,
+        default: Date.now
     },
     author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     elements: {
-      type: Array
+        type: Array
     },
     adresse : {
       type: String
@@ -93,10 +96,7 @@ export default class Event {
                 if (err || !event) {
                     res.status(400).send(err.message);
                 } else {
-                    res.json({
-                        success: true,
-                        event: event,
-                    });
+                    res.json(event);
                 }
             });
     }
@@ -108,14 +108,7 @@ export default class Event {
             if (err || !event) {
                 res.status(500).send(err.message);
             } else {
-                let tk = jsonwebtoken.sign(event, token, {
-                    expiresIn: "24h"
-                });
-                res.json({
-                    success: true,
-                    event: event,
-                    token: tk
-                });
+                res.json(event);
             }
         });
     }
