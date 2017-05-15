@@ -40,6 +40,18 @@ const eventSchema = new mongoose.Schema({
     },
     elements: {
         type: Array
+    },
+    adresse : {
+      type: String
+    },
+    lieu: {
+      type: String
+    },
+    description: {
+      type: String
+    },
+    place_url: {
+      type: String
     }
 });
 

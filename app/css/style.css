@@ -258,7 +258,7 @@ label.invitations_nogroup {
 /*AGENDA*/
 
 .event_agenda {
-    cursor: pointer;
+    /*cursor: pointer;*/
     border: solid 1px grey;
     background-color: white;
     float: left;

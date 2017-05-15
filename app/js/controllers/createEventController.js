@@ -21,12 +21,16 @@ angular.module('app')
           categorie: $scope.typeEvent,
           startDate: $scope.startDate,
           startTime: $scope.startTime,
-          author: CurrentUser.user()._id
+          author: CurrentUser.user()._id,
+          adresse: '',
+          lieu: '',
+          description: '',
+          place_url: ''
         };
         EventService.create(event).then(function(res) {
           LocalService.set('eventId', res.data.event._id);
         }).then(function() {
-          $state.go('user.invitations');
+          $state.go('user.description');
         });
       }
     };

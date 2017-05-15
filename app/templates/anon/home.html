@@ -15,13 +15,13 @@
 <div class="row center-align" ng-click="">
     <div class="offset-xl2 offset-s2 col xl10 s10 event_agenda hoverable">
       <p class="event_home">Evènement à venir :</p>
-        <div class="row">
-            <i class="material-icons right location_agenda">location_on</i>
-        </div>
+        <!-- <div class="row">
+            <a class="material-icons right location_agenda">location_on</a>
+        </div> -->
         <img class="logo_agenda" src="/../img/{{lastEvent.categorie}}.png" alt="">
         <div class="info_agenda">
-            <p>{{lastEvent.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>GYMNASE</p>
+            <p>{{lastEvent.startDate | date:' dd/MM/yyyy'}}</p>
+            <p>{{lastEvent.lieu}}</p>
             <p>{{lastEvent.name | uppercase}}</p>
         </div>
     </div>
