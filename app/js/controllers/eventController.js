@@ -11,7 +11,9 @@ angular.module('app')
                 $scope.members.push($scope.event.invitations[i]);
             }
             console.log($scope.members);
-
+            $(document).ready(function() {
+                $('.modal').modal();
+            });
 
             console.log($scope.event);
         });
