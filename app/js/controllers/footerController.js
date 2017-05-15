@@ -7,6 +7,7 @@ angular.module('app')
         $scope.logout = function() {
             Auth.logout();
         };
+
         $(document).ready(function(){
          $('.modal').modal();
        });
