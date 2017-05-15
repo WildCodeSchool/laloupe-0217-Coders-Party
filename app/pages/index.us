@@ -15,6 +15,7 @@
         <div ui-view='navbar'></div>
         <div id='main' ui-view='content'></div>
         <div class="slide" ui-view='slide'></div>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN74FLHqIamvhAdCEa8ZBhzfsrnQLuBUE&libraries=places"></script>
         <script type="text/javascript" src="<%= js %>"></script>
     </div>
 </body>
