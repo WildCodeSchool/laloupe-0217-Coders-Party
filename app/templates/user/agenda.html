@@ -1,18 +1,18 @@
 <div class="row">
-    <h1 class="title_home center-align">AGENDA</h1>
-    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+  <h1 class="title_home center-align">AGENDA</h1>
+  <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
 </div>
 <div class="row" ng-repeat="event in events | orderBy:'startDate'">
-    <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda hoverable" ng-click="setLocalService(event._id)" ui-sref="user.event">
-        <div class="row">
-            <i class="material-icons right location_agenda">location_on</i>
-        </div>
-        <div class="row">
-          <img class=" col xl2 logo_agenda" src="/../img/{{event.categorie}}.png" alt="logo_agenda">
-            <div class="col xl10 info_agenda">
-              <p>{{event.name | uppercase}} - {{event.startDate | date:' dd/MM/yyyy'}}</p>
-              <p>{{event.startTime | date:' HH:mm' }}</p>
-            </div>
-        </div>
+  <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda hoverable" ng-click="setLocalService(event._id)" ui-sref="user.event">
+    <!-- <div class="row">
+            <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
+        </div> -->
+    <div class="row">
+      <img class=" col xl2 logo_agenda" src="/../img/{{event.categorie}}.png" alt="logo_agenda">
+      <div class="col xl10 info_agenda">
+        <p>{{event.name | uppercase}} - {{event.startDate | date:' dd/MM/yyyy'}}</p>
+        <p>{{event.startTime | date:' HH:mm' }}</p>
+      </div>
     </div>
+  </div>
 </div>
