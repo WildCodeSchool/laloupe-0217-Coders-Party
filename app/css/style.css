@@ -88,7 +88,7 @@
 /*FOOTER*/
 
 .built_with {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .modalDesc {
@@ -440,7 +440,7 @@ label.invitations_nogroup {
 /* MODAL_EVENT */
 
 .modal_event {
-  width: 300px;
+    width: 300px;
     text-align: left;
 }
 
@@ -450,9 +450,25 @@ label.invitations_nogroup {
     border-radius: 50%;
     margin-top: 9px;
 }
+
+.buttonBis_event {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 19px 20px 0px 20px;
+    font-size: 5em;
+}
+.buttonBisTextDiv_event{
+    margin-bottom: 40px;
+}
+.buttonBisText_event{
+    margin: 0px 27px 0px 49px;
+}
+
+}
 .member_div {
-  height: 80px;
+    height: 80px;
 }
 .member_name {
-margin: auto auto auto 10px;
+    margin: auto auto auto 10px;
 }
