@@ -267,14 +267,13 @@ label.invitations_nogroup {
 }
 
 .logo_agenda {
-    width: 45%;
+    width: 20%;
     margin-top: 0%;
     padding-left: 5%;
 }
 
 .info_agenda {
     float: right;
-    text-align: right;
     width: 45%;
     padding-right: 10%;
     margin-top: 0%;
