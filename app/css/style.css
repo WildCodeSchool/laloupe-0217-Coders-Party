@@ -216,6 +216,11 @@
         height: 100%;
         margin-bottom: -21px;
     }
+
+    .madeBy {
+      /*text-align: left;*/
+      float: left;
+    }
     /*TOBRINGLIST*/
 
     .tobringlist_element {
