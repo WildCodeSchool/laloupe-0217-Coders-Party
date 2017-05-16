@@ -19,7 +19,7 @@
         <div class="divider"></div>
         <div class="row image_event">
             <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
-                <img src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+                <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
             </div>
             <button class="waves-effect waves-light btn orange right button_event" data-target='demoModal' modal>+</button>
 
@@ -30,8 +30,8 @@
                     <div class="divider"></div>
                     <div class="row left" ng-repeat="invitation in event.invitations">
                         <div class="col s12 member_div">
-                            <img src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                            <p class="member_name">{{participation.name}}</p>
+                            <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+                            <p class="member_name">{{invitation.name}}</p>
                         </div>
                     </div>
                 </div>
@@ -44,12 +44,14 @@
         <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
         <div class="divider"></div>
         <div class="center-align">
-            <button ng-show="showGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
+            <button ng-hide="hideGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
             <button ng-show="showRed()" class="waves-effect waves-light btn red buttonBis_event" ng-click="dontGo()">-</button>
+            <button ng-show="showGrey()" class="waves-effect waves-light btn grey buttonBis_event" ng-click="neverGo()">x</button>
         </div>
         <div class="center-align buttonBisTextDiv_event ">
-            <span ng-show="showGreen()" class="buttonBisText_event">J'y vais</span>
+            <span ng-hide="hideGreen()" class="buttonBisText_event">J'y vais</span>
             <span ng-show="showRed()" class="buttonBisText_event">Je n'y vais pas</span>
+            <span ng-show="showGrey()" class="buttonBisText_event">Retirez moi de la liste</span>
         </div>
     </div>
 </div>
