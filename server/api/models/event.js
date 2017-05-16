@@ -81,7 +81,9 @@ export default class Event {
     findById(req, res) {
         model.findById(req.params.id, {
             password: 0
-        }, (err, event) => {
+        })
+        .populate('author', 'name')
+        .exec( (err, event) => {
             if (err || !event) {
                 res.sendStatus(403);
             } else {
