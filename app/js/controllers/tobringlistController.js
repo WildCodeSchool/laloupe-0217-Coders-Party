@@ -4,7 +4,7 @@ angular.module('app')
             $scope.user = res.data;
         });
 
-        $scope.event = {};
+        $scope.event = [];
         $scope.event.elements = [];
         $scope.newElement = "";
         $scope.addElement = function() {
@@ -12,8 +12,10 @@ angular.module('app')
             $scope.newElement = "";
         };
         var id = LocalService.get('eventId');
+
         $scope.valider = function() {
             EventService.update(id, $scope.event).then(function() {
+                EventService.sendInvitation(id);
                 $state.go('user.happyEvent');
             });
         };

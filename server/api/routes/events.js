@@ -18,6 +18,8 @@ module.exports = (app) => {
 
     router.get('/:id', Auth.hasAuthorization, event.findById);
 
+    router.get('/sendall/:id', Auth.hasAuthorization, event.sendInvitation);
+
     router.put('/:id', Auth.hasAuthorization, event.update);
 
     router.delete('/:id', Auth.isAdministrator, event.delete);

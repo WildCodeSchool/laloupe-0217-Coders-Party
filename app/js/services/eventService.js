@@ -16,6 +16,9 @@ angular.module('app')
             },
             create: function(event) {
                 return $http.post('/events/newevent', event);
+            },
+            sendInvitation: function(id) {
+              return $http.get('/events/sendall/' + id);
             }
         };
     });
