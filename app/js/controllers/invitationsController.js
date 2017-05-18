@@ -26,7 +26,7 @@ angular.module('app')
                         }
                     }
                 }
-                EventService.update(id, $scope.event).then(function() {
+                LocalService.set('eventKey', JSON.stringify($scope.event)).then(function() {
                     $state.go('user.tobringlist');
                 });
             };

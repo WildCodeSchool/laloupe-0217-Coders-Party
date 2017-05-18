@@ -24,9 +24,8 @@ angular.module('app')
           description: $scope.evenement_description,
           place_url: place.url
         };
-        EventService.update(id, event).then(function() {
+        LocalService.set('eventKey', JSON.stringify(event));
           $state.go('user.invitations');
-        });
       };
     }
 
