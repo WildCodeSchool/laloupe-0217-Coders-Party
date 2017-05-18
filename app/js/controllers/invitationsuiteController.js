@@ -16,9 +16,8 @@ angular.module('app')
                         $scope.event.invitations.push($scope.users[i]);
                     }
                 }
-                EventService.update(id, $scope.event).then(function() {
+                LocalService.set('invitsuiteKey', JSON.stringify($scope.event));
                     $state.go('user.tobringlist');
-                });
             };
         });
     });

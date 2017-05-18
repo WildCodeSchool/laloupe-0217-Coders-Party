@@ -6,7 +6,6 @@ angular.module('app')
         });
         GroupService.getAll().then(function(res) {
             $scope.groups = res.data;
-            console.log($scope.groups);
             $scope.event = {};
             $scope.event.invitations = [];
             $scope.groupok = function() {
@@ -17,7 +16,6 @@ angular.module('app')
                 }
             };
             var id = LocalService.get('eventId');
-            console.log(id);
             $scope.valider = function() {
                 for (var i = 0; i < $scope.groups.length; i++) {
                     if ($scope.groups[i].selected === true) {
@@ -26,7 +24,7 @@ angular.module('app')
                         }
                     }
                 }
-                LocalService.set('eventKey', JSON.stringify($scope.event)).then(function() {
+                EventService.update(id, $scope.event).then(function() {
                     $state.go('user.tobringlist');
                 });
             };

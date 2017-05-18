@@ -54,7 +54,7 @@ const eventSchema = new mongoose.Schema({
 });
 
 var smtpTransport = nodemailer.createTransport({
-  service: 'Gmail', 
+  service: 'Gmail',
   auth: {
     user: "codersparty@gmail.com",
     pass: "c0d3r5p4rty"
@@ -117,6 +117,25 @@ export default class Event {
       if (err || !event) {
         res.status(500).send(err.message);
       } else {
+        let tk = jsonwebtoken.sign(event, token, {
+          expiresIn: "24h"
+        });
+        res.json({
+          success: true,
+          event: event,
+          token: tk
+        });
+      }
+    });
+  }
+
+  sendInvitation(req, res) {
+    model.findById(req.params.id, (err, event) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else if (!event) {
+        res.status(404);
+      } else {
         var mail = {
           from: "codersparty@gmail.com",
           to: "sabrina.mardjoeki@gmail.com",
@@ -132,13 +151,8 @@ export default class Event {
           }
           smtpTransport.close();
         });
-        let tk = jsonwebtoken.sign(event, token, {
-          expiresIn: "24h"
-        });
         res.json({
-          success: true,
-          event: event,
-          token: tk
+          success: true
         });
       }
     });
