@@ -84,18 +84,21 @@ export default class Event {
     });
   }
 
-  findById(req, res) {
-    model.findById(req.params.id, {
-      password: 0
-    }, (err, event) => {
-      if (err || !event) {
-        res.sendStatus(403);
-      } else {
-        res.json(event);
-      }
-    });
-  }
 
+    findById(req, res) {
+        model.findById(req.params.id, {
+            password: 0
+        })
+        .populate('author', 'name')
+        .exec( (err, event) => {
+            if (err || !event) {
+                res.sendStatus(403);
+            } else {
+                res.json(event);
+            }
+        });
+    }
+  
   create(req, res) {
     model.create(req.body,
       (err, event) => {
