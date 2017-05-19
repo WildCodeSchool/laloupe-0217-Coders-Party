@@ -1,27 +1,26 @@
-<h1>Hello World</h1>
-
 <div class="container">
-  <div class="row">
-    <div class="col s12 col l12">
-      <form role="form" class="form-horizontal" ng-submit="validateDescription()">
-        <div class="form-group">
-          <label for="user_input_autocomplete_address" class="col-sm-4 input-field">Addresse : </label>
-          <div class="col-sm-8">
-            <input id="user_input_autocomplete_address" name="user_input_autocomplete_address" ng-model="evenement_adresse" type="text" placeholder="Entrez l'adresse de l'évènement">
+
+  <h1>Desciption évènement</h1>
+
+  <div class="container">
+    <form role="form" class="form-horizontal" ng-submit="validateDescription()">
+      <div class="row">
+          <div class="col s12 l12">
+            <label for="user_input_autocomplete_address">Addresse : </label>
+            <input id="user_input_autocomplete_address" name="user_input_autocomplete_address" ng-model="evenement_adresse" type="text">
           </div>
-          <label for="fam_adress" class="col-sm-4 input-field">Nom lieu : </label>
-          <div class="col-sm-8">
+          <div class="col s12 l12">
+            <label for="fam_adress">Nom lieu : </label>
             <input id="fam_address" name="fam_adress" ng-model="evenement_lieu" class="form-control" placeholder="Entrez le nom familier de l'évènement">
           </div>
-          <label for="description_evenement" class="col-sm-4 input-field">Déscription évènement : </label>
-          <div class="col-sm-8">
+          <div class="col s12 l12">
+            <label for="description_evenement">Déscription évènement : </label>
             <input id="description_evenement" name="description_evenement" ng-model="evenement_description" class="form-control" placeholder="Entrez une déscitpion de l'évènement">
           </div>
-        </div>
         <div class="row col s12 col l12">
           <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </div>

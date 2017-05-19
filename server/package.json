@@ -18,7 +18,8 @@
     "method-override": "",
     "mongoose": "",
     "morgan": "",
-    "nodemailer": "^4.0.1"
+    "nodemailer": "^4.0.1",
+    "nodemailer-express-handlebars": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
