@@ -17,6 +17,9 @@ const eventSchema = new mongoose.Schema({
   invitations: {
     type: Array,
   },
+  participations: {
+    type: Array,
+  },
   categorie: {
     type: String,
   },
@@ -98,7 +101,7 @@ export default class Event {
             }
         });
     }
-  
+
   create(req, res) {
     model.create(req.body,
       (err, event) => {
@@ -139,21 +142,23 @@ export default class Event {
       } else if (!event) {
         res.status(404);
       } else {
-        var mail = {
-          from: "codersparty@gmail.com",
-          to: "sabrina.mardjoeki@gmail.com",
-          subject: "Coders Party",
-          html: "leCorpsDeVotreMessageEnHTML"
-        };
-        smtpTransport.sendMail(mail, function(error, response){
-          if(error){
-            console.log("Erreur lors de l'envoie du mail!");
-            console.log(error);
-          }else{
-            console.log("Mail envoyé avec succès!");
-          }
-          smtpTransport.close();
-        });
+        event.invitations.forEach((guest) => {
+          let mail = {
+            from: "codersparty@gmail.com",
+            to: guest.email,
+            subject: "Coders Party",
+            html: "leCorpsDeVotreMessageEnHTML"
+          };
+          smtpTransport.sendMail(mail, function(error, response){
+            if(error){
+              console.log("Erreur lors de l'envoie du mail!");
+              console.log(error);
+            } else{
+              console.log("Mail envoyé avec succès!");
+            }
+            smtpTransport.close();
+          });
+      });
         res.json({
           success: true
         });

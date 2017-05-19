@@ -352,6 +352,21 @@ label.invitations_nogroup {
   height: 70px;
   width: 70px;
 }
+.image_event_img {
+  margin-top: 9px;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  filter: grayscale(100%);
+}
+
+.image_event_img_include {
+  margin-top: 9px;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  filter: grayscale(0%);
+}
 
 .logo_agenda_event {
   width: 45%;
