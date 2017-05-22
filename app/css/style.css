@@ -249,8 +249,8 @@ label.invitations_nogroup {
 /*HAPPYEVENT*/
 
 .happy_event {
-  border-radius: 70%;
-  border: solid 1px;
+  /*border-radius: 70%;
+  border: solid 1px;*/
   width: 20%;
   margin: 2em auto;
 }
@@ -428,4 +428,16 @@ label.invitations_nogroup {
 
 .buttonBisText_event {
   margin: 0px 27px 0px 49px;
+}
+
+.event_newagenda {
+  box-shadow: 2px 5px lightgrey;
+}
+
+.circle {
+  border-radius: 0 !important;
+}
+
+.card-title {
+  color: grey !important;
 }
