@@ -1,35 +1,50 @@
-<div class="row">
-    <h1 class="title_home center-align">{'{CODERS.PARTY}'}</h1>
+<div class="carousel carousel-slider center mamacarouf" data-indicators="true">
+    <div class="carousel-fixed-item center">
 
-
-    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
-</div>
-
-<div class="row">
-    <div class="col s12 m12">
-        <p class="center-align">
-            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="user.agenda">REJOINDRE UN EVENEMENT</button>
-        </p>
     </div>
-</div>
-<div class="row center-align" >
-    <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda hoverable" ui-sref="user.event">
-      <p class="event_home">Evènement à venir :</p>
-        <!-- <div class="row">
-            <i class="material-icons right location_agenda">location_on</i>
-        </div> -->
-        <img class="logo_agenda" src="/../img/{{lastEvent.categorie}}.png" alt="">
+    <div class="carousel-item white-text carouf" style="background-image:url(/../img/background/{{lastEvent1.categorie}}.png);" href="#one!">
+
+        <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}'}</h1>
         <div class="info_agenda">
-            <p>{{lastEvent.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>{{lastEvent.lieu}}</p>
-            <p>{{lastEvent.name | uppercase}}</p>
+            <p>{{lastEvent1.startDate | date:' dd-MM-yyyy'}}</p>
+            <p>{{lastEvent1.lieu}}</p>
+            <p>{{lastEvent1.name | uppercase}}</p>
+        </div>
+</div>
+
+
+
+
+    <div class="carousel-item white-text" style="background-image:url(/../img/background/{{lastEvent2.categorie}}.png);" href="#two!">
+        <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}'}</h1>
+        <div class="info_agenda">
+            <p>{{lastEvent2.startDate | date:' dd-MM-yyyy'}}</p>
+            <p>{{lastEvent2.lieu}}</p>
+            <p>{{lastEvent2.name | uppercase}}</p>
+        </div>
+    </div>
+
+    <div class="carousel-item white-text" style="background-image:url(/../img/background/{{lastEvent3.categorie}}.png);" href="#three!">
+        <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}'}</h1>
+        <div class="info_agenda">
+            <p>{{lastEvent3.startDate | date:' dd-MM-yyyy'}}</p>
+            <p>{{lastEvent3.lieu}}</p>
+            <p>{{lastEvent3.name | uppercase}}</p>
+        </div>
+    </div>
+    <div class="carousel-item white-text" style="background-image:url(/../img/background/{{lastEvent4.categorie}}.png);" href="#four!">
+        <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}'}</h1>
+        <div class="info_agenda">
+            <p>{{lastEvent4.startDate | date:' dd-MM-yyyy'}}</p>
+            <p>{{lastEvent4.lieu}}</p>
+            <p>{{lastEvent4.name | uppercase}}</p>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col s12 m12">
-        <p class="center-align">
-            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="user.createevent">CREER UN EVENEMENT</button>
-        </p>
-    </div>
-</div>
+
+
+<script>
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+    });
+</script>
