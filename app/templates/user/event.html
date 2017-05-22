@@ -56,3 +56,36 @@
         </div>
     </div>
 </div>
+
+<!-- 
+<div class="row center-align">
+  <div class="col s12 m8">
+    <div class="card large">
+      <div class="card-image">
+        <p class="madeBy">Organisé par : {{event.author.name}}</p>
+        <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
+        <img src="/../img/{{event.categorie}}.png">
+      </div>
+      <span class="card-title">{{event.name | uppercase}} - {{event.startDate | date:' dd-MM-yyyy'}} - {{event.startTime | date:' HH:mm' }}</span>
+      <div class="card-content">
+        <div class="divider"></div>
+        <p class="desc_page_event">Description :</p>
+        <p class="desc_page_event">{{event.description}}</p>
+        <div class="divider"></div>
+        <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
+      </div>
+      <div class="card-action">
+        <div class="center-align">
+            <button ng-hide="hideGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
+            <button ng-show="showRed()" class="waves-effect waves-light btn red buttonBis_event" ng-click="dontGo()">-</button>
+            <button ng-show="showGrey()" class="waves-effect waves-light btn grey buttonBis_event" ng-click="neverGo()">x</button>
+        </div>
+        <div class="center-align buttonBisTextDiv_event ">
+            <span ng-hide="hideGreen()" class="buttonBisText_event">J'y vais</span>
+            <span ng-show="showRed()" class="buttonBisText_event">Je n'y vais pas</span>
+            <span ng-show="showGrey()" class="buttonBisText_event">Retirez moi de la liste</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
