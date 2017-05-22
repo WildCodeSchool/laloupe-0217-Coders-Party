@@ -1,3 +1,14 @@
+/*CAROUF*/
+.carouf{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mamacarouf{
+  height: 600px !important;
+}
+
 /*NAVBAR*/
 
 .logo_navbar {
