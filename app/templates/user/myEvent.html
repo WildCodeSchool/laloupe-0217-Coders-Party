@@ -1,8 +1,14 @@
 <div class="row">
   <h1 class="title_home center-align">MES EVENEMENTS</h1>
-  <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
-</div>
-<div class="container">
+  <div class="row center-align" ng-show="showingMessage()" ng-model="myValue">
+    <p>Tu n'as pas encore d'évènements</p>
+    <p><a ui-sref="user.createevent">Crées</a> ou <a ui-sref="user.agenda">rejoins</a> des évènements pour les voir s'afficher sur cette page.</p>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+  </div>
+  <div class="container">
     <ul class="collection event_newagenda hoverable" ng-click="setLocalService(myEvent._id)" ui-sref="user.event" ng-repeat="myEvent in myEvents | orderBy:'startDate'">
       <li class="collection-item avatar">
         <img src="/../img/{{myEvent.categorie}}.png" alt="" class="circle">
@@ -13,4 +19,5 @@
         <a class="secondary-content"><i class="material-icons">info_outline</i></a>
       </li>
     </ul>
+  </div>
 </div>

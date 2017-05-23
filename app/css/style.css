@@ -1,4 +1,5 @@
 /*CAROUF*/
+
 .carouf{
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,7 +53,6 @@
   overflow: hidden;
   background-color: #e0e0e0;
 }
-
 
 /*REGISTER*/
 

@@ -1,6 +1,7 @@
 import jsonwebtoken from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
+import hbs from 'nodemailer-express-handlebars';
 import bcrypt from 'bcrypt';
 import token from '../token.js';
 
@@ -56,13 +57,26 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-var smtpTransport = nodemailer.createTransport({
+var mailer = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
     user: "codersparty@gmail.com",
     pass: "c0d3r5p4rty"
   }
 });
+
+var options = {
+    viewEngine: {
+        extname: '.hbs',
+        layoutsDir: '../server/api/views/email/',
+        defaultLayout : 'template',
+        partialsDir : '../server/api/views/partials/'
+    },
+    viewPath: '../server/api/views/email/',
+    extName: '.hbs'
+};
+
+mailer.use('compile', hbs(options));
 
 eventSchema.methods.comparePassword = function(pwd, cb) {
   bcrypt.compare(pwd, this.password, function(err, isMatch) {
@@ -143,22 +157,26 @@ export default class Event {
         res.status(404);
       } else {
         event.invitations.forEach((guest) => {
-          let mail = {
+
+          mailer.sendMail({
             from: "codersparty@gmail.com",
             to: guest.email,
             subject: "Coders Party",
-            html: "leCorpsDeVotreMessageEnHTML"
-          };
-          smtpTransport.sendMail(mail, function(error, response){
-            if(error){
-              console.log("Erreur lors de l'envoie du mail!");
-              console.log(error);
-            } else{
-              console.log("Mail envoyé avec succès!");
+            template: 'email.body',
+            context: {
+              variable1 : 'Bonjour ' + guest.name + ' !',
+              variable2 : 'Tu es invité pour l\'évènement ' + event.name
             }
-            smtpTransport.close();
-          });
-      });
+          },function (error, response) {
+            if(error){
+                console.log("Erreur lors de l'envoie du mail!", guest.email);
+                console.log(error);
+              } else{
+                console.log("Mail envoyé avec succès a ", guest.email);
+              }
+               mailer.close();
+             });
+        });
         res.json({
           success: true
         });
