@@ -2,90 +2,57 @@
     <h1 class="title_home center-align">{{event.name | uppercase}}</h1>
     <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
 </div>
-<div class="row center-align">
-    <div class="offset-xl2 offset-s1 col xl10 s10 event_agenda_page_event hoverable">
-        <div class="row">
-            <p class="madeBy">Organisé par : {{event.author.name}}</p>
-            <img class="logo_agenda_event" src="/../img/{{event.categorie}}.png" alt="">
-            <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <p class="info_page_event">{{event.lieu}}</p>
-            </div>
-            <div class="col s6">
-                <p class="info_page_event">{{event.startDate | date:' dd-MM-yyyy'}}</p>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="row image_event">
-            <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
-                <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-            </div>
-            <button class="waves-effect waves-light btn orange right button_event" data-target='demoModal' modal>+</button>
+<div class="row">
+    <div class="col offset-s1 s10 offset-m3 m6 offset-lg4 lg4 container_ticket">
+        <div class="ticket">
+          <a href="{{event.place_url}}" target="_blank" class="material-icons left location_ticket">location_on</a>
+            <div class="datas">
+                <div class="ribbon">
+                    <div class="label">Par {{event.author.name}}</div>
+                </div>
+                <span class="span_ticket"></span>
+                <strong class="strong_ticket"><img src="/../img/{{event.categorie}}.png" alt=""></strong>
+                <div class="date_ticket flow-text">{{event.startDate | date:' dd-MM-yyyy'}}</div>
+                <div class="lieu_ticket flow-text">
+                    {{event.lieu}}
+                </div>
+                <div class="type_ticket flow-text">
+                    <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
 
-            <!-- Modal Structure -->
-            <div id="demoModal" class="modal modal_event">
-                <div class="modal-content ">
-                    <h4>Participants</h4>
-                    <div class="divider"></div>
-                    <div class="row left" ng-repeat="invitation in event.invitations">
-                        <div class="col s12 member_div">
-                            <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                            <p class="member_name">{{invitation.name}}</p>
-                        </div>
+                </div>
+                <em class="em_ticket flow-text">{{event.description}}</em>
+            </div>
+            <div class="row image_ticket">
+                <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:8">
+                    <img class="image_ticket_img" ng-class="{'image_ticket_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+                </div>
+                  <a class="material-icons right button_ticket_img" data-target='demoModal' modal>reorder</a>
+
+            </div>
+            <div class="ticket-in">
+                <div class="content_ticket center-align">
+                    <div class="pass">
+                        <h1>Ton ticket<br>pour {{event.name}}</h1>
                     </div>
+                    <span>PREMIUM</span>
+                    <em>2015</em>
                 </div>
             </div>
-        </div>
-        <div class="divider"></div>
-        <p class="desc_page_event">Description :</p>
-        <p class="desc_page_event">{{event.description}}</p>
-        <div class="divider"></div>
-        <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
-        <div class="divider"></div>
-        <div class="center-align">
-            <button ng-hide="hideGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
-            <button ng-show="showRed()" class="waves-effect waves-light btn red buttonBis_event" ng-click="dontGo()">-</button>
-            <button ng-show="showGrey()" class="waves-effect waves-light btn grey buttonBis_event" ng-click="neverGo()">x</button>
-        </div>
-        <div class="center-align buttonBisTextDiv_event ">
-            <span ng-hide="hideGreen()" class="buttonBisText_event">J'y vais</span>
-            <span ng-show="showRed()" class="buttonBisText_event">Je n'y vais pas</span>
-            <span ng-show="showGrey()" class="buttonBisText_event">Retirez moi de la liste</span>
+            <a class="button_ticket toogle" ng-hide="hideGreen()" ng-click="doGo()">J'y vais</a>
+            <a class="button_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
         </div>
     </div>
 </div>
-
-<!--
-<div class="row center-align">
-  <div class="col s12 m8">
-    <div class="card large">
-      <div class="card-image">
-        <p class="madeBy">Organisé par : {{event.author.name}}</p>
-        <a href="{{event.place_url}}" target="_blank" class="material-icons right location_agenda">location_on</a>
-        <img src="/../img/{{event.categorie}}.png">
-      </div>
-      <span class="card-title">{{event.name | uppercase}} - {{event.startDate | date:' dd-MM-yyyy'}} - {{event.startTime | date:' HH:mm' }}</span>
-      <div class="card-content">
-        <div class="divider"></div>
-        <p class="desc_page_event">Description :</p>
-        <p class="desc_page_event">{{event.description}}</p>
-        <div class="divider"></div>
-        <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
-      </div>
-      <div class="card-action">
-        <div class="center-align">
-            <button ng-hide="hideGreen()" class="waves-effect waves-light btn green buttonBis_event" ng-click="doGo()">+</button>
-            <button ng-show="showRed()" class="waves-effect waves-light btn red buttonBis_event" ng-click="dontGo()">-</button>
-            <button ng-show="showGrey()" class="waves-effect waves-light btn grey buttonBis_event" ng-click="neverGo()">x</button>
-        </div>
-        <div class="center-align buttonBisTextDiv_event ">
-            <span ng-hide="hideGreen()" class="buttonBisText_event">J'y vais</span>
-            <span ng-show="showRed()" class="buttonBisText_event">Je n'y vais pas</span>
-            <span ng-show="showGrey()" class="buttonBisText_event">Retirez moi de la liste</span>
-        </div>
+<!-- Modal Structure -->
+<div id="demoModal" class="modal modal_ticket center-align">
+  <div class="modal-content ">
+    <h4>Participants</h4>
+    <div class="divider"></div>
+    <div class="row left" ng-repeat="invitation in event.invitations">
+      <div class="col s12 m12 l12 member_div">
+        <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+        <p class="member_name">{{invitation.name}}</p>
       </div>
     </div>
   </div>
-</div> -->
+</div>

@@ -11,7 +11,7 @@ angular.module('app')
                     $scope.myEvents.push($scope.allEvents[i]);
                 }
                 for (var g = 0; g < $scope.allEvents[i].invitations.length; g++) {
-                    if ($scope.allEvents[i].invitations[g]._id === CurrentUser.user()._id && $scope.allEvents[i].author !== CurrentUser.user()._id) {
+                    if ($scope.allEvents[i].invitations[g].email === CurrentUser.user().email && $scope.allEvents[i].author !== CurrentUser.user()._id) {
                         $scope.myEvents.push($scope.allEvents[i]);
                     }
                 }
