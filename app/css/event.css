@@ -1,0 +1,335 @@
+.container_ticket{
+margin-top: -47px!important;
+}
+.datas {
+    background: white;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    z-index: 2;
+}
+
+
+/*  ================================================
+            TICKET STYLING & COUPON EFFECT
+    ================================================  */
+
+.ticket {
+    position: relative;
+    display: table;
+    width: 90%;
+    height: 400px;
+    margin: 50px auto 0 auto;
+    padding-bottom: 57px;
+    background: #F4F4F4;
+    text-align: center;
+}
+
+.ticket::before {
+    content: "";
+    position: absolute;
+    top: 61.5%;
+    left: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+.ticket::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: 47%;
+    right: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #e6e6e6;
+}
+
+
+/*  ================================================
+                    RIBBON EFFECT
+    ================================================  */
+
+.ribbon {
+    position: absolute;
+    display: block;
+    top: -2px;
+    right: -4px;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+}
+
+.ribbon .label {
+    position: relative;
+    display: block;
+    left: 6px;
+    top: 23px;
+    width: 158px;
+    padding: 0px 0;
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+    background-color: orange;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) translate3d(0, 0, 0);
+}
+
+.label:before {
+    left: 0;
+}
+
+.label:after {
+    right: 0;
+}
+
+
+/*  ================================================
+                        CONTENT
+    ================================================  */
+
+.span_ticket {
+    display: block;
+    font-size: 20px;
+    color: #540c5d;
+}
+
+.strong_ticket {
+    height: 180px;
+    display: block;
+    font-size: 85px;
+    color: #a52958;
+    margin: 0 0 10px;
+    0;
+    border-bottom: 2px dashed rgba(0, 0, 0, .1);
+}
+
+.strong_ticket img {
+    height: 65%;
+        margin-top: 17px;
+}
+
+
+/*  ================================================
+              ACTION CALL & ARROW UP EFFECT
+    ================================================  */
+
+.button_ticket {
+    display: block;
+    color: white;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: #86db78;
+    cursor: pointer;
+}
+
+.button_ticket::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid #86db78;
+}
+
+.button_ticket_red {
+    display: block;
+    color: white;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: red;
+    cursor: pointer;
+}
+
+.button_ticket_remove {
+    display: block;
+    font-size: 12px;
+    z-index: 4;
+    position: absolute;
+    bottom: 40px;
+    left: 30%;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.button_ticket_red::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid red;
+}
+
+
+/*  ================================================
+                    INSIDE TICKET
+    ================================================  */
+
+.ticket-in {
+    width: 100%;
+    height: 337px;
+    position: absolute;
+    background: #a52958;
+    top: 0px;
+    left: calc(100% - 100%);
+    z-index: 1;
+    transition: left 1s;
+}
+
+.ticket-in.active {
+    left: calc(65% - 80%);
+    transition: left 1s;
+}
+
+.content_ticket {
+    height: 319px;
+    margin: 8px;
+    border: 2px dashed #e0c68e;
+    border-radius: 10px;
+}
+
+.content_ticket h1 {
+    font-size: 29px;
+    color: #4c483b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.pass {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 288px;
+    height: 171px;
+    margin: 80px -48px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    background: #eadbb8;
+    border: 1px solid #82113c;
+    -webkit-transform: rotate(-90deg);
+}
+
+.pass::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #eadbb8;
+}
+
+.content_ticket span {
+    margin: 85px 0 0 0;
+    text-align: center;
+    color: #82113c;
+}
+
+.content_ticket em {
+    border: none;
+    text-align: center;
+    font-size: 89px;
+    color: #eadbb8;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .7);
+}
+
+.image_ticket {
+    top: 275px;
+    width: 100%;
+    height: 70px;
+    z-index: 3;
+    position: absolute;
+}
+
+.image_ticket_img {
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    filter: grayscale(100%);
+}
+
+.image_ticket_img_include {
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    filter: grayscale(0%);
+}
+
+.button_ticket_img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.date_ticket {
+    position: absolute;
+    top: 141px;
+    height: 100px;
+    left: 5%;
+    font-style: normal;
+    color: #86db78;
+    padding-left: 10px;
+
+}
+
+.lieu_ticket {
+    position: absolute;
+    top: 141px;
+    height: 100px;
+    right: 5%;
+    font-style: normal;
+    color: #86db78;
+    padding-left: 10px;
+}
+
+.em_ticket {
+    height: 100px;
+    font-style: normal;
+    color: #86db78;
+    padding: 10px 0;
+}
+
+.type_ticket {
+    font-size: 12px;
+    border-bottom: 2px dashed rgba(0, 0, 0, .1);
+}

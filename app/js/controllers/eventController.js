@@ -13,12 +13,22 @@ angular.module('app')
                         $scope.members.push($scope.event.participations[i].email);
                     }
                 }
+                function toggleTicket() {
+                  for (var i = 0; i < $scope.event.participations.length; i++) {
+                    if($scope.event.participations[i].email === $scope.user.email){
+                      $('.ticket-in').addClass('active');
+                    }
+                  }
 
+                }
                 function RmMembers(index) {
                     $scope.members.splice(index, 1);
                 }
+                toggleTicket();
                 AddMembers();
+
                 $scope.doGo = function() {
+                    $('.ticket-in').addClass('active');
                     for (var i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
                             $scope.event.participations.push($scope.user);
@@ -32,6 +42,7 @@ angular.module('app')
                     });
                 };
                 $scope.dontGo = function() {
+                      $('.ticket-in').removeClass('active');
                     for (i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
                             RmMembers($scope.members.indexOf($scope.event.participations[i].email));
@@ -92,6 +103,8 @@ angular.module('app')
                 $(document).ready(function() {
                     $('.modal').modal();
                 });
+
+
             });
         });
     });
