@@ -4,6 +4,9 @@ import nodemailer from 'nodemailer';
 import hbs from 'nodemailer-express-handlebars';
 import bcrypt from 'bcrypt';
 import token from '../token.js';
+import moment from 'moment';
+moment.locale('fr');
+
 
 const hashCode = (s) => s.split("").reduce((a, b) => {
   a = ((a << 5) - a) + b.charCodeAt(0);
@@ -170,7 +173,7 @@ export default class Event {
               variable4 : event.place_url,
               variable5 : 'Adresse : ' + event.adresse,
               // variable6 : 'http://localhost:8000/#!/user/event/'
-              // variable6 : 'Date : ' + `event.startDate | 'dd/mm/YYYY'`
+              variable6 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
             }
           },function (error, response) {
             if(error){
