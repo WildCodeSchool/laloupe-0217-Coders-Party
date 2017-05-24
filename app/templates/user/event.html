@@ -5,6 +5,7 @@
 <div class="row">
     <div class="col offset-s1 s10 offset-m3 m6 offset-lg4 lg4 container_ticket">
         <div class="ticket">
+          <a href="{{event.place_url}}" target="_blank" class="material-icons left location_ticket">location_on</a>
             <div class="datas">
                 <div class="ribbon">
                     <div class="label">Par {{event.author.name}}</div>
@@ -25,21 +26,8 @@
                 <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:8">
                     <img class="image_ticket_img" ng-class="{'image_ticket_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
                 </div>
-                <button class="waves-effect waves-light btn orange right button_ticket_img" data-target='demoModal' modal>...</button>
+                  <a class="material-icons right button_ticket_img" data-target='demoModal' modal>reorder</a>
 
-                <!-- Modal Structure -->
-                <div id="demoModal" class="modal modal_event">
-                    <div class="modal-content ">
-                        <h4>Participants</h4>
-                        <div class="divider"></div>
-                        <div class="row left" ng-repeat="invitation in event.invitations">
-                            <div class="col s12 member_div">
-                                <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                                <p class="member_name">{{invitation.name}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="ticket-in">
                 <div class="content_ticket center-align">
@@ -54,4 +42,17 @@
             <a class="button_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
         </div>
     </div>
+</div>
+<!-- Modal Structure -->
+<div id="demoModal" class="modal modal_ticket center-align">
+  <div class="modal-content ">
+    <h4>Participants</h4>
+    <div class="divider"></div>
+    <div class="row left" ng-repeat="invitation in event.invitations">
+      <div class="col s12 m12 l12 member_div">
+        <img class="image_event_img" ng-class="{'image_event_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+        <p class="member_name">{{invitation.name}}</p>
+      </div>
+    </div>
+  </div>
 </div>

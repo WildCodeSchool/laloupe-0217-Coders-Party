@@ -1,6 +1,7 @@
-.container_ticket{
-margin-top: -47px!important;
+.container_ticket {
+    margin-top: -47px!important;
 }
+
 .datas {
     background: white;
     position: absolute;
@@ -113,7 +114,7 @@ margin-top: -47px!important;
 
 .strong_ticket img {
     height: 65%;
-        margin-top: 17px;
+    margin-top: 17px;
 }
 
 
@@ -294,11 +295,13 @@ margin-top: -47px!important;
 }
 
 .button_ticket_img {
+    font-size: 50px !important;
     width: 50px;
     height: 50px;
     margin-top: 10px;
     border-radius: 50%;
     text-align: center;
+    cursor: pointer;
 }
 
 .date_ticket {
@@ -309,7 +312,6 @@ margin-top: -47px!important;
     font-style: normal;
     color: #86db78;
     padding-left: 10px;
-
 }
 
 .lieu_ticket {
@@ -332,4 +334,19 @@ margin-top: -47px!important;
 .type_ticket {
     font-size: 12px;
     border-bottom: 2px dashed rgba(0, 0, 0, .1);
+}
+
+.location_ticket {
+    position: relative;
+    z-index: 4;
+    margin: 10px 0 0 10px;
+    font-size: 50px !important;
+    cursor: pointer;
+}
+
+.modal_ticket {
+    width: 300px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
 }
