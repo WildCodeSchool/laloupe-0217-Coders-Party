@@ -165,7 +165,12 @@ export default class Event {
             template: 'email.body',
             context: {
               variable1 : 'Bonjour ' + guest.name + ' !',
-              variable2 : 'Tu es invité pour l\'évènement ' + event.name
+              variable2 : 'Tu es invité pour l\'évènement ' + event.name,
+              variable3 : 'Description évènement : ' + event.description,
+              variable4 : event.place_url,
+              variable5 : 'Adresse : ' + event.adresse,
+              // variable6 : 'http://localhost:8000/#!/user/event/'
+              // variable6 : 'Date : ' + `event.startDate | 'dd/mm/YYYY'`
             }
           },function (error, response) {
             if(error){
