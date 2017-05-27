@@ -59,6 +59,7 @@ angular.module('app')
                     for (var i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
                             $('.ticket-in').addClass('active');
+                            $('.card-event').addClass('active');
                         }
                     }
 
@@ -90,6 +91,7 @@ angular.module('app')
 
                 $scope.doGo = function() {
                     $('.ticket-in').addClass('active');
+                    $('.card-event').addClass('active');
                     for (var i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
                             $scope.event.participations.push($scope.user);
@@ -127,6 +129,7 @@ angular.module('app')
 
                 $scope.dontGo = function() {
                     $('.ticket-in').removeClass('active');
+                    $('.card-event').removeClass('active');
                     removeQty();
                     for (i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
