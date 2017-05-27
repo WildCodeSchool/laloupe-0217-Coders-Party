@@ -350,3 +350,28 @@
     padding-bottom: 40px;
     text-align: center;
 }
+
+.modal_ticket {
+    width: 500px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.ownerDiv_ticket {
+    margin-top: 600px;
+}
+
+.card-title-event {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+}
+
+.modal-close-event {
+    font-size: 50px !important;
+    margin: 10px 10px;
+}
