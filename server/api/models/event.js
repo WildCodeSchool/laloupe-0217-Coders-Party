@@ -157,28 +157,61 @@ export default class Event {
         });
     }
 
-    sendInvitation(req, res) {
-        model.findById(req.params.id, (err, event) => {
-            if (err) {
-                res.status(500).send(err.message);
-            } else if (!event) {
-                res.status(404);
-            } else {
-                event.invitations.forEach((guest) => {
+  create(req, res) {
+    model.create(req.body,
+      (err, event) => {
+        if (err || !event) {
+          res.status(400).send(err.message);
+        } else {
+          res.json({
+            success: true,
+            event: event,
+          });
+        }
+      });
+  }
 
-                    mailer.sendMail({
-                        from: "codersparty@gmail.com",
-                        to: guest.email,
-                        subject: "Coders Party",
-                        template: 'email.body',
-                        context: {
-                            variable1: 'Bonjour ' + guest.name + ' !',
-                            variable2: 'Tu es invité pour l\'évènement ' + event.name,
-                            variable3: 'Description évènement : ' + event.description,
-                            variable4: event.place_url,
-                            variable5: 'Adresse : ' + event.adresse,
-                            // variable6 : 'http://localhost:8000/#!/user/event/'
-                            variable6: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
+  update(req, res) {
+    model.update({
+      _id: req.params.id
+    }, req.body, (err, event) => {
+      if (err || !event) {
+        res.status(500).send(err.message);
+      } else {
+        let tk = jsonwebtoken.sign(event, token, {
+          expiresIn: "24h"
+        });
+        res.json({
+          success: true,
+          event: event,
+          token: tk
+        });
+      }
+    });
+  }
+
+  sendInvitation(req, res) {
+    model.findById(req.params.id, (err, event) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else if (!event) {
+        res.status(404);
+      } else {
+        event.invitations.forEach((guest) => {
+
+          mailer.sendMail({
+            from: "codersparty@gmail.com",
+            to: guest.email,
+            subject: "Coders Party",
+            template: 'email.body',
+            context: {
+              variable1 : 'Bonjour ' + guest.name + ' !',
+              variable2 : 'Tu es invité pour l\'évènement ' + event.name,
+              variable3 : 'Description évènement : ' + event.description,
+              variable4 : event.place_url,
+              variable5 : 'Adresse : ' + event.adresse,
+              variable6 : 'http://localhost:8000/#!/user/event/id/' + event.id,
+              variable7 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
                         }
                     }, function(error, response) {
                         if (error) {

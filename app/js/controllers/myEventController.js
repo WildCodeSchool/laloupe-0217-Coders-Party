@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('MyEventController', function($scope, CurrentUser, UserService, LocalService, EventService) {
+    .controller('MyEventController', function($scope, CurrentUser, UserService, LocalService, EventService, $location) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
@@ -16,8 +16,8 @@ angular.module('app')
                     }
                 }
             }
-            $scope.setLocalService = function(value) {
-                LocalService.set('thiseventid', value);
+            $scope.moveToEvent = function(value) {
+                $location.path('/user/event/id/' + value);
             };
 
             $scope.showingMessage = function() {
