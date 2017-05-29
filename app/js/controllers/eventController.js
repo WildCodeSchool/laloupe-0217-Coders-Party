@@ -5,8 +5,45 @@ angular.module('app')
             var id = LocalService.get('thiseventid');
             EventService.getOne(id).then(function(res) {
                 $scope.event = res.data;
+                console.log($scope.event);
                 $scope.class = "image_event_img";
+                $scope.isAuthor = function() {
+                    if ($scope.event.author._id === CurrentUser.user()._id) {
+                        return true;
+                    }
+                };
+
+                // initialize a front array to manage img color :
+
                 $scope.members = [];
+
+                // initialize a front array to manage the object to update the elements.partBring :
+
+                $scope.iBring = [];
+                for (var i = 0; i < $scope.event.elements.toBring.length; i++) {
+                    $scope.iBring.push({
+                        value: $scope.event.elements.toBring[i].value,
+                        number: 0
+                    });
+                }
+
+                $scope.incQty = function(index) {
+                    if ($scope.iBring[index].number < ($scope.event.elements.toBring[index].bringedQty)) {
+                        $scope.iBring[index].number++;
+                    }
+                };
+                $scope.decQty = function(index) {
+                    if ($scope.iBring[index].number > 0) {
+                        $scope.iBring[index].number--;
+                    }
+                };
+
+                function updateQty() {
+                    for (var i = 0; i < $scope.event.elements.toBring.length; i++) {
+                        $scope.event.elements.toBring[i].bringedQty = $scope.event.elements.toBring[i].qty - $scope.iBring[i].number;
+                    }
+                }
+
 
                 function AddMembers() {
                     for (var i = 0; i < $scope.event.participations.length; i++) {
@@ -14,27 +51,35 @@ angular.module('app')
                     }
                 }
 
+                function RmMembers(index) {
+                    $scope.members.splice(index, 1);
+                }
+
                 function toggleTicket() {
                     for (var i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
                             $('.ticket-in').addClass('active');
+                            $('.card-event').addClass('active');
                         }
                     }
 
                 }
-
-                function RmMembers(index) {
-                    $scope.members.splice(index, 1);
-                }
                 toggleTicket();
-                AddMembers();
 
-                $scope.doGo = function() {
-                    $('.ticket-in').addClass('active');
-                    for (var i = 0; i < $scope.event.invitations.length; i++) {
-                        if ($scope.event.invitations[i].email === $scope.user.email) {
-                            $scope.event.participations.push($scope.user);
-                        }
+                AddMembers();
+                $scope.validateBring = function() {
+                    $scope.event.elements.partBring.push({
+                        email: $scope.user.email,
+                        name: $scope.user.name,
+                        bringThis: $scope.iBring
+                    });
+                    updateQty();
+                    $scope.iBring = [];
+                    for (var i = 0; i < $scope.event.elements.toBring.length; i++) {
+                        $scope.iBring.push({
+                            value: $scope.event.elements.toBring[i].value,
+                            number: 0
+                        });
                     }
                     EventService.update(id, $scope.event).then(function() {
                         EventService.getOne(id).then(function(res) {
@@ -43,12 +88,58 @@ angular.module('app')
                         });
                     });
                 };
+
+                $scope.doGo = function() {
+                    $('.ticket-in').addClass('active');
+                    $('.card-event').addClass('active');
+                    for (var i = 0; i < $scope.event.invitations.length; i++) {
+                        if ($scope.event.invitations[i].email === $scope.user.email) {
+                            $scope.event.participations.push($scope.user);
+                        }
+                    }
+
+                    EventService.update(id, $scope.event).then(function() {
+                        EventService.getOne(id).then(function(res) {
+                            $scope.event = res.data;
+                            AddMembers();
+                        });
+                    });
+                };
+
+                function removeQty() {
+                    var userBringThis = [];
+                    var toBring = [];
+                    for (var i = 0; i < $scope.event.elements.partBring.length; i++) {
+                        if ($scope.event.elements.partBring[i].email === $scope.user.email) {
+                            for (var g = 0; g < $scope.event.elements.partBring[i].bringThis.length; g++) {
+                                userBringThis.push($scope.event.elements.partBring[i].bringThis[g].number);
+                            }
+                            for (i = 0; i < $scope.event.elements.toBring.length; i++) {
+                                toBring.push($scope.event.elements.toBring[i].bringedQty);
+                            }
+                        }
+                    }
+                    var result = toBring.map(function(num, index) {
+                        return num + userBringThis[index];
+                    });
+                    for (i = 0; i < $scope.event.elements.toBring.length; i++) {
+                        $scope.event.elements.toBring[i].bringedQty = result[i];
+                    }
+                }
+
                 $scope.dontGo = function() {
                     $('.ticket-in').removeClass('active');
+                    $('.card-event').removeClass('active');
+                    removeQty();
                     for (i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
                             RmMembers($scope.members.indexOf($scope.event.participations[i].email));
                             $scope.event.participations.splice(i, 1);
+                        }
+                    }
+                    for (i = 0; i < $scope.event.elements.partBring.length; i++) {
+                        if ($scope.event.elements.partBring[i].email === $scope.user.email) {
+                            $scope.event.elements.partBring.splice(i, 1);
                         }
                     }
                     EventService.update(id, $scope.event).then(function() {
@@ -57,6 +148,7 @@ angular.module('app')
                         });
                     });
                 };
+
                 $scope.neverGo = function() {
                     for (i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
@@ -88,6 +180,7 @@ angular.module('app')
                     }
                     return false;
                 }
+
                 $scope.hideGreen = function() {
                     if (isParticipating() === true || isInvitated() === false) {
                         return true;
@@ -103,10 +196,10 @@ angular.module('app')
                     }
                 };
                 $(document).ready(function() {
-                    $('.modal').modal();
+                    $('.modal').modal({
+                        dismissible: false
+                    });
                 });
-
-
             });
         });
     });

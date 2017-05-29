@@ -11,6 +11,6 @@ angular.module('app')
             $scope.lastEvent3 = $scope.events[$scope.events.length -3];
             $scope.lastEvent4 = $scope.events[$scope.events.length -4];
 
-            LocalService.set("thiseventid", $scope.lastEvent._id);
+            LocalService.set("thiseventid", $scope.lastEvent1._id);
         });
     });
