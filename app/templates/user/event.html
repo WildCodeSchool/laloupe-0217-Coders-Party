@@ -59,17 +59,16 @@
                 <img src="/../img/{{event.categorie}}.png">
             </div>
             <span class="card-event-title">{{event.description}}</span>
+            <div class="card-content card-profile-container">
+              <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
+                <img class="card-profile-event" ng-class="{'card-profile-event-include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+              </div>
+              <a class="material-icons right card-button-image" data-target='demoModal' modal>reorder</a>
+            </div>
             <div class="card-content card-event-description">
-                <p class="card-event-date">{{event.startDate | date:' dd/MM/yyyy'}}</p>
+                <p class="card-event-date">{{event.startDate | date:' dd/MM/yyyy'}} à {{event.startTime | date:'HH:mm'}}</p>
                 <p class="card-event-lieu">{{event.lieu}}</p>
                 </ul>
-            </div>
-            <div class="card-content card-profile-container">
-                <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
-                    <img class="card-profile-event" ng-class="{'card-profile-event-include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                </div>
-                <a class="material-icons right card-button-image" data-target='demoModal' modal>reorder</a>
-
             </div>
             <div class="card-content white card-event-type">
                 <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
