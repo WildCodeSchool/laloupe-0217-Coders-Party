@@ -25,8 +25,14 @@ angular.module('app')
                     }
                 }
                 EventService.update(id, $scope.event).then(function() {
+                  if ($scope.event.style === 'Collaboratif') {
                     $state.go('user.tobringlist');
-                });
+                }
+               else if ($scope.event.style === 'Libre') {
+                 EventService.sendInvitation(id);
+                $state.go('user.happyEvent');
+              }
+            });
             };
         });
     });
