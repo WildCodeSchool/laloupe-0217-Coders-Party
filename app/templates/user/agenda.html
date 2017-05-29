@@ -15,7 +15,7 @@
         </div>
       </div>
     </div> -->
-    <ul class="collection event_newagenda hoverable" ng-click="setLocalService(event._id)" ui-sref="user.event" ng-repeat="event in events | orderBy:'startDate'">
+    <ul class="collection event_newagenda hoverable" ng-click="moveToEvent(event._id)" ng-repeat="event in events | orderBy:'startDate'">
       <li class="collection-item avatar">
         <img src="/../img/{{event.categorie}}.png" alt="" class="circle">
         <span class="title">{{event.name | uppercase}}</span>

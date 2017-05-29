@@ -81,7 +81,7 @@ angular.module('app')
                 }
             })
             .state('user.event', {
-                url: '/event',
+                url: '/event/id/:id',
                 views: {
                     'content@': {
                         templateUrl: 'user/event.html',

@@ -172,8 +172,8 @@ export default class Event {
               variable3 : 'Description évènement : ' + event.description,
               variable4 : event.place_url,
               variable5 : 'Adresse : ' + event.adresse,
-              // variable6 : 'http://localhost:8000/#!/user/event/'
-              variable6 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
+              variable6 : 'http://localhost:8000/#!/user/event/id/' + event.id,
+              variable7 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
             }
           },function (error, response) {
             if(error){

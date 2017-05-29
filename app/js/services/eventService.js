@@ -5,7 +5,7 @@ angular.module('app')
                 return $http.get('/events');
             },
             getOne: function(id) {
-                return $http.get('/events/' + id);
+                return $http.get('/events/id/' + id);
             },
 
             update: function(id, event) {

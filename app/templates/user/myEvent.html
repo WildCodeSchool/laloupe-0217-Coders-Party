@@ -9,7 +9,7 @@
     <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
   </div>
   <div class="container">
-    <ul class="collection event_newagenda hoverable" ng-click="setLocalService(myEvent._id)" ui-sref="user.event" ng-repeat="myEvent in myEvents | orderBy:'startDate'">
+    <ul class="collection event_newagenda hoverable" ng-click="moveToEvent(myEvent._id)" ng-repeat="myEvent in myEvents | orderBy:'startDate'">
       <li class="collection-item avatar">
         <img src="/../img/{{myEvent.categorie}}.png" alt="" class="circle">
         <span class="title">{{myEvent.name | uppercase}}</span>

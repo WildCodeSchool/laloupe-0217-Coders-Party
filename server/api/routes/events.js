@@ -16,7 +16,7 @@ module.exports = (app) => {
 
     router.get('/', event.findAll);
 
-    router.get('/:id', Auth.hasAuthorization, event.findById);
+    router.get('/id/:id', Auth.hasAuthorization, event.findById);
 
     router.get('/sendall/:id', Auth.hasAuthorization, event.sendInvitation);
 
