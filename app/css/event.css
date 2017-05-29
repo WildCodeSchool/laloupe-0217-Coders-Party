@@ -1,4 +1,4 @@
-.container_ticket {
+/*.container_ticket {
     margin-top: -47px!important;
 }
 
@@ -15,7 +15,8 @@
             TICKET STYLING & COUPON EFFECT
     ================================================  */
 
-.ticket {
+
+/*.ticket {
     position: relative;
     display: table;
     width: 90%;
@@ -46,11 +47,6 @@
     border-bottom: 20px solid transparent;
     border-right: 20px solid #e6e6e6;
 }
-
-
-/*  ================================================
-                    RIBBON EFFECT
-    ================================================  */
 
 .ribbon {
     position: absolute;
@@ -92,10 +88,6 @@
 }
 
 
-/*  ================================================
-                        CONTENT
-    ================================================  */
-
 .span_ticket {
     display: block;
     font-size: 20px;
@@ -116,11 +108,6 @@
     height: 65%;
     margin-top: 17px;
 }
-
-
-/*  ================================================
-              ACTION CALL & ARROW UP EFFECT
-    ================================================  */
 
 .button_ticket {
     display: block;
@@ -191,10 +178,6 @@
     border-bottom: 10px solid red;
 }
 
-
-/*  ================================================
-                    INSIDE TICKET
-    ================================================  */
 
 .ticket-in {
     width: 100%;
@@ -349,4 +332,290 @@
     height: auto;
     padding-bottom: 40px;
     text-align: center;
+}
+
+.modal_list {
+    background-color: lightgreen;
+    width: 500px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.ownerDiv_ticket {
+    margin-top: 600px;
+}
+
+.card-title-event {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    background-color:  #ffcc80;
+}
+.card-title-event-modal {
+    display: block;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+     background-color:  #ffcc80;
+}
+
+.modal-close-event {
+    font-size: 50px !important;
+    margin: 10px 10px;
+}*/
+
+
+/*nouvelle carte*/
+
+.card-event-location {
+    position: relative;
+    margin: 10px 0 0 10px;
+    font-size: 50px !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.card-event {
+    background-color: #ffcc80;
+    transition: 1s;
+}
+
+.card-event.active {
+    background-color: lightgreen;
+    transition: 1s;
+}
+
+.card-event-title {
+    font-size: 24px;
+    color: white !important;
+    position: relative;
+    padding: 24px;
+    width: 100%;
+    font-weight: 600 !important;
+}
+
+.card-image-event {
+    width: 50%;
+    margin: auto;
+}
+
+.card-profile-container {
+    background-color: lightgrey;
+    height: 80px;
+    margin-left: -8px;
+}
+
+.card-profile-event {
+    margin-top: -10px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    filter: grayscale(100%);
+}
+
+.card-profile-event-include {
+    margin-top: -10px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    filter: grayscale(0%);
+}
+
+.card-button-image {
+    font-size: 50px !important;
+    margin-top: -10px;
+    cursor: pointer;
+    color: white;
+}
+
+.card-event-description {
+    border-top: 2px dashed rgba(0, 0, 0, .1);
+    height: 70px;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    background-color: lightgrey;
+}
+
+.card-event-date {
+    float: left;
+}
+
+.card-event-lieu {
+    float: right;
+}
+
+.card-event-type {
+    height: 90px;
+    color: grey;
+}
+
+.card_ticket {
+    display: block;
+    color: white !important;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: #86db78;
+    cursor: pointer;
+}
+
+.card_ticket::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid #86db78;
+}
+
+.card_ticket_red {
+    display: block;
+    color: white !important;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.card_ticket_remove {
+    display: block;
+    font-size: 12px;
+    z-index: 4;
+    position: absolute;
+    bottom: 40px;
+    left: 30%;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.card_ticket_red::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid lightgrey;
+}
+
+.ribbon-wrapper {
+    width: 102px;
+    height: 108px;
+    overflow: hidden;
+    position: absolute;
+    top: -8px;
+    right: -3px;
+}
+
+.ribbon-color {
+    font: bold 15px Sans-Serif;
+    color: #333;
+    text-align: center;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 149px;
+    background-color: orange;
+    color: #eee;
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ribbon-color:before, .ribbon-color:after {
+    content: "";
+    border-top: 3px solid #6e8900;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    bottom: -3px;
+}
+
+.ribbon-color:before {
+    left: 0;
+}
+
+.ribbon-color:after {
+    right: 0;
+}
+
+.modal-event-profile {
+    width: 300px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: lightgreen;
+}
+.modal-ticket-container{
+  padding: 20px;
+}
+.modal-ticket {
+    width: 300px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: lightgreen;
+}
+
+.modal-list {
+    background-color: lightgreen;
+    width: 500px;
+    height: auto;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.card-title-event {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    background-color: #ffcc80;
+}
+
+.card-title-event-modal {
+    display: block;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    background-color: #ffcc80;
+}
+
+.modal-close-event {
+    font-size: 50px !important;
+    margin: 10px 10px;
 }

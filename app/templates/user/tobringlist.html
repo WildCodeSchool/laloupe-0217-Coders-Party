@@ -1,13 +1,16 @@
 <div class="container">
     <h1>Choses à apporter par les invités</h1>
     <div class="input-field col s12">
-      <form ng-submit="addElement()">
-        <input ng-model="newElement" type="text" class="validate" id="{{event.element._id}}">
-        <label for="{{event.element._id}}">Elément à apporter</label>
-      </form>
+        <form ng-submit="addElement()">
+            <input ng-model="newEl" type="text" class="validate" id="newEl">
+            <label for="newEl">Elément à apporter</label>
+        </form>
     </div>
-    <div class="row" ng-repeat="element in event.elements track by $index">
-        <p class="tobringlist_element"> -  {{element}}</p>
+    <div class="row" ng-repeat="chose in event.elements.toBring track by $index">
+        <p class="tobringlist_element"> - {{chose.value}}</p>
+        <p>quantité : <span>{{chose.qty}}</span></p>
+        <button ng-click="incQty($index)" type="button" name="button">+</button>
+        <button ng-click="decQty($index)" type="button" name="button">-</button>
 
     </div>
 
