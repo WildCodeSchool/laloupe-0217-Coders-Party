@@ -60,6 +60,10 @@ const eventSchema = new mongoose.Schema({
     description: {
         type: String
     },
+    style: {
+      type: String,
+      default: ''
+    },
     place_url:  {
         type: String
     }

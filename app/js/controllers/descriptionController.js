@@ -1,5 +1,8 @@
 angular.module('app')
   .controller('DescriptionController', function($scope, $state, CurrentUser, UserService, EventService, LocalService) {
+    $(document).ready(function() {
+      $('select').material_select();
+    });
     UserService.getOne(CurrentUser.user()._id).then(function(res) {
       $scope.user = res.data;
     });
@@ -22,7 +25,8 @@ angular.module('app')
           adresse: place.formatted_address,
           lieu: $scope.evenement_lieu,
           description: $scope.evenement_description,
-          place_url: place.url
+          place_url: place.url,
+          style: $scope.styleEvent
         };
         EventService.update(id, event).then(function() {
           $state.go('user.invitations');

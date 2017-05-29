@@ -3,13 +3,13 @@ angular.module('app')
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
+        var id = LocalService.get('eventId');
+        EventService.getOne(id).then(function(res) {
+            $scope.event = res.data;
         UserService.getAll().then(function(res) {
             $scope.users = res.data;
-            console.log($scope.users);
-            $scope.event = {};
             $scope.event.invitations = [];
 
-            var id = LocalService.get('eventId');
             $scope.valider = function() {
                 for (var i = 0; i < $scope.users.length; i++) {
                     if ($scope.users[i].selected === true) {
@@ -17,8 +17,15 @@ angular.module('app')
                     }
                 }
                 EventService.update(id, $scope.event).then(function() {
+                  if ($scope.event.style === 'Collaboratif') {
                     $state.go('user.tobringlist');
-                });
-            };
-        });
+                }
+               else if ($scope.event.style === 'Libre') {
+                 EventService.sendInvitation(id);
+                $state.go('user.happyEvent');
+              }
+            });
+        };
     });
+  });
+});
