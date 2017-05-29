@@ -3,10 +3,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.5;
+  max-width: 100%;
+  height: auto;
+
 }
 
 .mamacarouf{
   height: 600px !important;
+}
+
+.logo_coders{
+  width: 40vw !important;
+  position: absolute;
+  margin-top: 70px;
+  margin-left: -300px;
 }
 
 /*NAVBAR*/
