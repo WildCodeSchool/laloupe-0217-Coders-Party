@@ -145,6 +145,7 @@ angular.module('app')
                     EventService.update(id, $scope.event).then(function() {
                         EventService.getOne(id).then(function(res) {
                             $scope.event = res.data;
+                            RmMembers();
                         });
                     });
                 };

@@ -405,36 +405,34 @@
 }
 
 .card-profile-container {
+    border-top: 2px dashed rgba(0, 0, 0, .1);
     background-color: lightgrey;
     height: 80px;
-    margin-left: -8px;
 }
 
 .card-profile-event {
-    margin-top: -10px;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     filter: grayscale(100%);
+    margin-left: -10px;
 }
 
 .card-profile-event-include {
-    margin-top: -10px;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     filter: grayscale(0%);
+    margin-left: -10px;
 }
 
 .card-button-image {
     font-size: 50px !important;
-    margin-top: -10px;
     cursor: pointer;
     color: white;
 }
 
 .card-event-description {
-    border-top: 2px dashed rgba(0, 0, 0, .1);
     height: 70px;
     font-size: 20px;
     font-weight: 400;
@@ -494,7 +492,7 @@
     line-height: 58px;
     text-align: center;
     border-radius: 0;
-    background-color: lightgrey;
+    background-color: grey;
     cursor: pointer;
 }
 
@@ -521,7 +519,7 @@
     left: calc(50% - 20px);
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 10px solid lightgrey;
+    border-bottom: 10px solid grey;
 }
 
 .ribbon-wrapper {
@@ -577,9 +575,11 @@
     text-align: center;
     background-color: lightgreen;
 }
-.modal-ticket-container{
-  padding: 20px;
+
+.modal-ticket-container {
+    padding: 20px;
 }
+
 .modal-ticket {
     width: 300px;
     height: auto;
