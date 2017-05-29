@@ -22,7 +22,6 @@ angular.module('app')
                     qty: 0,
                     value: $scope.newEl
                 });
-                console.log($scope.event);
                 $scope.newEl = "";
             };
             $scope.show = false;

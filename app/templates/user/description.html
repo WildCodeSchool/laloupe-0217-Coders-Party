@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Desciption évènement</h1>
+  <h1>Description évènement</h1>
 
   <div class="container">
     <form role="form" class="form-horizontal" ng-submit="validateDescription()">
@@ -16,6 +16,17 @@
           <div class="col s12 l12">
             <label for="description_evenement">Déscription évènement : </label>
             <input id="description_evenement" name="description_evenement" ng-model="evenement_description" class="form-control" placeholder="Entrez une déscitpion de l'évènement">
+          </div>
+          <div class="col s12 col l12">
+            <div class="input-field">
+              <select ng-model="styleEvent">
+                <option value="" disabled selected>Choisir type évènement</option>
+                <option>Libre</option>
+                <option>Collaboratif</option>
+                <option>Cagnotte</option>
+              </select>
+              <label>Selection type évènement</label>
+            </div>
           </div>
         <div class="row col s12 col l12">
           <button class="waves-effect waves-light btn orange right" type="submit">Valider</button>
