@@ -157,39 +157,6 @@ export default class Event {
         });
     }
 
-  create(req, res) {
-    model.create(req.body,
-      (err, event) => {
-        if (err || !event) {
-          res.status(400).send(err.message);
-        } else {
-          res.json({
-            success: true,
-            event: event,
-          });
-        }
-      });
-  }
-
-  update(req, res) {
-    model.update({
-      _id: req.params.id
-    }, req.body, (err, event) => {
-      if (err || !event) {
-        res.status(500).send(err.message);
-      } else {
-        let tk = jsonwebtoken.sign(event, token, {
-          expiresIn: "24h"
-        });
-        res.json({
-          success: true,
-          event: event,
-          token: tk
-        });
-      }
-    });
-  }
-
   sendInvitation(req, res) {
     model.findById(req.params.id, (err, event) => {
       if (err) {
