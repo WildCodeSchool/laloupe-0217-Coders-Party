@@ -2,21 +2,21 @@
     <h1>Choses à apporter par les invités</h1>
     <div class="input-field col s12">
         <form ng-submit="addElement()">
-            <input ng-model="newEl" type="text" class="validate" id="newEl">
+            <input ng-model="newEl" type="text" class="validate" id="newEl" required>
             <label for="newEl">Elément à apporter</label>
-        </form>
+          </form>
     </div>
     <div class="row" ng-repeat="chose in event.elements.toBring track by $index">
         <p class="tobringlist_element"> - {{chose.value}}</p>
         <p>quantité : <span>{{chose.qty}}</span></p>
         <button ng-click="incQty($index)" type="button" name="button">+</button>
         <button ng-click="decQty($index)" type="button" name="button">-</button>
-
     </div>
 
     <div class="col offset-s4 s4 m12">
-        <p class="center-align">
-            <button class="btn btn-large waves-effect waves-light orange validate_profil" ng-click="valider()" name="action">Valider</button>
-        </p>
+        <div class="center-align">
+            <button type="submit" class="btn btn-large waves-effect waves-light orange validate validate_profil" ng-click="valider()">Valider</button>
+            <div ng-show="show" style="color:maroon" role="alert">Vous devez entrer au moins 1 élément à apporter.</div>
+        </div>
     </div>
 </div>
