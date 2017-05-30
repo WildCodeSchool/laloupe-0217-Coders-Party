@@ -4,10 +4,11 @@ angular.module('app')
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
         });
+        var id = LocalService.get('eventId');
+        EventService.getOne(id).then(function(res) {
+            $scope.event = res.data;
         GroupService.getAll().then(function(res) {
             $scope.groups = res.data;
-            $scope.event = {};
-            $scope.event.invitations = [];
             $scope.groupok = function() {
                 for (var i = 0; i < $scope.groups.length; i++) {
                     if ($scope.groups[i].selected === true) {
@@ -15,7 +16,6 @@ angular.module('app')
                     }
                 }
             };
-            var id = LocalService.get('eventId');
             $scope.valider = function() {
                 for (var i = 0; i < $scope.groups.length; i++) {
                     if ($scope.groups[i].selected === true) {
@@ -35,4 +35,5 @@ angular.module('app')
             });
             };
         });
+      });
     });
