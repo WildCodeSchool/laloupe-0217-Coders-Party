@@ -2,13 +2,12 @@ angular.module('app')
     .controller('EventController', function($scope, CurrentUser, LocalService, UserService, EventService, $stateParams) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
-            var id = LocalService.get('thiseventid');
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 console.log($scope.event);
                 $scope.class = "image_event_img";
                 $scope.isAuthor = function() {
-                    if ($scope.event.author._id === CurrentUser.user()._id) {
+                    if ($scope.event.author._id === CurrentUser.user()._id && $scope.event.style === 'Collaboratif') {
                         return true;
                     }
                 };
@@ -81,8 +80,8 @@ angular.module('app')
                             number: 0
                         });
                     }
-                    EventService.update(id, $scope.event).then(function() {
-                        EventService.getOne(id).then(function(res) {
+                    EventService.update($stateParams.id, $scope.event).then(function() {
+                        EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
                             AddMembers();
                         });
@@ -92,14 +91,17 @@ angular.module('app')
                 $scope.doGo = function() {
                     $('.ticket-in').addClass('active');
                     $('.card-event').addClass('active');
+                    if ($scope.event.style === 'Collaboratif') {
+                      $('#bringModal').modal('open');
+                    }
                     for (var i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
                             $scope.event.participations.push($scope.user);
                         }
                     }
 
-                    EventService.update(id, $scope.event).then(function() {
-                        EventService.getOne(id).then(function(res) {
+                    EventService.update($stateParams.id, $scope.event).then(function() {
+                        EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
                             AddMembers();
                         });
@@ -142,8 +144,8 @@ angular.module('app')
                             $scope.event.elements.partBring.splice(i, 1);
                         }
                     }
-                    EventService.update(id, $scope.event).then(function() {
-                        EventService.getOne(id).then(function(res) {
+                    EventService.update($stateParams.id, $scope.event).then(function() {
+                        EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
                             RmMembers();
                         });
