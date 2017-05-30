@@ -80,8 +80,8 @@ angular.module('app')
                             number: 0
                         });
                     }
-                    EventService.update(id, $scope.event).then(function() {
-                        EventService.getOne(id).then(function(res) {
+                    EventService.update($stateParams.id, $scope.event).then(function() {
+                        EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
                             AddMembers();
                         });
