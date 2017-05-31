@@ -88,6 +88,8 @@ var options = {
     extName: '.hbs'
 };
 
+var today = moment().startOf('day');
+
 mailer.use('compile', hbs(options));
 
 eventSchema.methods.comparePassword = function(pwd, cb) {
@@ -102,7 +104,11 @@ let model = mongoose.model('Event', eventSchema);
 export default class Event {
 
     findAll(req, res) {
-        model.find({}, {
+        model.find({
+          startDate: {
+            $gte: today.toDate()
+          }
+        }, {
             password: 0
         }, (err, events) => {
             if (err || !events) {
@@ -183,7 +189,8 @@ export default class Event {
               variable5 : 'Adresse : ' + event.adresse,
               variable6 : 'http://localhost:8000/#!/user/event/id/' + event.id,
               variable7 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
-                        }
+              // variable8 : 'Voila ce que tu peux apporter : \n - ' + event.elements.toBring[0].value + '\n - ' + event.elements.toBring[1].value + ' \n - ' + event.elements.toBring[2].value
+            }
                     }, function(error, response) {
                         if (error) {
                             console.log("Erreur lors de l'envoie du mail!", guest.email);

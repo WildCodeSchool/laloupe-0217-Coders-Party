@@ -8,6 +8,5 @@ angular.module('app')
             if ($scope.user.odyssey === "ùmlmkm") {
                 $scope.user.odyssey = "Aucun compte";
             }
-            console.log($scope.user);
         });
     });
