@@ -29,6 +29,12 @@
   width: auto;
 }
 
+.logo2_navbar {
+  height: 115%;
+  width: auto;
+  margin-right: 2%;
+}
+
 .menu_navbar {
   float: left;
   font-size: 15px;
