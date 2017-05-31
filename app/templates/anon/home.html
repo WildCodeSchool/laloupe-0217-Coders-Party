@@ -1,35 +1,14 @@
-<div class="row">
-    <h1 class="title_home center-align">Bienvenue sur {'{CODERS.PARTY}'}</h1>
-
-
-    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+<div class="center-align">
+  <img src="../../img/logo.png" alt="">
 </div>
-
-<div class="row">
-    <div class="col s12 m12">
-        <p class="center-align">
-            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="anon.login">REJOINDRE UN EVENEMENT</button>
-        </p>
+<div class="carousel carousel-container">
+    <a class="carousel-item carousel-home" ng-repeat="event in events | limitTo:5 track by $index">
+      <img class="" src="../../img/images/{{event.categorie}}.gif">
+    <div class="carousel-title center-align">
+        <h3>{{event.name}}</h3>
     </div>
-</div>
-<div class="row center-align" ng-click="">
-    <div class="offset-xl2 offset-s2 col xl10 s10 event_agenda hoverable">
-      <p class="event_home">Evènement à venir :</p>
-        <!-- <div class="row">
-            <a class="material-icons right location_agenda">location_on</a>
-        </div> -->
-        <img class="logo_agenda" src="/../img/{{lastEvent.categorie}}.png" alt="">
-        <div class="info_agenda">
-            <p>{{lastEvent.startDate | date:' dd/MM/yyyy'}}</p>
-            <p>{{lastEvent.lieu}}</p>
-            <p>{{lastEvent.name | uppercase}}</p>
-        </div>
+    <div class="carousel-date center-align">
+        <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}}</p>
     </div>
-</div>
-<div class="row">
-    <div class="col s12 m12">
-        <p class="center-align">
-            <button class="btn-orange btn-large waves-effect waves-light orange button_newaccount" ui-sref="anon.login">CREER UN EVENEMENT</button>
-        </p>
-    </div>
+    </a>
 </div>

@@ -1,0 +1,46 @@
+.carousel-container {
+    height: 1000px !important;
+}
+
+.carousel-home {
+    width: 1000px !important;
+    height: 1000px !important;
+    position: absolute;
+    left: 2px !important;
+    top: 2px !important;
+}
+
+@media screen and (max-width: 640px) {
+    .carousel-home {
+        width: 350px !important;
+        height: 350px !important;
+        position: absolute;
+        top: 0px !important;
+        left: 324px !important;
+    }
+    .carousel-date {
+        font-size: 25px !important;
+        z-index: 2;
+        position: absolute;
+        bottom: 0px;
+        color: white;
+        width: 100%;
+    }
+}
+
+.carousel-title {
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    color: white;
+    width: 100%;
+}
+
+.carousel-date {
+    font-size: 40px !important;
+    z-index: 2;
+    position: absolute;
+    top: 40px;
+    color: white;
+    width: 100%;
+}
