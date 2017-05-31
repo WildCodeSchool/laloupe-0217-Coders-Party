@@ -60,10 +60,10 @@
             </div>
             <span class="card-event-title">{{event.description}}</span>
             <div class="card-content card-profile-container">
-              <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
-                <img class="card-profile-event" ng-class="{'card-profile-event-include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-              </div>
-              <a class="material-icons right card-button-image" data-target='demoModal' modal>reorder</a>
+                <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:10">
+                    <img class="card-profile-event" ng-class="{'card-profile-event-include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+                </div>
+                <a class="material-icons right card-button-image" data-target='demoModal' modal>reorder</a>
             </div>
             <div class="card-content card-event-description">
                 <p class="card-event-date">{{event.startDate | date:' dd/MM/yyyy'}} à {{event.startTime | date:'HH:mm'}}</p>
@@ -138,6 +138,16 @@
     <a class="material-icons modal-action modal-close modal-close-event right">clear</a>
     <div class="row">
         <div class="col s12">
+            <div class="card  ">
+                <div class="card-content center-align">
+                    <span class="card-title-event white-text center-align">Ce qu'il reste à apporter :</span>
+                    <div>
+                        <ul>
+                            <li ng-repeat="reste in event.elements.toBring">{{reste.value}} : {{reste.bringedQty}}/{{reste.qty}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="card ">
                 <div class="card-content">
                     <span class=" white-text card-title-event center-align">Ce que tes invités apportent :</span>
@@ -152,16 +162,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card  ">
-                <div class="card-content center-align">
-                    <span class="card-title-event white-text center-align">Ce qu'il reste à apporter :</span>
-                    <div>
-                        <ul>
-                            <li ng-repeat="reste in event.elements.toBring">{{reste.value}} : {{reste.bringedQty}}/{{reste.qty}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
