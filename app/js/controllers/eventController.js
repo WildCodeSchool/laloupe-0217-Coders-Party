@@ -4,7 +4,6 @@ angular.module('app')
             $scope.user = res.data;
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
-                console.log($scope.event);
                 $scope.class = "image_event_img";
                 $scope.isAuthor = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id && $scope.event.style === 'Collaboratif') {
