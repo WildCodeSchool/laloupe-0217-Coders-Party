@@ -3,17 +3,16 @@ angular.module('app')
         var id = LocalService.get('eventId');
         EventService.getOne(id).then(function(res) {
             $scope.event = res.data;
-            console.log($scope.event);
-
             $scope.newEl = "";
             $scope.incQty = function(index) {
                 $scope.event.elements.toBring[index].qty++;
                 $scope.event.elements.toBring[index].bringedQty++;
-                console.log($scope.event.elements);
             };
-            $scope.decQty = function() {
+            $scope.decQty = function(index) {
+              if ($scope.event.elements.toBring[index].qty !== 0) {
                 $scope.event.elements.toBring[index].qty--;
                 $scope.event.elements.toBring[index].bringedQty--;
+              }
             };
             $scope.addElement = function() {
               $scope.show = false;
