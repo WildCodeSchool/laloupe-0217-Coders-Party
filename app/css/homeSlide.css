@@ -1,13 +1,13 @@
 .carousel-container {
-    height: 1000px !important;
+    height: 600px !important;
 }
 
 .carousel-home {
-    width: 1000px !important;
-    height: 1000px !important;
+    width: 600px !important;
+    height: 600px !important;
     position: absolute;
     left: 2px !important;
-    top: 2px !important;
+    top: -15px !important;
 }
 
 @media screen and (max-width: 640px) {
