@@ -1,326 +1,330 @@
-/*CAROUF*/
-
-.carouf{
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.5;
-  max-width: 100%;
-  height: auto;
-
-}
-
-.mamacarouf{
-  height: 600px !important;
-}
-
-.logo_coders{
-  width: 40vw !important;
-  position: absolute;
-  margin-top: 70px;
-  margin-left: -300px;
-}
-
 /*NAVBAR*/
 
 .logo_navbar {
-  margin-left: -100%;
-  height: 72%;
-  width: auto;
+    margin-left: -100%;
+    height: 72%;
+    width: auto;
 }
 
 .logo2_navbar {
-  height: 115%;
-  width: auto;
-  margin-right: 2%;
+    height: 115%;
+    width: auto;
+    margin-right: 2%;
 }
 
 .menu_navbar {
-  float: left;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 25%;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25%;
 }
 
 .navbar {
-  background-color: #e6e6e6;
+    background-color: #e6e6e6;
 }
 
 .navbar a {
-  color: grey;
+    color: grey;
 }
 
 .background_sidenav img {
-  width: 25%;
-  height: auto;
+    width: 25%;
+    height: auto;
 }
 
 .side-nav {
-  background-color: #e6e6e6;
-  width: 70%;
+    background-color: #e6e6e6;
+    width: 70%;
 }
 
 .side-nav li>a {
-  font-size: 30px;
-  color: grey;
+    font-size: 30px;
+    color: grey;
 }
 
 .divider_sidebar {
-  height: 3px;
-  overflow: hidden;
-  background-color: #e0e0e0;
+    height: 3px;
+    overflow: hidden;
+    background-color: #e0e0e0;
 }
+
 
 /*REGISTER*/
 
 .register_container {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 .logo_register {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
 
 .group_register {
-  float: left;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+    float: left;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
 
 .groupbis_register {
-  float: right;
-  width: 150px;
-  font-size: 9px;
-  margin-bottom: 2em;
+    float: right;
+    width: 150px;
+    font-size: 9px;
+    margin-bottom: 2em;
 }
 
 
 /*LOGIN*/
 
 .logo_login {
-  height: 50%;
-  width: 50%;
+    height: 50%;
+    width: 50%;
 }
 
 .login_container {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 .button_newaccount {
-  width: 100%;
+    width: 100%;
 }
 
 
 /*FOOTER*/
 
 .built_with {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .modalDesc {
-  width: 232px;
-  height: 300px;
-  border: 1px solid grey;
+    width: 232px;
+    height: 300px;
+    border: 1px solid grey;
 }
 
 .modalPics {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 
 /*PROFILPICTURE*/
 
 .image_profil {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 100%;
-  height: 30%;
-  width: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 100%;
+    width: 277px !important;
 }
 
 
 /*PROFIL PAGE*/
 
 .description_profil {
-  background: white;
-  text-align: center;
-  height: 60px;
-  font-size: xx-large;
+    background: white;
+    text-align: center;
+    height: 60px;
+    font-size: xx-large;
 }
 
 .github_logo {
-  width: 25px;
-  margin-left: 3px;
+    width: 25px;
+    margin-left: 3px;
 }
 
 .icon_profil {
-  margin-top: 2%;
+    margin-top: 2%;
 }
 
 .validate_profil {
-  margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 body {
-  background-color: #e6e6e6;
-  background-size: cover;
-  color: grey;
-  height: auto;
-  position: relative;
+    background-color: #e6e6e6;
+    background-size: cover;
+    color: grey;
+    height: auto;
+    position: relative;
 }
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 #wrap {
-  min-height: 100%;
-  position: relative;
+    min-height: 100%;
+    position: relative;
 }
 
 #main {
-  position relative;
-  padding-bottom: 100px;
+    position relative;
+    padding-bottom: 100px;
 }
 
 #footer {
-  /*height: 100px;*/
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+    /*height: 100px;*/
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 
 /*USER HOMEPAGE*/
 
 .title_home {
-  font-size: 30px;
-  font-weight: 600;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .divider_title {
-  height: 2px;
-  overflow: hidden;
-  background-color: grey;
-  width: 25%;
+    height: 2px;
+    overflow: hidden;
+    background-color: grey;
+    width: 25%;
 }
 
 .logo_event {
-  width: 55%;
-  padding-left: 5%;
+    width: 55%;
+    padding-left: 5%;
 }
 
 .event_home {
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  font-size: 1.75em;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    font-size: 1.75em;
 }
 
 .event_home p {
-  font-size: 1.75em;
+    font-size: 1.75em;
 }
 
 .info_event {
-  font-size: 1.2em;
-  line-height: 0.75em;
-  float: right;
-  text-align: right;
-  width: 45%;
-  padding-right: 10%;
-  margin-top: 0%;
-  margin-bottom: 5%;
+    font-size: 1.2em;
+    line-height: 0.75em;
+    float: right;
+    text-align: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
 }
 
 
 /*INVITATIONS*/
 
+.collection-invitations{
+padding-bottom: 20px;
+}
 label.invitations_liste {
-  height: 3rem;
-  margin-left: 5%;
-  display: inline-block;
-  font-size: 2rem;
+    height: 3rem;
+    margin-left: 5%;
+    display: inline-block;
+    font-size: 2rem;
 }
 
-label.invitations_nogroup {
-  margin-top: 15px;
-  height: 3rem;
-  margin-left: 6.5%;
-  display: inline-block;
-  font-size: 2rem;
+label.img_nogroup {
+    margin-top: 15px;
+    height: 3rem;
+    margin-left: 6.5%;
+    display: inline-block;
+    font-size: 2rem;
+}
+.invitations_image{
+width: 42px;
+height: 42px;
+border-radius: 100%;
+vertical-align: middle;
+}
+.invitations_case{
+padding-left: 50px;
 }
 
 .list_image {
-  border-radius: 100%;
-  height: 100%;
-  margin-bottom: -21px;
+    border-radius: 100%;
+    height: 100%;
+    margin-bottom: -21px;
 }
 
 .madeBy {
-  /*text-align: left;*/
-  float: left;
+    /*text-align: left;*/
+    float: left;
 }
 
 
 /*TOBRINGLIST*/
 
 .tobringlist_element {
-  margin-left: 2em;
-  font-size: 25px;
-  line-height: 25px;
+    margin-left: 2em;
+    font-size: 23px;
+    line-height: 23px;
+}
+
+.tobringlist_container {
+    height: 430px;
+}
+
+.tobringlist_buttons {
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
 /*HAPPYEVENT*/
 
+.happy-container {
+    padding-top: 100px;
+}
+
 .happy_event {
-  /*border-radius: 70%;
+    /*border-radius: 70%;
   border: solid 1px;*/
-  width: 20%;
-  margin: 2em auto;
+    width: 20%;
+    margin: 2em auto;
 }
 
 .happy_text {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 
 /*AGENDA*/
 
 .event_agenda {
-  /*cursor: pointer;*/
-  border: solid 1px grey;
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  box-shadow: 2px 5px lightgrey;
+    /*cursor: pointer;*/
+    border: solid 1px grey;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    box-shadow: 2px 5px lightgrey;
 }
 
 .logo_agenda {
-  width: 20%;
-  margin-top: 0%;
-  padding-left: 5%;
+    width: 20%;
+    margin-top: 0%;
+    padding-left: 5%;
 }
 
 .info_agenda {
-  float: right;
-  width: 45%;
-  padding-right: 10%;
-  margin-top: 0%;
-  margin-bottom: 5%;
+    float: right;
+    width: 45%;
+    padding-right: 10%;
+    margin-top: 0%;
+    margin-bottom: 5%;
 }
 
 .info_agenda p {
-  font-size: 2em;
-  line-height: 1.5em;
+    font-size: 2em;
+    line-height: 1.5em;
 }
 
 .location_agenda {
-  font-size: 40px;
-  padding: 1.5em 1.5em 0 0;
+    font-size: 40px;
+    padding: 1.5em 1.5em 0 0;
 }
 
 
@@ -328,144 +332,145 @@ label.invitations_nogroup {
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
 .teamPics {
-  height: 42px;
-  width: 42px;
-  /*border-radius: 100%;*/
+    height: 42px;
+    width: 42px;
+    /*border-radius: 100%;*/
 }
 
 .teamTitle {
-  text-align: center;
-  text-decoration: underline;
+    text-align: center;
+    text-decoration: underline;
 }
 
 
 /* PLACEHOLDER DATE AND TIME */
 
 .dateclass {
-  width: 100%;
+    width: 100%;
 }
 
 .dateclass.placeholderclass::before {
-  width: 100%;
-  content: attr(placeholder);
+    width: 100%;
+    content: attr(placeholder);
 }
 
 .dateclass.placeholderclass:hover::before {
-  width: 0%;
-  content: "";
+    width: 0%;
+    content: "";
 }
 
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 360px) {
-  .info_agenda p {
-    font-size: 1em !important;
-  }
-  .btn_login {
-    margin-left: -25% !important;
-  }
+    .info_agenda p {
+        font-size: 1em !important;
+    }
+    .btn_login {
+        margin-left: -25% !important;
+    }
 }
 
 
 /* EVENT */
 
 .image_event {
-  height: 70px;
+    height: 70px;
 }
 
 .image_event img {
-  margin-top: 9px;
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
 }
+
 .image_event_img {
-  margin-top: 9px;
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  filter: grayscale(100%);
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    filter: grayscale(100%);
 }
 
 .image_event_img_include {
-  margin-top: 9px;
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  filter: grayscale(0%);
+    margin-top: 9px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    filter: grayscale(0%);
 }
 
 .logo_agenda_event {
-  width: 45%;
-  margin-top: 5%;
-  padding-left: 5%;
+    width: 45%;
+    margin-top: 5%;
+    padding-left: 5%;
 }
 
 .event_agenda_page_event {
-  border: solid 1px grey;
-  background-color: white;
-  float: left;
-  max-width: 900px;
-  box-shadow: 2px 5px lightgrey;
+    border: solid 1px grey;
+    background-color: white;
+    float: left;
+    max-width: 900px;
+    box-shadow: 2px 5px lightgrey;
 }
 
 .info_page_event {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .desc_page_event {
-  font-size: 1.1em;
-  text-align: left;
+    font-size: 1.1em;
+    text-align: left;
 }
 
 
 /* MODAL_EVENT */
 
 .modal_event {
-  width: 300px;
-  text-align: left;
+    width: 300px;
+    text-align: left;
 }
 
 .button_event {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-top: 9px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 9px;
 }
 
 .member_div {
-  height: 80px;
+    height: 80px;
 }
 
 .member_name {
-  margin: auto auto auto 10px;
+    margin: auto auto auto 10px;
 }
 
 .buttonBis_event {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 19px 20px 0px 20px;
-  font-size: 5em;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 19px 20px 0px 20px;
+    font-size: 5em;
 }
 
 .buttonBisTextDiv_event {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .buttonBisText_event {
-  margin: 0px 27px 0px 49px;
+    margin: 0px 27px 0px 49px;
 }
 
 .event_newagenda {
-  box-shadow: 2px 5px lightgrey;
+    box-shadow: 2px 5px lightgrey;
 }
 
 .circle {
-  border-radius: 0 !important;
+    border-radius: 0 !important;
 }
 
 .card-title {
-  color: grey !important;
+    color: grey !important;
 }

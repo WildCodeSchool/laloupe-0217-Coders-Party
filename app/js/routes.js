@@ -62,15 +62,6 @@ angular.module('app')
                     access: AccessLevels.user
                 }
             })
-            .state('user.description', {
-                url: '/description',
-                views: {
-                    'content@': {
-                        templateUrl: 'user/description.html',
-                        controller: 'DescriptionController'
-                    }
-                }
-            })
             .state('user.agenda', {
                 url: '/agenda',
                 views: {
@@ -101,9 +92,18 @@ angular.module('app')
             .state('user.createevent', {
               url: '/createevent',
               views: {
-                'content@': {
+                'slide@': {
                   templateUrl: 'user/createevent.html',
                   controller: 'CreateEventController'
+                }
+              }
+            })
+            .state('user.description', {
+              url: '/description',
+              views: {
+                'slide@': {
+                  templateUrl: 'user/description.html',
+                  controller: 'DescriptionController'
                 }
               }
             })
