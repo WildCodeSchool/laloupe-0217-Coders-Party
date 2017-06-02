@@ -3,7 +3,8 @@
 </div>
 <div class="carousel carousel-container">
     <a class="carousel-item carousel-home" ui-sref="anon.login" ng-repeat="event in events | orderBy:'-startDate' | limitTo:5 track by $index">
-      <img class="" src="../../img/images/{{event.categorie}}.gif">
+      <img class="gif" src="../../img/images/{{event.categorie}}.gif">
+      <img class="jpeg" src="../../img/images/{{event.categorie}}.jpg">
     <div class="carousel-title center-align">
         <h3>{{event.name}}</h3>
     </div>
