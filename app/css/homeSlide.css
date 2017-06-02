@@ -1,3 +1,19 @@
+.carousel-item.carousel-home .gif {
+  display: none;
+}
+
+.carousel-item.carousel-home.active .gif {
+  display: block;
+}
+
+.carousel-item.carousel-home .jpeg {
+  display: block;
+}
+
+.carousel-item.carousel-home.active .jpeg {
+  display: none;
+}
+
 .carousel-container {
     height: 600px !important;
 }
@@ -6,7 +22,7 @@
     width: 600px !important;
     height: 600px !important;
     position: absolute;
-    left: 2px !important;
+    left: 0px !important;
     top: -15px !important;
 }
 
