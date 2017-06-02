@@ -1,48 +1,14 @@
-<div class="carousel carousel-slider center mamacarouf" data-indicators="true">
-    <div class="carousel-fixed-item center">
-
-    </div>
-    <div class="carousel-item white-text carouf" style="background-image:url(/../img/background/{{lastEvent1.categorie}}.png);" href="#one!">
-
-      <img class="logo_coders" src="/../img/logocoders.png">
-        <div class="info_agenda">
-            <p>{{lastEvent1.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>{{lastEvent1.lieu}}</p>
-            <p>{{lastEvent1.name | uppercase}}</p>
-        </div>
-    </div>
-
-
-    <div class="carousel-item white-text carouf" style="background-image:url(/../img/background/{{lastEvent2.categorie}}.png);" href="#two!">
-      <img class="logo_coders" src="/../img/logocoders.png">
-        <div class="info_agenda">
-            <p>{{lastEvent2.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>{{lastEvent2.lieu}}</p>
-            <p>{{lastEvent2.name | uppercase}}</p>
-        </div>
-    </div>
-
-    <div class="carousel-item white-text carouf" style="background-image:url(/../img/background/{{lastEvent3.categorie}}.png);" href="#three!">
-      <img class="logo_coders" src="/../img/logocoders.png">
-        <div class="info_agenda">
-            <p>{{lastEvent3.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>{{lastEvent3.lieu}}</p>
-            <p>{{lastEvent3.name | uppercase}}</p>
-        </div>
-    </div>
-    <div class="carousel-item white-text carouf" style="background-image:url(/../img/background/{{lastEvent4.categorie}}.png);" href="#four!">
-      <img class="logo_coders" src="/../img/logocoders.png">
-        <div class="info_agenda">
-            <p>{{lastEvent4.startDate | date:' dd-MM-yyyy'}}</p>
-            <p>{{lastEvent4.lieu}}</p>
-            <p>{{lastEvent4.name | uppercase}}</p>
-        </div>
-    </div>
+<div class="center-align">
+  <img src="../../img/logo.png" alt="">
 </div>
-
-
-<script>
-    $('.carousel.carousel-slider').carousel({
-        fullWidth: true
-    });
-</script>
+<div class="carousel carousel-container">
+    <a class="carousel-item carousel-home" ng-click="moveToEvent(event._id)" ng-repeat="event in events | orderBy:'-startDate' | limitTo:5 track by $index">
+      <img class="" src="../../img/images/{{event.categorie}}.gif">
+    <div class="carousel-title center-align">
+        <h3>{{event.name}}</h3>
+    </div>
+    <div class="carousel-date center-align">
+        <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}}</p>
+    </div>
+    </a>
+</div>
