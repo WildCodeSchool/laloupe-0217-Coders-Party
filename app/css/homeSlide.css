@@ -1,62 +1,90 @@
 .carousel-item.carousel-home .gif {
-  display: none;
+    display: none;
 }
 
 .carousel-item.carousel-home.active .gif {
-  display: block;
+    display: block;
 }
 
 .carousel-item.carousel-home .jpeg {
-  display: block;
+    display: block;
 }
 
 .carousel-item.carousel-home.active .jpeg {
-  display: none;
+    display: none;
 }
 
 .carousel-container {
-    height: 600px !important;
+    height: 450px !important;
 }
 
 .carousel-home {
     width: 600px !important;
-    height: 600px !important;
+    height: 450px !important;
     position: absolute;
     left: 0px !important;
-    top: -15px !important;
+    top: 0px !important;
 }
 
 @media screen and (max-width: 640px) {
+  .carousel-container {
+      height: 300px !important;
+  }
     .carousel-home {
         width: 350px !important;
-        height: 350px !important;
+        height: 300px !important;
         position: absolute;
         top: 0px !important;
-        left: 324px !important;
+        left: 0px !important;
     }
-    .carousel-date {
-        font-size: 25px !important;
-        z-index: 2;
-        position: absolute;
-        bottom: 0px;
-        color: white;
+    .carousel-title p {
+        font-size: 12px;
+        color: black;
         width: 100%;
     }
+
+    .carousel-title h5 {
+      font-size: 20px !important;
+        color: black;
+        width: 100%;
+    }
+    .button_carousel {
+        z-index: 2;
+        position: absolute;
+        bottom: 20%;
+        right: 28px;
+    }
+}
+
+.carousel-arrows {
+    font-size: 96px !important;
+    cursor: pointer;
 }
 
 .carousel-title {
+    background-color: #ffffff;
+    opacity: 0.5;
     z-index: 2;
-    position: absolute;
     top: 0px;
-    color: white;
+    position: absolute;
     width: 100%;
 }
 
-.carousel-date {
-    font-size: 40px !important;
+.carousel-title p {
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    width: 100%;
+}
+
+.carousel-title h5 {
+    color: black;
+    width: 100%;
+}
+
+.button_carousel {
     z-index: 2;
     position: absolute;
-    top: 40px;
-    color: white;
-    width: 100%;
+    bottom: 5%;
+    right: 28px;
 }
