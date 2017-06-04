@@ -1,5 +1,9 @@
 angular.module('app')
-    .controller('MainController', function($scope, EventService, $location) {
+    .controller('MainController', function($scope, CurrentUser, UserService, EventService, $location, GroupService) {
+      UserService.getOne(CurrentUser.user()._id).then(function(res) {
+          $scope.user = res.data;
+          console.log($scope.user);
+      });
         EventService.getAll().then(function(res) {
             $scope.events = res.data;
             $(document).ready(function() {
@@ -20,5 +24,9 @@ angular.module('app')
             $scope.moveToEvent = function(value) {
                 $location.path('/user/event/id/' + value);
             };
+            GroupService.getAll().then(function(res) {
+                $scope.groups = res.data;
+                console.log($scope.groups);
+        });
         });
     });

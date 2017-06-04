@@ -1,19 +1,27 @@
-<div class="row">
-    <div class="col s12 xl12 center-align">
-        <img src="../../img/logo.png" alt="">
-    </div>
-</div>
-<div class="carousel carousel-container">
-    <div class="carousel-item carousel-home" ng-model="item" ng-repeat="event in events | orderBy:'-startDate' | limitTo:5 track by $index">
-        <img class="gif" src="../../img/images/{{event.categorie}}.gif">
-        <img class="jpeg" src="../../img/images/{{event.categorie}}.jpg">
-        <div class="carousel-title center-align">
-            <h5>{{event.name}}</h5>
-            <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}}</p>
+
+<div class="row home-container">
+    <div class="col s12 ">
+        <div class="carousel carousel-container">
+            <div class="carousel-item carousel-home" ng-model="item" ng-repeat="event in events | orderBy:'-startDate' | limitTo:5 track by $index">
+                <img class="gif" src="../../img/images/{{event.categorie}}.gif">
+                <img class="jpeg" src="../../img/images/{{event.categorie}}.jpg">
+                <div class="carousel-title center-align">
+                    <h5>{{event.name | uppercase}}</h5>
+                    <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}} par {{event.author.name}} de {{event.author.groupe | uppercase}}</p>
+                </div>
+                <a class="btn-floating btn-large waves-effect waves-light orange button_carousel" ng-click="moveToEvent(event._id)">Go !</a>
+                <a><i class="material-icons carousel-arrow-prev hide-on-med-and-down" ng-click="prev()">keyboard_arrow_left</i></a>
+                <a><i class="material-icons carousel-arrow-next hide-on-med-and-down" ng-click="next()">keyboard_arrow_right</i></a>
+            </div>
         </div>
-        <a class="btn-floating btn-large waves-effect waves-light red button_carousel" ng-click="moveToEvent(event._id)">Go !</a>
+        <div class="row">
+          <div class="col s12 center-align home-text">
+            <h1 class="carousel-presentation">
+              <div>Hello  <span class="teal-text">{{user.name}},</span></div>
+              <div>Bienvenue sur CodersParty !</div>
+            </h1>
+            <p>L'application qui te permet d'organiser tes événements... tout simplement.</p>
+          </div>
+        </div>
     </div>
-</div>
-<div class="row center-align">
-    <span><i class="material-icons carousel-arrows" ng-click="prev()">keyboard_arrow_left</i></span><span><i class="material-icons carousel-arrows" ng-click="next()">keyboard_arrow_right</i></span>
 </div>

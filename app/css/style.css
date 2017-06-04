@@ -27,7 +27,9 @@
     color: grey;
 }
 
-.background_sidenav img {
+.background_sidenav {
+    margin-left: 10px;
+    margin-top: 10px;
     width: 25%;
     height: auto;
 }
@@ -368,7 +370,7 @@ label.img_nogroup {
         font-size: 1em !important;
     }
     .btn_login {
-        margin-left: -25% !important;
+        margin-left: 0% !important;
     }
 }
 

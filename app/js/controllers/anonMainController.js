@@ -1,21 +1,15 @@
 angular.module('app')
-    .controller('AnonMainController', function($scope, EventService) {
-        EventService.getAll().then(function(res) {
-            $scope.events = res.data;
-            $(document).ready(function() {
-                $('.carousel').carousel();
-                autoplay();
-            });
+    .controller('AnonMainController', function($scope, UserService) {
+        UserService.getAll().then(function(res) {
+            var datas = res.data;
+            $scope.users = datas;
+            var length = 9-datas.length;
 
-            function autoplay() {
-                $('.carousel').carousel('next');
-                setTimeout(autoplay, 10000);
+            function users() {
+                for (var i =length; i >0 ; i--) {
+                    $scope.users.push(datas[length-i]);
+                }
             }
-            $scope.next = function() {
-                $('.carousel').carousel('next');
-            };
-            $scope.prev = function() {
-                $('.carousel').carousel('prev');
-            };
+            users();
         });
     });
