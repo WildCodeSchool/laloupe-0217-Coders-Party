@@ -1,9 +1,9 @@
 angular.module('app')
     .controller('MainController', function($scope, CurrentUser, UserService, EventService, $location, GroupService) {
-      UserService.getOne(CurrentUser.user()._id).then(function(res) {
-          $scope.user = res.data;
-          console.log($scope.user);
-      });
+        UserService.getOne(CurrentUser.user()._id).then(function(res) {
+            $scope.user = res.data;
+            console.log($scope.user);
+        });
         EventService.getAll().then(function(res) {
             $scope.events = res.data;
             $(document).ready(function() {
@@ -12,14 +12,20 @@ angular.module('app')
             });
 
             function autoplay() {
-                $('.carousel').carousel('next');
-                setTimeout(autoplay, 15000);
+                $(document).ready(function() {
+                    $('.carousel').carousel('next');
+                    setTimeout(autoplay, 15000);
+                });
             }
             $scope.next = function() {
-                $('.carousel').carousel('next');
+                $(document).ready(function() {
+                    $('.carousel').carousel('next');
+                });
             };
             $scope.prev = function() {
-                $('.carousel').carousel('prev');
+                $(document).ready(function() {
+                    $('.carousel').carousel('prev');
+                });
             };
             $scope.moveToEvent = function(value) {
                 $location.path('/user/event/id/' + value);
@@ -27,6 +33,6 @@ angular.module('app')
             GroupService.getAll().then(function(res) {
                 $scope.groups = res.data;
                 console.log($scope.groups);
-        });
+            });
         });
     });

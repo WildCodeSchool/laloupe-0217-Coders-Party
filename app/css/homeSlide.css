@@ -29,7 +29,7 @@
                     height: 250px;
                 }
                 .carousel-home {
-                    width: 75% !important;
+                    width: 80% !important;
                     height: 100% !important;
                     position: absolute;
                     left: 0px !important;
@@ -37,7 +37,7 @@
                     bottom: 0px !important;
                 }
                 .carousel-home img {
-                    border-radius: 15%;
+                    border-radius: 5%;
                 }
                 .carousel-title {
                     background-color: #e6e6e6;
@@ -54,14 +54,16 @@
                 }
                 .carousel-title h5 {
                     font-weight: bold;
-                    font-size: 15px !important;
+                    font-size: 14px !important;
                     color: black;
                     width: 100%;
                 }
                 .button_carousel {
+                  font-size:20px;
                     z-index: 2;
-                    bottom: 60px;
-                    left: 74%;
+                    bottom: 40px;
+                    left: 65%;
+                    cursor: pointer;
                 }
                 .carousel-presentation {
                     font-size: 20px;
@@ -101,7 +103,7 @@
                     top: 20px !important;
                 }
                 .carousel-home img {
-                    border-radius: 15%;
+                    border-radius: 5%;
                 }
                 .carousel-arrow-prev {
                     font-size: 70px !important;
