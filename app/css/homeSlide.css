@@ -1,7 +1,16 @@
+
+
             @media only screen and (max-width: 640px) {
+              .spinner {
+              margin-top:10px;
+              }
+              .spinner img{
+                width: 100%;
+              border-radius: 5%;
+              }
                 @media only screen and (max-width: 321px) {
                     .carousel-presentation {
-                        margin-top: -6px;
+                        margin-top: -56px;
                         font-size: 20px;
                         line-height: 1;
                         font-weight: bold;
@@ -26,7 +35,7 @@
                     margin-bottom: 0px;
                 }
                 .carousel-container {
-                    height: 250px;
+                    height: 300px;
                 }
                 .carousel-home {
                     width: 80% !important;
@@ -92,6 +101,13 @@
                 .carousel-item.carousel-home.active .jpeg {
                     display: none;
                 }
+                .spinner {
+                margin-top:30px;
+                }
+                .spinner img{
+                  width: 40%;
+                border-radius: 5%;
+                }
                 .carousel-container {
                     height: 470px !important;
                 }
@@ -100,7 +116,7 @@
                     height: 450px !important;
                     position: absolute;
                     left: 0px !important;
-                    top: 20px !important;
+                    top: 10px !important;
                 }
                 .carousel-home img {
                     border-radius: 5%;
