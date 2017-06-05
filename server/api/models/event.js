@@ -66,6 +66,10 @@ const eventSchema = new mongoose.Schema({
     },
     place_url:  {
         type: String
+    },
+    private:  {
+        type: Boolean,
+        default: false
     }
 });
 

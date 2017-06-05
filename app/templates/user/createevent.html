@@ -1,27 +1,27 @@
 <div class="container">
-<div class="row">
-  <h1 class="title_home center-align">CREATION EVENEMENT</h1>
-  <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
-</div>
-  <div class="container">
-    <form name="dateForm" novalidate ng-submit="validateDate()">
-      <div class="row">
-        <div class="input-field col s12 col l12">
-          <i class="material-icons prefix">mode_edit</i>
-          <input id="icon_prefix2" ng-model="name" class="materialize-input" type="text" required>
-          <label for="icon_prefix2">Nom de l'évènement</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s6 col l6">
-          <input type="date" ng-model="startDate" class="dateclass placeholderclass" show-xs show-sm hide-md hide-lg hide-xl placeholder="Date" onClick="$(this).removeClass('placeholderclass')">
-          <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
-        </div>
-        <div class="col s6 col l6">
-          <input type="time" ng-model="startTime" class="dateclass placeholderclass" required placeholder="Entrez une heure" onClick="$(this).removeClass('placeholderclass')">
-        </div>
-      </div>
-      <!-- <div class="row">
+    <div class="row">
+        <h1 class="title_home center-align">CREATION EVENEMENT</h1>
+        <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+    </div>
+    <div class="container">
+        <form name="dateForm" novalidate ng-submit="validateDate()">
+            <div class="row">
+                <div class="input-field col s12 col l12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input id="icon_prefix2" ng-model="name" class="materialize-input" type="text" required>
+                    <label for="icon_prefix2">Nom de l'évènement</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 col l6">
+                    <input type="date" ng-model="startDate" class="dateclass placeholderclass" show-xs show-sm hide-md hide-lg hide-xl placeholder="Date" onClick="$(this).removeClass('placeholderclass')">
+                    <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
+                </div>
+                <div class="col s6 col l6">
+                    <input type="time" ng-model="startTime" class="dateclass placeholderclass" required placeholder="Entrez une heure" onClick="$(this).removeClass('placeholderclass')">
+                </div>
+            </div>
+            <!-- <div class="row">
         <div class="col s6 col l6">
           <input type="date" ng-model="endDate" show-xs show-sm hide-md hide-lg hide-xl>
           <md-datepicker ng-model="endDate" md-placeholder="Date de fin" required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
@@ -30,10 +30,10 @@
           <input type="time" ng-model="endTime" required>
         </div>
       </div> -->
-      <div class="row">
-        <div class="col s12 col l12">
-          <div class="input-field">
-            <select ng-model="typeEvent">
+            <div class="row">
+                <div class="col s12 col l12">
+                    <div class="input-field">
+                        <select ng-model="typeEvent">
               <option value="" disabled selected>Choisir type évènement</option>
               <option>Sportif</option>
               <option>Projection</option>
@@ -44,13 +44,19 @@
               <option>Soirée</option>
               <option>Challenge</option>
             </select>
-            <label>Selection type évènement</label>
-          </div>
-        </div>
-      </div>
-      <div class="row col s12 col l12">
-        <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
-      </div>
-    </form>
-  </div>
+                        <label>Selection type évènement</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 col l12">
+                    <input type="checkbox" ng-model='private' id="test5" />
+                    <label for="test5">Evénement privé</label>
+                </div>
+            </div>
+            <div class="row col s12 col l12">
+                <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
+            </div>
+        </form>
+    </div>
 </div>

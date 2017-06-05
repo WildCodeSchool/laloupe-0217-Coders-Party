@@ -10,7 +10,17 @@ angular.module('app')
             console.log($scope.user);
         });
         EventService.getAll().then(function(res) {
-            $scope.events = res.data;
+            $scope.allEvents = res.data;
+            $scope.events = [];
+            function filter() {
+                for (var i = 0; i < $scope.allEvents.length; i++) {
+                    if ($scope.allEvents[i].private === false) {
+                        $scope.events.push($scope.allEvents[i]);
+                    }
+                }
+            }
+            filter();
+
             $(document).ready(function() {
                 $('.carousel').carousel();
                 autoplay();
