@@ -2,54 +2,8 @@
     <h1 class="title_home center-align">{{event.name | uppercase}}</h1>
     <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
 </div>
-
-<!-- OLD STYLE -->
-
-<!-- <div class="row">
-    <div class="col offset-s1 s10 offset-m3 m6 offset-lg4 lg4 container_ticket">
-        <div class="ticket">
-            <a href="{{event.place_url}}" target="_blank" class="material-icons left location_ticket">location_on</a>
-            <div class="datas">
-                <div class="ribbon">
-                    <div class="label">Par {{event.author.name}}</div>
-                </div>
-                <span class="span_ticket"></span>
-                <strong class="strong_ticket"><img src="/../img/{{event.categorie}}.png" alt=""></strong>
-                <div class="date_ticket flow-text">{{event.startDate | date:' dd-MM-yyyy'}}</div>
-                <div class="lieu_ticket flow-text">
-                    {{event.lieu}}
-                </div>
-                <div class="type_ticket flow-text">
-                    <p>Cet évènement est collaboratif, une participation est demandé aux participants</p>
-
-                </div>
-                <em class="em_ticket flow-text">{{event.description}}</em>
-            </div>
-            <div class="row image_ticket">
-                <div class="col s1" ng-repeat="invitation in event.invitations | limitTo:8">
-                    <img class="image_ticket_img" ng-class="{'image_ticket_img_include': members.includes(invitation.email)}" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                </div>
-                <a class="material-icons right button_ticket_img" data-target='demoModal' modal>reorder</a>
-            </div>
-            <div class="ticket-in">
-                <div class="content_ticket center-align">
-                    <div class="pass">
-                        <h1>Ton ticket<br>pour {{event.name}}</h1>
-                    </div>
-                    <span>PREMIUM</span>
-                    <em>2015</em>
-                </div>
-            </div>
-            <a class="button_ticket toogle" ng-hide="hideGreen()" ng-click="doGo()" data-target='bringModal' modal>J'y vais</a>
-            <a class="button_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
-        </div>
-    </div>
-</div> -->
-
-<!-- NEW STYLE -->
-
 <div class="row">
-    <div class="col s12 offset-m2 m8">
+    <div class="col s12 offset-m2 m8 offset-l3 l6">
         <div class="card card-event">
             <div class="ribbon-wrapper">
                 <div class="ribbon-color">Par <br>{{event.author.name}}</div>
@@ -78,11 +32,13 @@
                 <a class="card_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
             </div>
         </div>
+        <div ng-show="isAuthor()" class="center-align">
+          <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
+        </div>
+        <div ng-show="isParticipant()" class="center-align">
+          <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
+        </div>
     </div>
-</div>
-</div>
-<div ng-show="isAuthor()" class="center-align">
-    <a class="waves-effect waves-light btn grey" data-target='bringedModal' modal>liste des éléments à apporter</a>
 </div>
 
 
@@ -95,10 +51,10 @@
             <div class="card ">
                 <div class="card-content">
                     <span class=" white-text card-title-event center-align">Invités :</span>
-                    <div class="row " ng-repeat="invitation in event.invitations">
-                        <div class="col s12 m12 l12">
-                            <img class="image_event_img" ng-hide="members.includes(invitation.email)" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
-                            <p ng-hide="members.includes(invitation.email)" class="member_name">{{invitation.name}}</p>
+                    <div class="row ">
+                        <div class="col s6 m6 l6" ng-repeat="invitation in event.invitations" ng-if="!members.includes(invitation.email)">
+                            <img class="image_event_img" ng-src="https://avatars.githubusercontent.com/{{invitation.odyssey}}?s=460" alt="">
+                            <p class="member_name">{{invitation.name}}</p>
                         </div>
                     </div>
                 </div>
@@ -106,8 +62,8 @@
             <div class="card  ">
                 <div class="card-content center-align">
                     <span class="card-title-event white-text center-align">Participants :</span>
-                    <div class="row " ng-repeat="participation in event.participations">
-                        <div class="col s12 m12 l12 ">
+                    <div class="row ">
+                        <div class="col s6 m6 l6 " ng-repeat="participation in event.participations">
                             <img class="image_event_img_include" ng-src="https://avatars.githubusercontent.com/{{participation.odyssey}}?s=460" alt="">
                             <p class="member_name">{{participation.name}}</p>
                         </div>
@@ -163,6 +119,23 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</div>
+<div id="iBringModal" class="modal modal-list center-align">
+    <a class="material-icons modal-action modal-close modal-close-event right">clear</a>
+    <div class="row">
+        <div class="col s12">
+            <div class="card  ">
+                <div class="card-content center-align">
+                    <span class="card-title-event white-text center-align">Ce que tu dois apporter :</span>
+                    <div>
+                        <ul>
+                            <li ng-repeat="bring in userBring()">{{bring.value}} : {{bring.number}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -10,7 +10,19 @@ angular.module('app')
                         return true;
                     }
                 };
-
+                $scope.isParticipant = function() {
+                    if ($scope.event.author._id !== CurrentUser.user()._id && $scope.event.style === 'Collaboratif' && $('.card-event').hasClass('active')) {
+                        return true;
+                    }
+                };
+                $scope.userBring = function() {
+                    for (var i = 0; i < $scope.event.elements.partBring.length; i++) {
+                        if ($scope.event.elements.partBring[i].email === $scope.user.email) {
+                            var result = $scope.event.elements.partBring[i].bringThis;
+                            return result;
+                        }
+                    }
+                };
                 // initialize a front array to manage img color :
 
                 $scope.members = [];
@@ -91,7 +103,7 @@ angular.module('app')
                     $('.ticket-in').addClass('active');
                     $('.card-event').addClass('active');
                     if ($scope.event.style === 'Collaboratif') {
-                      $('#bringModal').modal('open');
+                        $('#bringModal').modal('open');
                     }
                     for (var i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {

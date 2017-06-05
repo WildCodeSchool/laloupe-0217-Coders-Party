@@ -61,8 +61,8 @@ const eventSchema = new mongoose.Schema({
         type: String
     },
     style: {
-      type: String,
-      default: ''
+        type: String,
+        default: ''
     },
     place_url:  {
         type: String
@@ -105,18 +105,19 @@ export default class Event {
 
     findAll(req, res) {
         model.find({
-          startDate: {
-            $gte: today.toDate()
-          }
-        }, {
-            password: 0
-        }, (err, events) => {
-            if (err || !events) {
-                res.sendStatus(403);
-            } else {
-                res.json(events);
-            }
-        });
+                startDate: {
+                    $gte: today.toDate()
+                }
+            }, {
+                password: 0
+            }).populate('author', 'name groupe')
+            .exec((err, events) => {
+                if (err || !events) {
+                    res.sendStatus(403);
+                } else {
+                    res.json(events);
+                }
+            });
     }
 
 
@@ -167,30 +168,30 @@ export default class Event {
         });
     }
 
-  sendInvitation(req, res) {
-    model.findById(req.params.id, (err, event) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else if (!event) {
-        res.status(404);
-      } else {
-        event.invitations.forEach((guest) => {
+    sendInvitation(req, res) {
+        model.findById(req.params.id, (err, event) => {
+            if (err) {
+                res.status(500).send(err.message);
+            } else if (!event) {
+                res.status(404);
+            } else {
+                event.invitations.forEach((guest) => {
 
-          mailer.sendMail({
-            from: "codersparty@gmail.com",
-            to: guest.email,
-            subject: "Coders Party",
-            template: 'email.body',
-            context: {
-              variable1 : 'Bonjour ' + guest.name + ' !',
-              variable2 : 'Tu es invité pour l\'évènement ' + event.name,
-              variable3 : 'Description évènement : ' + event.description,
-              variable4 : event.place_url,
-              variable5 : 'Adresse : ' + event.adresse,
-              variable6 : 'http://localhost:8000/#!/user/event/id/' + event.id,
-              variable7 : 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd dd MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
-              // variable8 : 'Voila ce que tu peux apporter : \n - ' + event.elements.toBring[0].value + '\n - ' + event.elements.toBring[1].value + ' \n - ' + event.elements.toBring[2].value
-            }
+                    mailer.sendMail({
+                        from: "codersparty@gmail.com",
+                        to: guest.email,
+                        subject: "Coders Party",
+                        template: 'email.body',
+                        context: {
+                            variable1: 'Bonjour ' + guest.name + ' !',
+                            variable2: 'Tu es invité pour l\'évènement ' + event.name,
+                            variable3: 'Description évènement : ' + event.description,
+                            variable4: event.place_url,
+                            variable5: 'Adresse : ' + event.adresse,
+                            variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
+                            variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd dd MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
+                            // variable8 : 'Voila ce que tu peux apporter : \n - ' + event.elements.toBring[0].value + '\n - ' + event.elements.toBring[1].value + ' \n - ' + event.elements.toBring[2].value
+                        }
                     }, function(error, response) {
                         if (error) {
                             console.log("Erreur lors de l'envoie du mail!", guest.email);

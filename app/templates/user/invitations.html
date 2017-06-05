@@ -1,26 +1,28 @@
 <div class="container">
-  <h1 class="title_home center-align">INVITATIONS</h1>
-<div class="row" ng-repeat="group in groups track by $index" ng-hide="nogroup">
-  <form action="#" ng-model="events" >
-  <div class="input-field col s12">
-    <input  ng-model="group.selected"  type="checkbox" id="{{group._id}}" />
-    <label class=" invitations_liste" for="{{group._id}}">{{group.name}}</label>
-  </div>
-
-  </form>
-</div>
-<div ng-hide="groupok()" class="">
-  <input type="checkbox" ng-model="nogroup" id="nogroup" />
-  <label class=" invitations_nogroup" for="nogroup">Je préfère ajouter mes participants</label>
-</div>
-<div ng-hide="nogroup" class="col offset-s4 s4 m12">
-    <p class="center-align">
-        <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" ng-click="valider()" name="action">Valider</button>
-    </p>
-</div>
-<div ng-show="nogroup" class="col offset-s4 s4 m12">
-    <p class="center-align">
-        <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" ui-sref="user.invitationsuite" name="action">Valider</button>
-    </p>
-</div>
+    <div class="row">
+        <h1 class="title_home center-align">INVITATIONS</h1>
+        <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+    </div>
+    <div class="row">
+        <form action="#" ng-model="events">
+            <div class="input-field col s12">
+                <ul class="collection">
+                    <li class="collection-item" ng-repeat="group in groups track by $index" ng-hide="nogroup">
+                        <div class=" collection-invitations">
+                            <input ng-model="group.selected" type="checkbox" id="{{group._id}}" />
+                            <label for="{{group._id}}">{{group.name | uppercase}}</label>
+                        </div>
+                    </li>
+                </ul>
+        </form>
+        </div>
+    </div>
+    <div ng-hide="groupok()">
+        <a ui-sref="user.invitationsuite">Je préfère ajouter mes participants</a>
+    </div>
+    <div ng-hide="nogroup" class="col offset-s4 s4 m12">
+        <p class="center-align">
+            <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
+        </p>
+    </div>
 </div>

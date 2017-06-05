@@ -1,8 +1,8 @@
 <div class="container register_container">
     <div class="row">
-        <div class="offset-m3 col m6">
-            <div class="row">
-                <img class="col offset-s3 offset-m3 m6 logo_register" src="/../img/logo_orange.png" alt="">
+        <div class="col s12 offset-m3 m6">
+            <div class="row center-align">
+                <img class="col offset-s3 s6 offset-m3 m6 logo_register" src="/../img/logo_orange.png" alt="">
             </div>
             <h2 class="center-align">S'enregistrer</h2>
             <div class="row">
@@ -11,8 +11,8 @@
                         <div class="input-field col s12">
                             <input id="name" name="name" type="text" class="validate" ng-model="user.name" required>
                             <label for="name">Nom d'utilisateur</label>
-                            </div>
                         </div>
+                    </div>
 
                     <div class="row">
                         <div class="input-field col s12">
@@ -50,11 +50,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">Créer un Groupe</button>
-                        <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
+                        <div class="col s12 m12">
+                            <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">Créer un Groupe</button>
+                            <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="col offset-s4 s4 m12">
+                        <div class="col s12 m12">
                             <p class="center-align">
                                 <button class="btn btn-large waves-effect waves-light orange" type="submit" name="action">Register</button>
                             </p>
