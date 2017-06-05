@@ -1,6 +1,6 @@
 angular.module('app')
     .controller('MainController', function($scope, $timeout, CurrentUser, UserService, EventService, $location, GroupService) {
-        $timeout(callAtTimeout, 5000);
+        $timeout(callAtTimeout, 3000);
         $scope.spinner = true;
 
         function callAtTimeout() {
