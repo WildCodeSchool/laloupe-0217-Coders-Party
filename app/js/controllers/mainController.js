@@ -1,5 +1,10 @@
 angular.module('app')
-    .controller('MainController', function($scope, CurrentUser, UserService, EventService, $location, GroupService) {
+    .controller('MainController', function($scope, $timeout, CurrentUser, UserService, EventService, $location, GroupService) {
+        $timeout(callAtTimeout, 5000);
+        $scope.spinner = true;
+
+        function callAtTimeout() {
+            $scope.spinner = false;
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
             console.log($scope.user);
@@ -35,4 +40,5 @@ angular.module('app')
                 console.log($scope.groups);
             });
         });
+      }
     });

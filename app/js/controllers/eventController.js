@@ -5,6 +5,7 @@ angular.module('app')
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
+                console.log($scope.event);
                 $scope.isAuthor = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id && $scope.event.style === 'Collaboratif') {
                         return true;
@@ -50,7 +51,7 @@ angular.module('app')
 
                 function updateQty() {
                     for (var i = 0; i < $scope.event.elements.toBring.length; i++) {
-                        $scope.event.elements.toBring[i].bringedQty = $scope.event.elements.toBring[i].qty - $scope.iBring[i].number;
+                        $scope.event.elements.toBring[i].bringedQty = $scope.event.elements.toBring[i].bringedQty - $scope.iBring[i].number;
                     }
                 }
 
