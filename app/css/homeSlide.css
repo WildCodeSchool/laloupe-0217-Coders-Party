@@ -1,14 +1,14 @@
             @media only screen and (max-width: 640px) {
                 @media only screen and (max-width: 321px) {
-                  .carousel-presentation {
-                      margin-top: -6px;
-                      font-size: 20px;
-                      line-height: 1;
-                      font-weight: bold;
-                      letter-spacing: 0;
-                      -webkit-font-smoothing: inherit;
-                      text-rendering: optimizeLegibility;
-                  }
+                    .carousel-presentation {
+                        margin-top: -6px;
+                        font-size: 20px;
+                        line-height: 1;
+                        font-weight: bold;
+                        letter-spacing: 0;
+                        -webkit-font-smoothing: inherit;
+                        text-rendering: optimizeLegibility;
+                    }
                 }
                 .carousel-item.carousel-home .gif {
                     display: none;
@@ -59,10 +59,10 @@
                     width: 100%;
                 }
                 .button_carousel {
-                  font-size:20px;
+                    font-size: 20px;
                     z-index: 2;
                     bottom: 40px;
-                    left: 65%;
+                    left: 55%;
                     cursor: pointer;
                 }
                 .carousel-presentation {

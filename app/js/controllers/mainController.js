@@ -14,7 +14,7 @@ angular.module('app')
             function autoplay() {
                 $(document).ready(function() {
                     $('.carousel').carousel('next');
-                    setTimeout(autoplay, 15000);
+                    setTimeout(autoplay, 60000);
                 });
             }
             $scope.next = function() {

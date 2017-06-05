@@ -32,11 +32,13 @@
                 <a class="card_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
             </div>
         </div>
+        <div ng-show="isAuthor()" class="center-align">
+          <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
+        </div>
+        <div ng-show="isParticipant()" class="center-align">
+          <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
+        </div>
     </div>
-</div>
-</div>
-<div ng-show="isAuthor()" class="center-align">
-    <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>liste des éléments à apporter</a>
 </div>
 
 
@@ -117,6 +119,23 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</div>
+<div id="iBringModal" class="modal modal-list center-align">
+    <a class="material-icons modal-action modal-close modal-close-event right">clear</a>
+    <div class="row">
+        <div class="col s12">
+            <div class="card  ">
+                <div class="card-content center-align">
+                    <span class="card-title-event white-text center-align">Ce que tu dois apporter :</span>
+                    <div>
+                        <ul>
+                            <li ng-repeat="bring in userBring()">{{bring.value}} : {{bring.number}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

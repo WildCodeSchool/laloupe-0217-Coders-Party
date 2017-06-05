@@ -9,7 +9,7 @@
                     <h5>{{event.name | uppercase}}</h5>
                     <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}} par {{event.author.name}} de {{event.author.groupe | uppercase}}</p>
                 </div>
-                <button class="button_carousel waves-effect waves-light btn" ng-click="moveToEvent(event._id)">Go !</button>
+                <button class="button_carousel waves-effect waves-light btn" ng-mobile-click="moveToEvent(event._id)">Go !</button>
                 <a><i class="material-icons carousel-arrow-prev hide-on-med-and-down" ng-click="prev()">keyboard_arrow_left</i></a>
                 <a><i class="material-icons carousel-arrow-next hide-on-med-and-down" ng-click="next()">keyboard_arrow_right</i></a>
             </div>
