@@ -4,25 +4,21 @@
         <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
     </div>
     <div class="row">
-        <form action="#" ng-model="events">
-            <div class="input-field col s12">
+        <div class="input-field col s12">
+            <form action="#" ng-model="events">
                 <ul class="collection">
-                    <li class="collection-item" ng-repeat="group in groups track by $index" ng-hide="nogroup">
+                    <li class="col s12 l6 collection-item" ng-repeat="group in groups track by $index" ng-hide="nogroup">
                         <div class=" collection-invitations">
                             <input ng-model="group.selected" type="checkbox" id="{{group._id}}" />
                             <label for="{{group._id}}">{{group.name | uppercase}}</label>
                         </div>
                     </li>
                 </ul>
-        </form>
+            </form>
+        <div ng-hide="groupok()">
+            <a ui-sref="user.invitationsuite">Je préfère ajouter mes participants</a>
         </div>
-    </div>
-    <div ng-hide="groupok()">
-        <a ui-sref="user.invitationsuite">Je préfère ajouter mes participants</a>
-    </div>
-    <div ng-hide="nogroup" class="col offset-s4 s4 m12">
-        <p class="center-align">
-            <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
-        </p>
+        <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
+      </div>
     </div>
 </div>

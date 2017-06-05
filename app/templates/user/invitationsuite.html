@@ -4,21 +4,20 @@
         <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
     </div>
     <div class="row">
-        <form>
-            <ul class="collection">
-                <li class="collection-item" ng-repeat="user in users track by $index">
-                    <img class="invitations_image" src="https://avatars.githubusercontent.com/{{user.odyssey}}?s=460" alt="">
-                    <span class="invitations_case">
+        <div class="col s12">
+
+            <form>
+                <ul class="collection">
+                    <li class="col s12 l6 collection-item" ng-repeat="user in users track by $index">
+                        <img class="invitations_image" src="https://avatars.githubusercontent.com/{{user.odyssey}}?s=460" alt="">
+                        <span class="invitations_case">
                         <input ng-model="user.selected" type="checkbox" id="{{user._id}}" />
                         <label for="{{user._id}}"> {{user.name}} </label>
                         <p class="right">{{user.groupe | uppercase}}</p>
                     </span>
-                </li>
-            </ul>
-        </form>
-    </div>
-    <div class="row">
-        <div class="col offset-s4 s4 m12">
+                    </li>
+                </ul>
+            </form>
             <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
         </div>
     </div>
