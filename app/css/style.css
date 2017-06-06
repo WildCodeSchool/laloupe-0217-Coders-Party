@@ -7,9 +7,10 @@
 }
 
 .logo2_navbar {
-    height: 115%;
+    height: 132%;
     width: auto;
     margin-right: 2%;
+    margin-top: -5px;
 }
 
 .menu_navbar {
