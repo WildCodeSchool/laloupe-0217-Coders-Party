@@ -39,6 +39,20 @@
           <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
         </div>
     </div>
+    <div class="col s12 offset-m2 m8 offset-l3 l6">
+      <div class="card-content white card-event-type">
+        <textarea name="name" ng-model="commentBody" rows="8" cols="80"></textarea>
+        <a class="btn btn-success" ng-click="addComment()">Post</a>
+        <a class="btn btn-success pull-right" ng-click="getComments()">getComments</a>
+      </div>
+    </div>
+    <div class="col s12 offset-m2 m8 offset-l3 l6">
+      <div class="card-content white card-event-type" ng-repeat="comment in comments track by $index">
+        <p>{{comment.title}} , commentaire par : {{event.author.name}}<p>
+        <p>{{comment.body}}<p>
+        <p>le {{comment.date | date:' dd/MM/yyyy, HH:mm'}}<p>
+      </div>
+    </div>
 </div>
 
 

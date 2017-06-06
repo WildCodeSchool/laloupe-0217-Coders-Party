@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('EventController', function($scope, CurrentUser, LocalService, UserService, EventService, $stateParams) {
+    .controller('EventController', function($scope, CurrentUser, LocalService, UserService, EventService, $stateParams, CommentService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
             EventService.getOne($stateParams.id).then(function(res) {
@@ -208,6 +208,24 @@ angular.module('app')
                     if (isParticipating() === true) {
                         return true;
                     }
+                };
+                $scope.comments = [];
+                $scope.getComments = function(eventId) {
+                  CommentService.getAllByEventId($scope.event._id, eventId).then(function(res) {
+                    $scope.comments = res.data;
+                  }, function(err) {
+                  });
+                };
+                $scope.addComment = function() {
+                  var comment = {
+                    eventId: $scope.event._id,
+                    author: $scope.user._id,
+                    title: $scope.event.name,
+                    body: $scope.commentBody
+                  };
+                  CommentService.addComment(comment).then(function(res) {
+                  });
+                  // location.reload();
                 };
                 $(document).ready(function() {
                     $('.modal').modal({
