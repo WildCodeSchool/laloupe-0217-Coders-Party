@@ -7,9 +7,10 @@
 }
 
 .logo2_navbar {
-    height: 115%;
+    height: 132%;
     width: auto;
     margin-right: 2%;
+    margin-top: -5px;
 }
 
 .menu_navbar {
@@ -177,8 +178,17 @@ html {
     .title_home {
         font-size: 15px;
         font-weight: 600;
-        margin: 10px auto 10px auto;
+        margin: 20px auto 10px auto;
     }
+    .bringItem{
+      font-size:11px;
+    }
+    .tobringlist_buttons {
+      font-size: 20px !important;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
 }
 
 @media only screen and (min-width: 641px) {
@@ -186,6 +196,13 @@ html {
         font-size: 30px;
         font-weight: 600;
     }
+    .tobringlist_buttons {
+        padding-left: 12px;
+        padding-right: 12px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
 }
 
 .divider_title {
@@ -252,7 +269,7 @@ label.img_nogroup {
 }
 
 .invitations_case {
-    padding-left: 50px;
+    padding-left: 12px;
 }
 
 .list_image {
@@ -273,17 +290,6 @@ label.img_nogroup {
     margin-left: 2em;
     font-size: 23px;
     line-height: 23px;
-}
-
-.tobringlist_container {
-    height: 430px;
-}
-
-.tobringlist_buttons {
-    padding-left: 12px;
-    padding-right: 12px;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 

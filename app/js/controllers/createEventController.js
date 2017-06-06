@@ -3,6 +3,7 @@ angular.module('app')
     $(document).ready(function() {
       $('select').material_select();
     });
+    $scope.private =false;
     $scope.myDate = new Date();
     $scope.minDate = new Date(
       $scope.myDate.getFullYear(),
@@ -25,7 +26,8 @@ angular.module('app')
           adresse: '',
           lieu: '',
           description: '',
-          place_url: ''
+          place_url: '',
+          private: $scope.private
         };
         EventService.create(event).then(function(res) {
           LocalService.set('eventId', res.data.event._id);

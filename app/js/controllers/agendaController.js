@@ -4,9 +4,19 @@ angular.module('app')
             $scope.user = res.data;
         });
         EventService.getAll().then(function(res) {
-            $scope.events = res.data;
-            $scope.moveToEvent = function(value) {
-                $location.path('/user/event/id/' + value);
-            };
+            $scope.allEvents = res.data;
+            $scope.events = [];
+
+            function filter() {
+                for (var i = 0; i < $scope.allEvents.length; i++) {
+                    if ($scope.allEvents[i].private === false) {
+                        $scope.events.push($scope.allEvents[i]);
+                    }
+                }
+            }
+            filter();
+                $scope.moveToEvent = function(value) {
+                    $location.path('/user/event/id/' + value);
+                };
         });
     });
