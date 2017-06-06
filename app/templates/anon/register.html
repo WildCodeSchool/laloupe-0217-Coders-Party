@@ -1,12 +1,12 @@
-<div class="container register_container">
+<div class="container logreg_container">
   <div class="row">
       <div class="col s12">
           <div class="row center-align">
               <img class="logo_login" src="/../img/logo_orange.png" alt="">
           </div>
-            <h2 class="center-align">S'enregistrer</h2>
+            <h2 class="title_logreg center-align">S'enregistrer</h2>
             <div class="row">
-                <form class="col s12 form" name="loginForm" novalidate ng-submit="register()">
+                <form class="col s12 offset-m4 m4 form" name="loginForm" novalidate ng-submit="register()">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="name" name="name" type="text" class="validate" ng-model="user.name" required>
@@ -14,26 +14,26 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row logreg">
                         <div class="input-field col s12">
                             <input id="email" name="email" type="email" class="validate" ng-model="user.email" required>
                             <label for="email">Email</label>
                             <div ng-show="show(user.email)" style="color:maroon" role="alert">Cet email existe déjà</div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row logreg">
                         <div class="input-field col s12">
                             <input id="pass" type="password" class="validate" ng-model="user.password" required>
                             <label for="pass">Mot de passe</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row logreg">
                         <div class="input-field col s12">
                             <input id="odyssey" type="text" class="validate" ng-model="user.odyssey" required>
                             <label for="odyssey">Nom d'utilisateur Github</label>
                         </div>
                     </div>
-                    <div class="row" ng-hide="hideme">
+                    <div class="row logreg" ng-hide="hideme">
                         <div class="input-field col s12">
                             <select ng-model="newGroup">
                                <optgroup label="Choisis ton groupe">
@@ -43,19 +43,19 @@
                             <label>Groupe</label>
                         </div>
                     </div>
-                    <div class="row" ng-show="showme">
+                    <div class="row logreg" ng-show="showme">
                         <div class="input-field col s12">
                             <input id="newgroup" type="text" class="validate" ng-model="newGroup" required>
                             <label for="newgroup">Nouveau groupe</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row logreg">
                         <div class="col s12 m12">
                             <button ng-hide="hideme" type="button" class="btn grey group_register" ng-click="showme=true; hideme=true">Créer un Groupe</button>
                             <button ng-show="showme" type="button" class="btn grey groupbis_register" ng-click="showme=false; hideme=false">Choisir Groupe</button>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row button_logreg">
                         <div class="col s12 m12">
                             <p class="center-align">
                                 <button class="btn btn-large waves-effect waves-light orange" type="submit" name="action">Register</button>

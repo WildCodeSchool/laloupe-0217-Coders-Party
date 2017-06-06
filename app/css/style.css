@@ -54,14 +54,6 @@
 
 /*REGISTER*/
 
-.register_container {
-    margin-top: 5%;
-}
-
-.logo_register {
-    max-width: 200px;
-}
-
 .group_register {
     float: left;
     width: 150px;
@@ -79,12 +71,8 @@
 
 /*LOGIN*/
 
-.logo_login {
-    max-width: 200px;
-}
-
-.login_container {
-    margin-top: 5%;
+.logreg_container {
+    margin-top: 2%;
 }
 
 .button_newaccount {
@@ -175,23 +163,54 @@ html {
 /*USER HOMEPAGE*/
 
 @media only screen and (max-width: 640px) {
+    .logo_login {
+        max-width: 100px;
+    }
+    .logo_register {
+        max-width: 100px;
+    }
+    .title_logreg {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+    .logreg {
+        margin-top: -20px;
+    }
+    .button_logreg {
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
     .title_home {
         font-size: 15px;
         font-weight: 600;
         margin: 20px auto 10px auto;
     }
-    .bringItem{
-      font-size:11px;
+    .bringItem {
+        font-size: 11px;
     }
     .tobringlist_buttons {
-      font-size: 20px !important;
+        font-size: 20px !important;
         cursor: pointer;
         text-decoration: none;
     }
-
 }
 
 @media only screen and (min-width: 641px) {
+    .logreg {
+        margin-top: -20px;
+    }
+    .logo_register {
+        max-width: 200px;
+        margin-top: -20px;
+    }
+    .title_logreg {
+        font-size: 40px;
+        margin-top: -20px;
+    }
+    .logo_login {
+        max-width: 200px;
+        margin-top: -20px;
+    }
     .title_home {
         font-size: 30px;
         font-weight: 600;
@@ -202,7 +221,6 @@ html {
         cursor: pointer;
         text-decoration: none;
     }
-
 }
 
 .divider_title {
