@@ -12,6 +12,7 @@ module.exports = function(lineman) {
             vendor: [
                 "vendor/js/jquery.js",
                 "vendor/js/moment.js",
+                // "vendor/js/angular-sanitize.js",
                 "vendor/js/materialize.js",
                 "vendor/js/angular.js",
                 "vendor/js/**/*.js"
@@ -29,7 +30,7 @@ module.exports = function(lineman) {
         less: {
             compile: {
                 options: {
-                    paths: ["vendor/css/materialize.css", "vendor/css/angular-material.css", "app/css/**/*.less"]
+                    paths: ["vendor/css/materialize.css", "vendor/css/angular-material.css", "vendor/css/ng-emoticons.css", "app/css/**/*.less"]
                 }
             }
         }

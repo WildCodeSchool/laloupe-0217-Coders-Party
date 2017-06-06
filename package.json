@@ -14,6 +14,7 @@
     "lineman": "~0.37.0",
     "lineman-angular": "^0.3.0",
     "lineman-less": "^0.1.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "ng-emoticons": "^2.1.0"
   }
 }
