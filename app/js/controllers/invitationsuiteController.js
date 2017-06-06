@@ -6,26 +6,28 @@ angular.module('app')
         var id = LocalService.get('eventId');
         EventService.getOne(id).then(function(res) {
             $scope.event = res.data;
-        UserService.getAll().then(function(res) {
-            $scope.users = res.data;
-            $scope.event.invitations = [];
+            UserService.getAll().then(function(res) {
+                $scope.users = res.data;
+                $scope.event.invitations = [];
 
-            $scope.valider = function() {
-                for (var i = 0; i < $scope.users.length; i++) {
-                    if ($scope.users[i].selected === true) {
-                        $scope.event.invitations.push($scope.users[i]);
+                $scope.valider = function() {
+                    for (var i = 0; i < $scope.users.length; i++) {
+                        if ($scope.users[i].selected === true) {
+                            $scope.event.invitations.push($scope.users[i]);
+                        }
                     }
-                }
-                EventService.update(id, $scope.event).then(function() {
-                  if ($scope.event.style === 'Collaboratif') {
-                    $state.go('user.tobringlist');
-                }
-               else if ($scope.event.style === 'Libre') {
-                 EventService.sendInvitation(id);
-                $state.go('user.happyEvent');
-              }
+                    $scope.validate=true;
+                    if ($scope.event.invitations.length > 0) {
+                        EventService.update(id, $scope.event).then(function() {
+                            if ($scope.event.style === 'Collaboratif') {
+                                $state.go('user.tobringlist');
+                            } else if ($scope.event.style === 'Libre') {
+                                EventService.sendInvitation(id);
+                                $state.go('user.happyEvent');
+                            }
+                        });
+                    }
+                };
             });
-        };
+        });
     });
-  });
-});

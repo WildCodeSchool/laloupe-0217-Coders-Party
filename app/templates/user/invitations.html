@@ -5,7 +5,7 @@
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <form action="#" ng-model="events">
+            <form name="groupForm" action="#" ng-model="events">
                 <ul class="collection">
                     <li class="col s12 l6 collection-item" ng-repeat="group in groups track by $index" ng-hide="nogroup">
                         <div class=" collection-invitations">
@@ -15,10 +15,11 @@
                     </li>
                 </ul>
             </form>
-        <div ng-hide="groupok()">
-            <a ui-sref="user.invitationsuite">Je préfère ajouter mes participants</a>
+            <div ng-hide="groupok()">
+                <a ui-sref="user.invitationsuite">Je préfère ajouter mes participants</a>
+            </div>
+            <div ng-show='validate' class='messages left' style="color:maroon">Sélectionnez au moins 1 groupe</div>
+            <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
         </div>
-        <button class="btn waves-effect waves-light orange validate right" type="submit" ng-click="valider()" name="action">Valider<i class="material-icons right">send</i></button>
-      </div>
     </div>
 </div>
