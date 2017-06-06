@@ -511,3 +511,11 @@ label.img_nogroup {
 .card-title {
     color: grey !important;
 }
+
+/* COMMENTS */
+
+.image_profil_comment {
+  width: 10%;
+  border-radius: 100%;
+  vertical-align: middle;
+}
