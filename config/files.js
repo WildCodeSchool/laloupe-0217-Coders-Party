@@ -14,6 +14,7 @@ module.exports = function(lineman) {
                 "vendor/js/moment.js",
                 "vendor/js/materialize.js",
                 "vendor/js/angular.js",
+                "vendor/js/angular-messages.js",
                 "vendor/js/**/*.js"
             ],
             app: [
