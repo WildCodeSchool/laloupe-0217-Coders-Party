@@ -7,7 +7,6 @@ angular.module('app')
             $scope.spinner = false;
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
-            console.log($scope.user);
         });
         EventService.getAll().then(function(res) {
             $scope.allEvents = res.data;
@@ -47,7 +46,6 @@ angular.module('app')
             };
             GroupService.getAll().then(function(res) {
                 $scope.groups = res.data;
-                console.log($scope.groups);
             });
         });
       }

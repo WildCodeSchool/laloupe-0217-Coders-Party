@@ -5,7 +5,6 @@ angular.module('app')
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
-                console.log($scope.event);
 
                 var id = ($stateParams.id);
                 $scope.deleteEvent = function() {
@@ -232,24 +231,23 @@ angular.module('app')
                 };
                 $scope.getComments();
                 $scope.addComment = function() {
-                    var comment = {
-                        eventId: $scope.event._id,
-                        author: $scope.user._id,
-                        author_odyssey: $scope.user.odyssey,
-                        title: $scope.event.name,
-                        body: $scope.commentBody
-                    };
-                    console.log($scope.user.odyssey);
-                    $scope.comments.push({
-                        eventId: $scope.event._id,
-                        author: $scope.user._id,
-                        title: $scope.event.name,
-                        body: $scope.commentBody
-                    });
-                    CommentService.addComment(comment).then(function() {
-                        $scope.getComments();
-                    });
-                    $scope.commentBody = '';
+                  var comment = {
+                    eventId: $scope.event._id,
+                    author: $scope.user._id,
+                    author_odyssey: $scope.user.odyssey,
+                    title: $scope.event.name,
+                    body: $scope.commentBody
+                  };
+                  $scope.comments.push({
+                    eventId: $scope.event._id,
+                    author: $scope.user._id,
+                    title: $scope.event.name,
+                    body: $scope.commentBody
+                  });
+                  CommentService.addComment(comment).then(function() {
+                    $scope.getComments();
+                  });
+                  $scope.commentBody = '';
                 };
                 $(document).ready(function() {
                     $('.modal').modal({
