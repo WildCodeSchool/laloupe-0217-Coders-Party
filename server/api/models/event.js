@@ -91,10 +91,29 @@ var options = {
     viewPath: '../server/api/views/email/',
     extName: '.hbs'
 };
+var mailerCancel = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: "codersparty@gmail.com",
+        pass: "c0d3r5p4rty"
+    }
+});
+
+var optionsCancel = {
+    viewEngine: {
+        extname: '.hbs',
+        layoutsDir: '../server/api/views/email/',
+        defaultLayout: 'templateCancel',
+        partialsDir: '../server/api/views/partials/'
+    },
+    viewPath: '../server/api/views/email/',
+    extName: '.hbs'
+};
 
 var today = moment().startOf('day');
 
 mailer.use('compile', hbs(options));
+mailerCancel.use('compile', hbs(optionsCancel));
 
 eventSchema.methods.comparePassword = function(pwd, cb) {
     bcrypt.compare(pwd, this.password, function(err, isMatch) {
@@ -204,6 +223,42 @@ export default class Event {
                             console.log("Mail envoyé avec succès a ", guest.email);
                         }
                         mailer.close();
+                    });
+                });
+                res.json({
+                    success: true
+                });
+            }
+        });
+    }
+
+    sendAnnulation(req, res) {
+        model.findById(req.params.id, (err, event) => {
+            if (err) {
+                res.status(500).send(err.message);
+            } else if (!event) {
+                res.status(404);
+            } else {
+                event.invitations.forEach((guest) => {
+
+                    mailerCancel.sendMail({
+                        from: "codersparty@gmail.com",
+                        to: guest.email,
+                        subject: "Coders Party",
+                        template: 'email.body',
+                        context: {
+                            variable1: 'Bonjour ' + guest.name + ' !',
+                            variable2: 'L\'évènement ' + event.name + 'est annulé',
+                            variable3: 'Nous sommes désolés, et esperons te voir lors d\'un prochain évènement.'
+                        }
+                    }, function(error, response) {
+                        if (error) {
+                            console.log("Erreur lors de l'envoie du mail!", guest.email);
+                            console.log(error);
+                        } else {
+                            console.log("Mail envoyé avec succès a ", guest.email);
+                        }
+                        mailerCancel.close();
                     });
                 });
                 res.json({
