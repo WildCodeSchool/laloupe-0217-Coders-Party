@@ -248,7 +248,7 @@ export default class Event {
                         template: 'email.body',
                         context: {
                             variable1: 'Bonjour ' + guest.name + ' !',
-                            variable2: 'L\'évènement ' + event.name + 'est annulé',
+                            variable2: 'L\'évènement ' + event.name + ' est annulé',
                             variable3: 'Nous sommes désolés, et esperons te voir lors d\'un prochain évènement.'
                         }
                     }, function(error, response) {
