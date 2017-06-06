@@ -31,7 +31,6 @@ angular.module('app')
                     }
                 }).then(function() {
                     $state.go('user.profile');
-                    console.log($scope.groups);
                 });
             };
             $(document).ready(function() {

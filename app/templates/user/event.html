@@ -50,16 +50,13 @@
   <div class="col s12 offset-m2 m8 offset-l3 l6">
     <ul class="collection">
       <li class="collection-item" ng-repeat="comment in comments track by $index">
-        <div class="comment">
-          <p>{{comment.title}}, commentaire par : {{comment.author.name}}<img class="image_profil_comment pull-right" src="https://avatars.githubusercontent.com/{{comment.author_odyssey}}?s=460" alt="image_profil_comment"><p>
-          <p>{{comment.body}}<p>
-          <p>Le {{comment.date | date:' dd/MM/yyyy, \à HH:mm'}}</p>
-        </div>
+        <strong class="title"><img class="image_profil_comment" src="https://avatars.githubusercontent.com/{{comment.author_odyssey}}?s=460" alt="image_profil_comment">{{comment.author.name}}<br></strong>
+        <small>{{comment.date | date:' dd/MM/yyyy, \à HH:mm'}}</small>
+        <p class="body_comment"><q>{{comment.body}}</q></p>
       </li>
     </ul>
   </div>
 </div>
-
 
 <!-- Modals Structures -->
 <div id="demoModal" class="modal modal-event-profile center-align">

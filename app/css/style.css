@@ -515,7 +515,15 @@ label.img_nogroup {
 /* COMMENTS */
 
 .image_profil_comment {
+  margin-right: 1%;
   width: 10%;
-  border-radius: 100%;
-  vertical-align: middle;
+  float: left;
+}
+
+.comment{
+  line-height: 0.5em;
+}
+
+.body_comment{
+  margin-bottom: 0px !important;
 }

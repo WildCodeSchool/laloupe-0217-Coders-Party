@@ -5,7 +5,6 @@ angular.module('app')
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
-                console.log($scope.event);
                 $scope.isAuthor = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id && $scope.event.style === 'Collaboratif') {
                         return true;
@@ -226,7 +225,6 @@ angular.module('app')
                     title: $scope.event.name,
                     body: $scope.commentBody
                   };
-                  console.log($scope.user.odyssey);
                   $scope.comments.push({
                     eventId: $scope.event._id,
                     author: $scope.user._id,
