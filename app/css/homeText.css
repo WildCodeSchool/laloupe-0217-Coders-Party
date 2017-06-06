@@ -25,7 +25,7 @@
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
-      height: 77vmin;
+      height: 700px;
       min-height: 0;
       max-height: 100%;
   }
@@ -38,7 +38,7 @@
 
   @media screen and (max-width: 615px) {
       #master-container {
-          height: 120vmin;
+          height: 365px;
           -webkit-animation: master-container-bg-mobile 15s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
           animation: master-container-bg-mobile 15s cubic-bezier(0.645, 0.045, 0.355, 1) infinite
       }

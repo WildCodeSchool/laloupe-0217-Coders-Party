@@ -1,10 +1,24 @@
 angular.module('app')
-    .controller('EventController', function($scope, CurrentUser, LocalService, UserService, EventService, $stateParams, CommentService) {
+    .controller('EventController', function($scope, CurrentUser, $state, LocalService, UserService, EventService, $stateParams, CommentService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
+
+                var id = ($stateParams.id);
+                $scope.deleteEvent = function() {
+                    EventService.sendAnnulation(id).then(function() {
+                        EventService.delete(id);
+                        $state.go('user.home');
+                    });
+                };
+
+                $scope.author = function() {
+                    if ($scope.event.author._id === CurrentUser.user()._id) {
+                        return true;
+                    }
+                };
                 $scope.isAuthor = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id && $scope.event.style === 'Collaboratif') {
                         return true;
@@ -211,10 +225,9 @@ angular.module('app')
                 };
                 $scope.comments = [];
                 $scope.getComments = function(eventId) {
-                  CommentService.getAllByEventId($scope.event._id, eventId).then(function(res) {
-                    $scope.comments = res.data;
-                  }, function(err) {
-                  });
+                    CommentService.getAllByEventId($scope.event._id, eventId).then(function(res) {
+                        $scope.comments = res.data;
+                    }, function(err) {});
                 };
                 $scope.getComments();
                 $scope.addComment = function() {

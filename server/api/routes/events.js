@@ -20,9 +20,11 @@ module.exports = (app) => {
 
     router.get('/sendall/:id', Auth.hasAuthorization, event.sendInvitation);
 
+    router.get('/sendcancel/:id', Auth.hasAuthorization, event.sendAnnulation);
+
     router.put('/:id', Auth.hasAuthorization, event.update);
 
-    router.delete('/:id', Auth.isAdministrator, event.delete);
+    router.delete('/:id', Auth.hasAuthorization, event.delete);
 
     app.use('/events', router);
 

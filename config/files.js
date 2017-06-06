@@ -15,6 +15,7 @@ module.exports = function(lineman) {
                 // "vendor/js/angular-sanitize.js",
                 "vendor/js/materialize.js",
                 "vendor/js/angular.js",
+                "vendor/js/angular-messages.js",
                 "vendor/js/**/*.js"
             ],
             app: [

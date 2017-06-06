@@ -4,21 +4,22 @@
         <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
     </div>
     <div class="container">
-        <form name="dateForm" novalidate ng-submit="validateDate()">
+        <form name="dateForm" ng-submit="validateDate()">
             <div class="row">
                 <div class="input-field col s12 col l12">
                     <i class="material-icons prefix">mode_edit</i>
                     <input id="icon_prefix2" ng-model="name" class="materialize-input" type="text" required>
-                    <label for="icon_prefix2">Nom de l'évènement</label>
+                    <label for="icon_prefix2" data-error="wrong" data-success="right">Nom de l'évènement</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s6 col l6">
-                    <input type="date" ng-model="startDate" class="dateclass placeholderclass" show-xs show-sm hide-md hide-lg hide-xl placeholder="Date" onClick="$(this).removeClass('placeholderclass')">
+                    <input type="date" ng-model="startDate" class="dateclass placeholderclass" show-xs show-sm hide-md hide-lg hide-xl placeholder="Date" onClick="$(this).removeClass('placeholderclass')" required>
                     <md-datepicker ng-model="startDate" md-placeholder="Date de début" md-open-on-focus required hide-xs hide-sm show-md show-lg show-xl></md-datepicker>
+
                 </div>
                 <div class="col s6 col l6">
-                    <input type="time" ng-model="startTime" class="dateclass placeholderclass" required placeholder="Entrez une heure" onClick="$(this).removeClass('placeholderclass')">
+                    <input type="time" ng-model="startTime" class="dateclass placeholderclass" required placeholder="Entrez une heure" onClick="$(this).removeClass('placeholderclass')" required>
                 </div>
             </div>
             <!-- <div class="row">
@@ -33,8 +34,7 @@
             <div class="row">
                 <div class="col s12 col l12">
                     <div class="input-field">
-                        <select ng-model="typeEvent">
-              <option value="" disabled selected>Choisir type évènement</option>
+                        <select name="type" ng-model="typeEvent" required>
               <option>Sportif</option>
               <option>Projection</option>
               <option>Jeux</option>
@@ -44,7 +44,10 @@
               <option>Soirée</option>
               <option>Challenge</option>
             </select>
-                        <label>Selection type évènement</label>
+                        <label>Selection type événement</label>
+                    </div>
+                    <div ng-show='validate' ng-messages="dateForm.type.$error" style="color:maroon" role="alert">
+                        <div class="left messages" ng-message="required">Sélectionnez une catégorie</div>
                     </div>
                 </div>
             </div>
