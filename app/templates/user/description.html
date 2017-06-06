@@ -16,8 +16,8 @@
                     <input id="fam_address" name="fam_adress" ng-model="evenement_lieu" class="form-control" placeholder="Entrez le nom familier de l'événement" required>
                 </div>
                 <div class="col s12 l12">
-                    <label for="description_evenement">Description évènement : </label>
-                    <input id="description_evenement" name="description_evenement" ng-model="evenement_description" class="form-control" placeholder="Entrez une description de l'évènement" required>
+                    <label for="description_evenement">Description événement : </label>
+                    <input id="description_evenement" name="description_evenement" ng-model="evenement_description" class="form-control" placeholder="Entrez une description de l'événement" required>
                 </div>
                 <div class="col s12 col l12">
                     <div class="input-field">
@@ -26,17 +26,17 @@
                 <option>Collaboratif</option>
                 <option>Cagnotte</option>
               </select>
-                        <label>Selection type évènement</label>
+                        <label>Selection catégorie événement</label>
                     </div>
                     <div ng-show='validate' ng-messages="descriptionForm.type.$error" style="color:maroon" role="alert">
                         <div class="left messages" ng-message="required">Sélectionnez une catégorie</div>
                     </div>
                 </div>
-                </div>
-                <div class="row col s12 col l12">
-                    <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
-                </div>
             </div>
-        </form>
+            <div class="row col s12 col l12">
+                <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
+            </div>
     </div>
+    </form>
+</div>
 </div>
