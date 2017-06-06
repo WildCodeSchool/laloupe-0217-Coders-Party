@@ -19,6 +19,9 @@ angular.module('app')
             },
             sendInvitation: function(id) {
               return $http.get('/events/sendall/' + id);
+            },
+            sendAnnulation: function(id) {
+              return $http.get('/events/sendcancel/' + id);
             }
         };
     });
