@@ -189,7 +189,7 @@ export default class Event {
                             variable4: event.place_url,
                             variable5: 'Adresse : ' + event.adresse,
                             variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
-                            variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd dd MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
+                            variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd d MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
                             // variable8 : 'Voila ce que tu peux apporter : \n - ' + event.elements.toBring[0].value + '\n - ' + event.elements.toBring[1].value + ' \n - ' + event.elements.toBring[2].value
                         }
                     }, function(error, response) {

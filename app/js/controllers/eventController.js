@@ -216,16 +216,26 @@ angular.module('app')
                   }, function(err) {
                   });
                 };
+                $scope.getComments();
                 $scope.addComment = function() {
                   var comment = {
                     eventId: $scope.event._id,
                     author: $scope.user._id,
+                    author_odyssey: $scope.user.odyssey,
                     title: $scope.event.name,
                     body: $scope.commentBody
                   };
-                  CommentService.addComment(comment).then(function(res) {
+                  console.log($scope.user.odyssey);
+                  $scope.comments.push({
+                    eventId: $scope.event._id,
+                    author: $scope.user._id,
+                    title: $scope.event.name,
+                    body: $scope.commentBody
                   });
-                  // location.reload();
+                  CommentService.addComment(comment).then(function() {
+                    $scope.getComments();
+                  });
+                  $scope.commentBody = '';
                 };
                 $(document).ready(function() {
                     $('.modal').modal({

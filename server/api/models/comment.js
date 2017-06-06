@@ -10,12 +10,16 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    author_odyssey: {
+      type: String,
+      default: "ùmlmkm"
+    },
     title: {
         type: String,
     },
     date: {
         type: Date,
-        default: new Date()
+        default: Date.now
     },
     body: {
         type: String
@@ -52,5 +56,5 @@ export default class Comment {
         }
     });
   }
-  
+
 }
