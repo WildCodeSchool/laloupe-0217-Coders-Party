@@ -5,7 +5,7 @@
     </div>
 
     <div class="container">
-        <form name="descriptionForm" ng-submit="validateDescription()">
+        <form name="cagnotteForm" ng-submit="valider()">
             <div class="row">
                 <div class="input-field col s12 l12">
                     <i class="material-icons prefix">euro_symbol</i>
@@ -14,12 +14,12 @@
                 </div>
                 <div class="input-field col s12 l12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input type="text" id="autocomplete-input" class="autocomplete" required>
+                    <input ng-model="tresorier" type="text" id="autocomplete-input" class="autocomplete" required>
                     <label for="autocomplete-input">Trésorier</label>
                 </div>
-                <div class="row col s12 col l12">
-                    <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
-                </div>
+            </div>
+            <div class="row col s12 col l12">
+              <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
             </div>
         </form>
     </div>

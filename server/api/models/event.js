@@ -70,6 +70,14 @@ const eventSchema = new mongoose.Schema({
     private:  {
         type: Boolean,
         default: false
+    },
+    budget: {
+        type: Number,
+        default: 0
+    },
+    tresorier: {
+        type: String,
+        default: ""
     }
 });
 

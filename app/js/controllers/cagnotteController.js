@@ -4,24 +4,29 @@ angular.module('app')
 
         UserService.getAll().then(function(res) {
             $scope.users = res.data;
-            var names = [];
+            var datas = [];
+            var names = {
+                data: {}
+            };
             $scope.users.forEach(function(element) {
-                names.push(element.name);
+                datas.push({
+                    odyssey: element.odyssey,
+                    email: element.email
+                });
             });
-            console.log(names);
+            datas.forEach(function(data) {
+                names.data[data.email] = "https://avatars.githubusercontent.com/" + data.odyssey + "?s=460";
+            });
+            $('input.autocomplete').autocomplete(names);
 
-            $('input.autocomplete').autocomplete({
-                data: {
-                    "Apple": null,
-                    "Microsoft": null,
-                    "Google": 'http://placehold.it/250x250'
-                },
-                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-                onAutocomplete: function(val) {
-                    // Callback function when value is autcompleted.
-                },
-                minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-            });
+            $scope.valider = function() {
+              var event = {
+                budget: $scope.budget,
+                tresorier: $scope.tresorier
+              };
+                EventService.update(id, event).then(function() {
+                    $state.go('user.happyEvent');
+                });
+            };
         });
-
     });
