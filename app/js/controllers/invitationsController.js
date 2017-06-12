@@ -17,8 +17,9 @@ angular.module('app')
                     }
                 };
                 $scope.valider = function() {
-                  $scope.validate=true;
-                    if ($scope.groupok()===true) {
+                    $scope.validate = true;
+                    if ($scope.groupok() === true) {
+                        $scope.validate = false;
                         for (var i = 0; i < $scope.groups.length; i++) {
                             if ($scope.groups[i].selected === true) {
                                 for (var g = 0; g < $scope.groups[i].members.length; g++) {
@@ -32,6 +33,9 @@ angular.module('app')
                             } else if ($scope.event.style === 'Libre') {
                                 EventService.sendInvitation(id);
                                 $state.go('user.happyEvent');
+                            } else if ($scope.event.style === 'Cagnotte') {
+                                EventService.sendInvitation(id);
+                                $state.go('user.cagnotte');
                             }
                         });
                     }
