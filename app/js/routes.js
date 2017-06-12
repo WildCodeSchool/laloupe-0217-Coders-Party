@@ -107,6 +107,15 @@ angular.module('app')
                 }
               }
             })
+            .state('user.cagnotte', {
+              url: '/cagnotte',
+              views: {
+                'slide@': {
+                  templateUrl: 'user/cagnotte.html',
+                  controller: 'CagnotteController'
+                }
+              }
+            })
             .state('user.invitations', {
               url: '/invitations',
               views: {

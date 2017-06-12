@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="title_home center-align">CAGNOTTE</h1>
+    <div class="row">
+        <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+    </div>
+
+    <div class="container">
+        <form name="descriptionForm" ng-submit="validateDescription()">
+            <div class="row">
+                <div class="input-field col s12 l12">
+                    <i class="material-icons prefix">euro_symbol</i>
+                    <input ng-model="budget" id="icon_prefix" type="text" class="validate" required>
+                    <label for="icon_prefix">Budget par personne</label>
+                </div>
+                <div class="input-field col s12 l12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete" required>
+                    <label for="autocomplete-input">Trésorier</label>
+                </div>
+                <div class="row col s12 col l12">
+                    <button class="btn waves-effect waves-light orange validate right" type="submit">Valider<i class="material-icons right">send</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
