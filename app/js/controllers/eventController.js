@@ -69,13 +69,13 @@ angular.module('app')
                 }
 
 
-                function AddMembers() {
+                function addMembers() {
                     for (var i = 0; i < $scope.event.participations.length; i++) {
                         $scope.members.push($scope.event.participations[i].email);
                     }
                 }
 
-                function RmMembers(index) {
+                function rmMembers(index) {
                     $scope.members.splice(index, 1);
                 }
 
@@ -90,7 +90,7 @@ angular.module('app')
                 }
                 toggleTicket();
 
-                AddMembers();
+                addMembers();
                 $scope.validateBring = function() {
                     $scope.event.elements.partBring.push({
                         email: $scope.user.email,
@@ -108,7 +108,7 @@ angular.module('app')
                     EventService.update($stateParams.id, $scope.event).then(function() {
                         EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
-                            AddMembers();
+                            addMembers();
                         });
                     });
                 };
@@ -128,7 +128,7 @@ angular.module('app')
                     EventService.update($stateParams.id, $scope.event).then(function() {
                         EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
-                            AddMembers();
+                            addMembers();
                         });
                     });
                 };
@@ -160,7 +160,7 @@ angular.module('app')
                     removeQty();
                     for (i = 0; i < $scope.event.participations.length; i++) {
                         if ($scope.event.participations[i].email === $scope.user.email) {
-                            RmMembers($scope.members.indexOf($scope.event.participations[i].email));
+                            rmMembers($scope.members.indexOf($scope.event.participations[i].email));
                             $scope.event.participations.splice(i, 1);
                         }
                     }
@@ -172,7 +172,7 @@ angular.module('app')
                     EventService.update($stateParams.id, $scope.event).then(function() {
                         EventService.getOne($stateParams.id).then(function(res) {
                             $scope.event = res.data;
-                            RmMembers();
+                            rmMembers();
                         });
                     });
                 };
@@ -180,7 +180,7 @@ angular.module('app')
                 $scope.neverGo = function() {
                     for (i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
-                            RmMembers($scope.members.indexOf($scope.event.invitations[i].email));
+                            rmMembers($scope.members.indexOf($scope.event.invitations[i].email));
                             $scope.event.invitations.splice(i, 1);
                         }
                     }
@@ -215,8 +215,9 @@ angular.module('app')
                     }
                 };
                 $scope.showGrey = function() {
-                    if (isParticipating() === false && isInvitated() === true)
+                    if (isParticipating() === false && isInvitated() === true) {
                         return true;
+                      }
                 };
                 $scope.showRed = function() {
                     if (isParticipating() === true) {

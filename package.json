@@ -7,7 +7,9 @@
   "scripts": {
     "start": "lineman run",
     "test": "lineman spec-ci",
-    "production": "lineman clean build && node production.js"
+    "production": "lineman clean build && cd server && babel-node index.js",
+    "server": "cd server && babel-node index.js",
+    "createAdmin": "cd server && babel-node ./api/userCreation.js"
   },
   "dependencies": {
     "angular-messages": "^1.6.4",
@@ -16,6 +18,19 @@
     "lineman-angular": "^0.3.0",
     "lineman-less": "^0.1.0",
     "moment": "^2.18.1",
-    "ng-emoticons": "^2.1.0"
-  }
+    "ng-emoticons": "^2.1.0",
+    "bcrypt": "",
+    "body-parser": "",
+    "cors": "",
+    "express": "",
+    "jsonwebtoken": "",
+    "method-override": "",
+    "mongoose": "",
+    "morgan": "",
+    "nodemailer": "^4.0.1",
+    "nodemailer-express-handlebars": "^2.0.0",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  } 
 }

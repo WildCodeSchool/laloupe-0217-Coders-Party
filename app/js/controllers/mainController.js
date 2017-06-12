@@ -1,6 +1,5 @@
 angular.module('app')
     .controller('MainController', function($scope, $timeout, CurrentUser, UserService, EventService, $location, GroupService) {
-        $timeout(callAtTimeout, 3000);
         $scope.spinner = true;
 
         function callAtTimeout() {
@@ -20,17 +19,17 @@ angular.module('app')
             }
             filter();
 
+            function autoplay() {
+              $(document).ready(function() {
+                $('.carousel').carousel('next');
+                setTimeout(autoplay, 60000);
+              });
+            }
             $(document).ready(function() {
                 $('.carousel').carousel();
                 autoplay();
             });
 
-            function autoplay() {
-                $(document).ready(function() {
-                    $('.carousel').carousel('next');
-                    setTimeout(autoplay, 60000);
-                });
-            }
             $scope.next = function() {
                 $(document).ready(function() {
                     $('.carousel').carousel('next');
@@ -49,4 +48,5 @@ angular.module('app')
             });
         });
       }
+      $timeout(callAtTimeout, 3000);
     });
