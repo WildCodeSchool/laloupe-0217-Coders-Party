@@ -9,9 +9,11 @@
         font-size: 12px;
     }
     .card-event-type {
+      text-align: left;
+      line-height: 17px;
+      font-size: 10px;
         height: 60px;
-        font-size: 12px;
-        padding-top: 7px !important;
+        padding-top: 11px !important;
     }
     .card-profile-container {
         padding-top: 15px !important;
@@ -78,6 +80,9 @@
         font-size: 20px;
     }
     .card-event-type {
+      line-height: 16px;
+      font-size: 16px;
+        padding-top: 34px !important;
         height: 90px;
     }
     .card-image-event {

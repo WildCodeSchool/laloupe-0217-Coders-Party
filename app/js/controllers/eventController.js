@@ -5,7 +5,7 @@ angular.module('app')
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
-
+                console.log($scope.event);
                 var id = ($stateParams.id);
                 $scope.deleteEvent = function() {
                     EventService.sendAnnulation(id).then(function() {
@@ -13,6 +13,7 @@ angular.module('app')
                         $state.go('user.home');
                     });
                 };
+
 
                 $scope.author = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id) {
@@ -26,6 +27,11 @@ angular.module('app')
                 };
                 $scope.isParticipant = function() {
                     if ($scope.event.author._id !== CurrentUser.user()._id && $scope.event.style === 'Collaboratif' && $('.card-event').hasClass('active')) {
+                        return true;
+                    }
+                };
+                $scope.isTresorier = function() {
+                    if ($scope.event.tresorier.email === CurrentUser.user().email && $scope.event.style === 'Cagnotte') {
                         return true;
                     }
                 };
@@ -113,11 +119,17 @@ angular.module('app')
                     });
                 };
 
+                $scope.validateMoney = function() {
+                    EventService.update($stateParams.id, $scope.event);
+                };
                 $scope.doGo = function() {
                     $('.ticket-in').addClass('active');
                     $('.card-event').addClass('active');
                     if ($scope.event.style === 'Collaboratif') {
                         $('#bringModal').modal('open');
+                    }
+                    if ($scope.event.style === 'Cagnotte') {
+                        $('#cagnotteModal').modal('open');
                     }
                     for (var i = 0; i < $scope.event.invitations.length; i++) {
                         if ($scope.event.invitations[i].email === $scope.user.email) {
@@ -217,7 +229,7 @@ angular.module('app')
                 $scope.showGrey = function() {
                     if (isParticipating() === false && isInvitated() === true) {
                         return true;
-                      }
+                    }
                 };
                 $scope.showRed = function() {
                     if (isParticipating() === true) {
@@ -232,23 +244,23 @@ angular.module('app')
                 };
                 $scope.getComments();
                 $scope.addComment = function() {
-                  var comment = {
-                    eventId: $scope.event._id,
-                    author: $scope.user._id,
-                    author_odyssey: $scope.user.odyssey,
-                    title: $scope.event.name,
-                    body: $scope.commentBody
-                  };
-                  $scope.comments.push({
-                    eventId: $scope.event._id,
-                    author: $scope.user._id,
-                    title: $scope.event.name,
-                    body: $scope.commentBody
-                  });
-                  CommentService.addComment(comment).then(function() {
-                    $scope.getComments();
-                  });
-                  $scope.commentBody = '';
+                    var comment = {
+                        eventId: $scope.event._id,
+                        author: $scope.user._id,
+                        author_odyssey: $scope.user.odyssey,
+                        title: $scope.event.name,
+                        body: $scope.commentBody
+                    };
+                    $scope.comments.push({
+                        eventId: $scope.event._id,
+                        author: $scope.user._id,
+                        title: $scope.event.name,
+                        body: $scope.commentBody
+                    });
+                    CommentService.addComment(comment).then(function() {
+                        $scope.getComments();
+                    });
+                    $scope.commentBody = '';
                 };
                 $(document).ready(function() {
                     $('.modal').modal({
