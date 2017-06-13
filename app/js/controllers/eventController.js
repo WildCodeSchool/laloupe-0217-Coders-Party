@@ -14,7 +14,6 @@ angular.module('app')
                     });
                 };
 
-
                 $scope.author = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id) {
                         return true;

@@ -28,10 +28,10 @@
                     <p>Cet évènement est de type {{event.style}}</p>
                 </div>
                 <div class="col s3">
-                    <div ng-show="event.type == Cagnotte">{{event.budget}}€/pers</div>
+                    <div ng-if="event.style == 'Cagnotte'">{{event.budget}}€/pers</div>
                 </div>
                 <div class="col s3">
-                    <div ng-show="event.type == Cagnotte">Trésorier : {{event.tresorier.name}}</div>
+                    <div ng-if="event.style == 'Cagnotte'">Trésorier : {{event.tresorier.name}}</div>
                 </div>
             </div>
             <div class="card-action">
