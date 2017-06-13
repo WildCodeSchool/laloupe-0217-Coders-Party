@@ -1,40 +1,40 @@
 <div class="container logreg_container">
-    <div class="row">
-        <div class="col s12">
-            <div class="row center-align">
-                <img class="logo_login" src="/../img/logo_orange.png" alt="">
+  <div class="row">
+    <div class="col s12">
+      <div class="row center-align">
+          <img class="logo_login" src="/../img/logo_orange.png" alt="">
+      </div>
+      <h2 class=" title_logreg center-align">Se connecter</h2>
+      <div class="row">
+        <form class="col s12 offset-m4 m4 form" name="loginForm" novalidate ng-submit="login()">
+          <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate" ng-model="user.email" required>
+                <label for="email">Email</label>
             </div>
-            <h2 class=" title_logreg center-align">Se connecter</h2>
+          </div>
+          <div class="row logreg">
+            <div class="input-field col s12">
+                <input id="pass" type="password" class="validate" ng-model="user.password" required>
+                <label for="pass">Mot de passe</label>
+            </div>
+          </div>
+          <div class="row button_logreg">
+            <div class="col s12 m12 ">
+              <p class="center-align">
+                  <button class="btn-orange btn-large waves-effect waves-light orange btn_login" type="submit" name="action">Connexion</button>
+              </p>
+            </div>
             <div class="row">
-                <form class="col s12 offset-m4 m4 form" name="loginForm" novalidate ng-submit="login()">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" ng-model="user.email" required>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row logreg">
-                        <div class="input-field col s12">
-                            <input id="pass" type="password" class="validate" ng-model="user.password" required>
-                            <label for="pass">Mot de passe</label>
-                        </div>
-                    </div>
-                    <div class="row button_logreg">
-                        <div class="col s12 m12 ">
-                            <p class="center-align">
-                                <button class="btn-orange btn-large waves-effect waves-light orange btn_login" type="submit" name="action">Connexion</button>
-                            </p>
-                          </div>
-                            <div class="row">
-                                <div class="col s12 m12">
-                                    <p class="center-align">
-                                        <a ui-sref="anon.register">Je n'ai pas de compte</a>
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+              <div class="col s12 m12">
+                  <p class="center-align">
+                      <a ui-sref="anon.register">Je n'ai pas de compte</a>
+                  </p>
+              </div>
             </div>
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
