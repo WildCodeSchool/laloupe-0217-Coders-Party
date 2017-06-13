@@ -23,16 +23,11 @@
             <div class="divider divider_sidebar"></div>
             <li ui-sref-active="active"><a ui-sref="user.profile" ng-show="auth.isAuthenticated()">Mon profil</a></li>
             <div class="divider divider_sidebar"></div>
-            <!-- <li ui-sref-active="active"><a ui-sref="">Mes évènements</a></li>
-      <div class="divider divider_sidebar"></div> -->
-            <!-- <li ui-sref-active="active"><a ui-sref="">Création</a></li>
-      <div class="divider divider_sidebar"></div> -->
             <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes événements</a></li>
             <div class="divider divider_sidebar"></div>
             <li ui-sref-active="active"><a ui-sref="user.createevent" ng-show="auth.isAuthenticated()">Créer un événement</a></li>
             <div class="divider divider_sidebar"></div>
             <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Se deconnecter</a></li>
-
             <div class="divider divider_sidebar"></div>
         </ul>
         <img class="logo2_navbar right" src="../../img/logo.png" alt="">
