@@ -76,8 +76,7 @@ const eventSchema = new mongoose.Schema({
         default: 0
     },
     tresorier: {
-        type: String,
-        default: ""
+    
     }
 });
 

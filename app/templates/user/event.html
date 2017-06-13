@@ -1,7 +1,6 @@
 <div class="row">
     <h1 class="title_home center-align">{{event.name | uppercase}}</h1>
     <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
-    <a class="btn btn-success pull-right" ng-show="author" ng-click="deleteEvent()">Annuler l'évenement</a>
 </div>
 <div class="row">
     <div class="col s12 offset-m2 m8 offset-l3 l6">
@@ -25,40 +24,52 @@
                 <p class="card-event-lieu">{{event.lieu}}</p>
                 </ul>
             </div>
-            <div class="card-content white card-event-type">
-                <p>Cet évènement est {{event.style}}</p>
+            <div class="card-content white card-event-type row ">
+                <div class="col s6">
+                    <p>Cet évènement est de type {{event.style}}</p>
+                </div>
+                <div class="col s3">
+                    <div ng-show="event.type == Cagnotte">{{event.budget}}€/pers</div>
+                </div>
+                <div class="col s3">
+                    <div ng-show="event.type == Cagnotte">Trésorier : {{event.tresorier.name}}</div>
+                </div>
             </div>
             <div class="card-action">
                 <a class="card_ticket toogle" ng-hide="hideGreen()" ng-click="doGo()">J'y vais</a>
                 <a class="card_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
             </div>
         </div>
+        <a class="btn btn-success" ng-show="author()" ng-click="deleteEvent()">Annuler l'évenement</a>
         <div ng-show="isAuthor()" class="center-align">
-          <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
+            <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
         </div>
         <div ng-show="isParticipant()" class="center-align">
-          <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
+            <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
+        </div>
+        <div ng-show="isTresorier()" class="center-align">
+            <a class="waves-effect waves-light btn button_bring" data-target='moneyModal' modal>Cagnotte des participants</a>
         </div>
     </div>
 </div>
 <div class="row">
-  <form>
+    <form>
+        <div class="col s12 offset-m2 m8 offset-l3 l6">
+            <div class="collection">
+                <textarea name="name" ng-model="commentBody" rows="8" cols="80" placeholder="Entrez votre commentaire"></textarea>
+            </div>
+            <a class="btn btn-success pull-right" type="submit" ng-click="addComment()">Post</a>
+        </div>
+    </form>
     <div class="col s12 offset-m2 m8 offset-l3 l6">
-      <div class="collection">
-        <textarea name="name" ng-model="commentBody" rows="8" cols="80" placeholder="Entrez votre commentaire"></textarea>
-      </div>
-        <a class="btn btn-success pull-right" type="submit" ng-click="addComment()">Post</a>
+        <ul class="collection">
+            <li class="collection-item" ng-repeat="comment in comments track by $index">
+                <strong class="title"><img class="image_profil_comment" src="https://avatars.githubusercontent.com/{{comment.author_odyssey}}?s=460" alt="image_profil_comment">{{comment.author.name}}<br></strong>
+                <small>{{comment.date | date:' dd/MM/yyyy, \à HH:mm'}}</small>
+                <p class="body_comment"><q ng-bind-html="comment.body | emoticons"></q></p>
+            </li>
+        </ul>
     </div>
-  </form>
-  <div class="col s12 offset-m2 m8 offset-l3 l6">
-    <ul class="collection">
-      <li class="collection-item" ng-repeat="comment in comments track by $index">
-        <strong class="title"><img class="image_profil_comment" src="https://avatars.githubusercontent.com/{{comment.author_odyssey}}?s=460" alt="image_profil_comment">{{comment.author.name}}<br></strong>
-        <small>{{comment.date | date:' dd/MM/yyyy, \à HH:mm'}}</small>
-        <p class="body_comment"><q ng-bind-html="comment.body | emoticons"></q></p>
-      </li>
-    </ul>
-  </div>
 </div>
 
 <!-- Modals Structures -->
@@ -105,6 +116,19 @@
             </div>
         </div>
         <button class="btn waves-effect waves-light modal-action modal-close" ng-click="validateBring()">Valider <i class="material-icons right">send</i></button>
+    </div>
+</div>
+
+<div id="cagnotteModal" class="modal modal-ticket center-align">
+    <div class="modal-content">
+        <span class=" white-text card-title-event center-align">Evénement financé par cagnotte</span>
+        <div class="white modal-ticket-container">
+            <div class="row">
+                <p>En validant ta participation tu t'engages à amener {{event.budget}}€ au trésorier</p>
+                <p>Le trésorier pour cette événement est {{event.tresorier.name}} : {{event.tresorier.email}}</p>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light modal-action modal-close">J'accepte les conditions de participation <i class="material-icons right">send</i></button>
     </div>
 </div>
 
@@ -157,4 +181,33 @@
         </div>
     </div>
 </div>
+<div id="moneyModal" class="modal">
+    <a class="material-icons modal-action modal-close modal-close-event right">clear</a>
+    <div class="card-content center-align">
+        <span class="card-title-event white-text">Listes participants :</span>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">Total récolté= {{participant.hasPayed.length*event.budget}} €</div>
+          <form name="moneyForm" novalidate ng-submit="validateMoney()">
+            <ul class="collection">
+                <li class="collection-item" ng-repeat="participant in event.participations">
+                    <div>
+                        <span>{{participant.name}}</span><span ng-show="participant.hasPayed"> a payé</span>
+                        <span class="switch right">
+    <label>
+      <input ng-model="participant.hasPayed" type="checkbox">
+      <span class="lever"></span>
+                        </label>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <button class="btn waves-effect waves-light modal-action modal-close right" type="submit" name="action">Valider <i class="material-icons right">send</i></button>
+          </form>
+        </div>
+    </div>
+
+</div>
+
 <!-- Ajouter une ligne avec l author et ce qu il apporte : A peut etre stocker en base event--->
