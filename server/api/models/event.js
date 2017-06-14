@@ -263,7 +263,7 @@ export default class Event {
                             variable3: 'Description évènement : ' + event.description,
                             variable4: event.place_url,
                             variable5: 'Adresse : ' + event.adresse,
-                            variable6: 'https://desolate-island-54632.herokuapp.com/#!/user/event/id/' + event.id,
+                            variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
                             variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
                         }
                     }, function(error, response) {
@@ -301,7 +301,7 @@ export default class Event {
                             variable3: 'Description évènement : ' + event.description,
                             variable4: event.place_url,
                             variable5: 'Adresse : ' + event.adresse,
-                            variable6: 'https://desolate-island-54632.herokuapp.com/#!/user/event/id/' + event.id,
+                            variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
                             variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
                             variable8 : event.elements.toBring.length > 0,
                             variable9 : event.elements.toBring
@@ -342,7 +342,7 @@ export default class Event {
                             variable3: 'Description évènement : ' + event.description,
                             variable4: event.place_url,
                             variable5: 'Adresse : ' + event.adresse,
-                            variable6: 'https://desolate-island-54632.herokuapp.com/#!/user/event/id/' + event.id,
+                            variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
                             variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
                             variable8 : 'C\'est un évènement de type cagnotte, une participation financiére est demandé aux participants. Le montant est de ' + event.budget + '€ par personne, le tresorier chargé de la cagnotte est : ' + event.tresorier.name
                         }
