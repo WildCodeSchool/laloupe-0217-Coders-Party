@@ -28,7 +28,7 @@ angular.module('app')
                 if ($scope.event.elements.toBring.length > 0) {
 
                     EventService.update(id, $scope.event).then(function() {
-                        EventService.sendInvitation(id);
+                        EventService.sendInvitationCollaboratif(id);
                         $state.go('user.happyEvent');
                     });
                 } else {
