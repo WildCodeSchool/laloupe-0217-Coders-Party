@@ -37,6 +37,7 @@ angular.module('app')
                 };
 
                 EventService.update(id, event).then(function() {
+                  EventService.sendInvitationCagnotte(id);
                     $state.go('user.happyEvent');
                 });
             };

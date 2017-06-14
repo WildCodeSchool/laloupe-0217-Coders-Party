@@ -20,6 +20,10 @@ module.exports = (app) => {
 
     router.get('/sendall/:id', Auth.hasAuthorization, event.sendInvitation);
 
+    router.get('/sendcagnotte/:id', Auth.hasAuthorization, event.sendInvitationCagnotte);
+
+    router.get('/sendcollaboratif/:id', Auth.hasAuthorization, event.sendInvitationCollaboratif);
+
     router.get('/sendcancel/:id', Auth.hasAuthorization, event.sendAnnulation);
 
     router.put('/:id', Auth.hasAuthorization, event.update);

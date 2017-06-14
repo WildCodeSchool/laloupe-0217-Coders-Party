@@ -24,7 +24,6 @@ angular.module('app')
                                 EventService.sendInvitation(id);
                                 $state.go('user.happyEvent');
                             } else if ($scope.event.style === 'Cagnotte') {
-                                EventService.sendInvitation(id);
                                 $state.go('user.cagnotte');
                             }
                         });
