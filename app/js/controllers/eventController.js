@@ -13,7 +13,16 @@ angular.module('app')
                         $state.go('user.home');
                     });
                 };
-
+                $scope.hasPayed = function() {
+                    var count = 0;
+                    for (var i = 0; i < $scope.event.participations.length; i++) {
+                        if ($scope.event.participations[i].hasPayed === true) {
+                            count++;
+                            console.log(count);
+                        }
+                    }
+                    return count;
+                };
                 $scope.author = function() {
                     if ($scope.event.author._id === CurrentUser.user()._id) {
                         return true;

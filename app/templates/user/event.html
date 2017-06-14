@@ -188,7 +188,7 @@
     </div>
     <div class="row">
         <div class="col s12">
-            <div class="center-align">Total récolté= {{participant.hasPayed.length*event.budget}} €</div>
+            <div class="center-align">Total récolté = {{hasPayed()*event.budget}} €</div>
           <form name="moneyForm" novalidate ng-submit="validateMoney()">
             <ul class="collection">
                 <li class="collection-item" ng-repeat="participant in event.participations">
