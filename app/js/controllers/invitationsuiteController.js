@@ -16,7 +16,6 @@ angular.module('app')
                             $scope.event.invitations.push($scope.users[i]);
                         }
                     }
-                    $scope.validate=true;
                     if ($scope.event.invitations.length > 0) {
                         EventService.update(id, $scope.event).then(function() {
                             if ($scope.event.style === 'Collaboratif') {
@@ -24,8 +23,13 @@ angular.module('app')
                             } else if ($scope.event.style === 'Libre') {
                                 EventService.sendInvitation(id);
                                 $state.go('user.happyEvent');
+                            } else if ($scope.event.style === 'Cagnotte') {
+                                EventService.sendInvitation(id);
+                                $state.go('user.cagnotte');
                             }
                         });
+                    } else {
+                        $scope.validate = true;
                     }
                 };
             });
