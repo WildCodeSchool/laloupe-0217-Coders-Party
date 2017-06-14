@@ -197,11 +197,18 @@
                     {{variable7}}
                   </td>
                 </tr>
-                <!-- <tr>
-                  <td class="bodycopy">
-                    {{variable8}}
-                  </td>
-                </tr> -->
+                {{#if variable8}}
+                  <tr>
+                    <td class="bodycopy">
+                      <p>Voici les élèments que vous pouvez rapporter</p>
+                      <ul>
+                        {{#each variable9}}
+                          <li>{{ this.value }} x {{ this.qty }}</li>
+                        {{/each}}
+                      </ul>
+                    </td>
+                  </tr>
+                {{/if}}
               </table>
             </td>
           </tr>

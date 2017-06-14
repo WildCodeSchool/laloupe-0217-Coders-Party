@@ -13,6 +13,7 @@ const hashCode = (s) => s.split("").reduce((a, b) => {
     a & a;
 }, 0);
 
+
 const eventSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -303,7 +304,8 @@ export default class Event {
                             variable5: 'Adresse : ' + event.adresse,
                             variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
                             variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
-                            // variable8 : 'Voila ce que tu peux apporter : \n - ' + event.elements.toBring[0].value + '\n - ' + event.elements.toBring[1].value + ' \n - ' + event.elements.toBring[2].value
+                            variable8 : event.elements.toBring.length > 0,
+                            variable9 : event.elements.toBring
                         }
                     }, function(error, response) {
                         if (error) {
