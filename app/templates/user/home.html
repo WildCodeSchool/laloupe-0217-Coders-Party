@@ -4,7 +4,7 @@
   </div>
   <div class="col s12 center-align home-text">
     <h1 class="carousel-presentation">
-      <div>Loading...</div>
+      <div>Chargement...</div>
     </h1>
   </div>
 </div>
@@ -18,7 +18,7 @@
               <h5>{{event.name | uppercase}}</h5>
               <p>Le {{event.startDate | date: 'dd/MM/yyyy'}} à {{event.startTime | date: 'HH:mm'}} par {{event.author.name}} de {{event.author.groupe | uppercase}}</p>
           </div>
-          <button class="button_carousel waves-effect waves-light btn" ng-mobile-click="moveToEvent(event._id)">Go !</button>
+          <button class="button_carousel waves-effect waves-light btn" ng-mobile-click="moveToEvent(event._id)">Voir</button>
           <a><i class="material-icons carousel-arrow-prev hide-on-med-and-down" ng-click="prev()">keyboard_arrow_left</i></a>
           <a><i class="material-icons carousel-arrow-next hide-on-med-and-down" ng-click="next()">keyboard_arrow_right</i></a>
       </div>
@@ -26,10 +26,10 @@
     <div class="row">
       <div class="col s12 center-align home-text">
         <h1 class="carousel-presentation">
-          <div>Hello  <span class="teal-text">{{user.name}},</span></div>
+          <div>Bonjour  <span class="teal-text">{{user.name}}</span>,</div>
           <div>Bienvenue sur CodersParty !</div>
         </h1>
-        <p>L'application qui te permet d'organiser tes événements... tout simplement.</p>
+        <p>L'application qui te permet d'organiser tes évènements... tout simplement.</p>
       </div>
     </div>
   </div>

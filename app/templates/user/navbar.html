@@ -8,9 +8,9 @@
             <li ui-sref-active="active"><a ui-sref="user.home">Accueil</a></li>
             <li ui-sref-active="active"><a ui-sref="user.agenda">Agenda</a></li>
             <li ui-sref-active="active"><a ui-sref="user.profile" ng-show="auth.isAuthenticated()">Mon profil</a></li>
-            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes événements</a></li>
-            <li ui-sref-active="active"><a ui-sref="user.createevent" ng-show="auth.isAuthenticated()">Créer un événement</a></li>
-            <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Logout</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes évènements</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.createevent" ng-show="auth.isAuthenticated()">Créer un évènement</a></li>
+            <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Se deconnecter</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li>
@@ -23,9 +23,9 @@
             <div class="divider divider_sidebar"></div>
             <li ui-sref-active="active"><a ui-sref="user.profile" ng-show="auth.isAuthenticated()">Mon profil</a></li>
             <div class="divider divider_sidebar"></div>
-            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes événements</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.myEvent" ng-show="auth.isAuthenticated()">Mes évènements</a></li>
             <div class="divider divider_sidebar"></div>
-            <li ui-sref-active="active"><a ui-sref="user.createevent" ng-show="auth.isAuthenticated()">Créer un événement</a></li>
+            <li ui-sref-active="active"><a ui-sref="user.createevent" ng-show="auth.isAuthenticated()">Créer un évènement</a></li>
             <div class="divider divider_sidebar"></div>
             <li><a ng-click="logout()" ng-show="auth.isAuthenticated()" href='#'>Se deconnecter</a></li>
             <div class="divider divider_sidebar"></div>
