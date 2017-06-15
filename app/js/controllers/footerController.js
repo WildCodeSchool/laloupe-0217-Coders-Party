@@ -9,6 +9,8 @@ angular.module('app')
         };
 
         $(document).ready(function(){
-         $('.modal').modal();
+         $('.modal').modal({
+          dismissible: true
+         });
        });
     });
