@@ -2,6 +2,7 @@ import jsonwebtoken from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
 import hbs from 'nodemailer-express-handlebars';
+import smtpTransport from 'nodemailer-smtp-transport';
 import bcrypt from 'bcrypt';
 import token from '../token.js';
 import moment from 'moment';
@@ -88,14 +89,15 @@ const eventSchema = new mongoose.Schema({
     }
 });
 
-var mailer = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: "codersparty@gmail.com",
-        pass: "c0d3r5p4rty"
-    }
-});
-
+var mailer = nodemailer.createTransport(smtpTransport ({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: "codersparty@gmail.com",
+    pass: "c0d3r5p4rty"
+  }
+}));
 var options = {
     viewEngine: {
         extname: '.hbs',
@@ -106,14 +108,23 @@ var options = {
     viewPath: '../server/api/views/email/',
     extName: '.hbs'
 };
-var mailerCollaboratif = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: "codersparty@gmail.com",
-        pass: "c0d3r5p4rty"
-    }
+mailer.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take our messages');
+  }
 });
 
+var mailerCollaboratif = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: "codersparty@gmail.com",
+    pass: "c0d3r5p4rty"
+  }
+});
 var optionsCollaboratif = {
     viewEngine: {
         extname: '.hbs',
@@ -124,14 +135,16 @@ var optionsCollaboratif = {
     viewPath: '../server/api/views/email/',
     extName: '.hbs'
 };
-var mailerCancel = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: "codersparty@gmail.com",
-        pass: "c0d3r5p4rty"
-    }
-});
 
+var mailerCancel = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: "codersparty@gmail.com",
+    pass: "c0d3r5p4rty"
+  }
+});
 var optionsCancel = {
     viewEngine: {
         extname: '.hbs',
@@ -142,14 +155,16 @@ var optionsCancel = {
     viewPath: '../server/api/views/email/',
     extName: '.hbs'
 };
-var mailerCagnotte = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: "codersparty@gmail.com",
-        pass: "c0d3r5p4rty"
-    }
-});
 
+var mailerCagnotte = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: "codersparty@gmail.com",
+    pass: "c0d3r5p4rty"
+  }
+});
 var optionsCagnotte = {
     viewEngine: {
         extname: '.hbs',
