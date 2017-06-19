@@ -12,13 +12,13 @@ module.exports = (app) => {
 
   var comment = new Comment();
 
-  router.get('/forEvent/:eventId', comment.findAllForEvent);
+  // router.get('/forEvent/:eventId', comment.findAllForEvent);
 
   router.get('/forEvent/:eventId', Auth.hasAuthorization, comment.findAllForEvent);
 
   router.post('/addcomment', Auth.hasAuthorization, comment.addComment);
 
-  // router.put('/delcomment', Auth.hasAuthorization, comment.delComment);
+  router.delete('/delcomment/:id', Auth.hasAuthorization, comment.delComment);
 
   app.use('/comments', router);
 };
