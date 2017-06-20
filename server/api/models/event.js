@@ -88,7 +88,7 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-import sendInvation from '../mailer/sendInvitation.js';
+import sendInvitation from '../mailer/sendInvitation.js';
 import mailer from '../mailer/config.js';
 
 import invitationMailer from '../mailer/invitation.js';
@@ -190,13 +190,13 @@ export default class Event {
       } else if (!event) {
         res.status(404);
       } else {
-        sendInvation(event, 0, mailer, invitationMailer.mail);
+        sendInvitation(event, 0, mailer, invitationMailer.mail);
         res.json({
           success: true
         });
       }
-  });
-}
+    });
+  }
   sendInvitationCollaboratif(req, res) {
     model.findById(req.params.id, (err, event) => {
       if (err) {
@@ -204,7 +204,7 @@ export default class Event {
       } else if (!event) {
         res.status(404);
       } else {
-        sendInvation(event, 0, mailerCollaboratif, invitationCollaboratifMailer.mail);
+        sendInvitation(event, 0, mailerCollaboratif, invitationCollaboratifMailer.mail);
         res.json({
           success: true
         });
@@ -218,7 +218,7 @@ export default class Event {
       } else if (!event) {
         res.status(404);
       } else {
-        sendInvation(event, 0, mailerCagnotte, invitationCagnotteMailer.mail);
+        sendInvitation(event, 0, mailerCagnotte, invitationCagnotteMailer.mail);
         res.json({
           success: true
         });
@@ -233,7 +233,7 @@ export default class Event {
       } else if (!event) {
         res.status(404);
       } else {
-        sendInvation(event, 0, mailerCancel, invitationCancelMailer.mail);
+        sendInvitation(event, 0, mailerCancel, invitationCancelMailer.mail);
         res.json({
           success: true
         });

@@ -1,4 +1,4 @@
-let sendInvation = (event, index, mailer, mail) => {
+let sendInvitation = (event, index, mailer, mail) => {
   let guest = event.invitations[index];
   mailer.sendMail(
     mail(event, guest),
@@ -13,7 +13,7 @@ let sendInvation = (event, index, mailer, mail) => {
     });
   if (index < event.invitations.length - 1) {
     setTimeout(function() {
-        sendInvation(event, index + 1, mailer, mail);
+        sendInvitation(event, index + 1, mailer, mail);
       },
       10 * 1000);
   } else {
@@ -21,4 +21,4 @@ let sendInvation = (event, index, mailer, mail) => {
   }
 };
 
-module.exports = sendInvation;
+module.exports = sendInvitation;
