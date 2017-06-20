@@ -104,8 +104,8 @@ var today = moment().startOf('day');
 
 mailer.use('compile', hbs(invitationMailer.options));
 mailerCollaboratif.use('compile', hbs(invitationCollaboratifMailer.options));
-mailerCagnotte.use('compile', hbs(invitationCagnotteMailer.options));
 mailerCancel.use('compile', hbs(invitationCancelMailer.options));
+mailerCagnotte.use('compile', hbs(invitationCagnotteMailer.options));
 
 eventSchema.methods.comparePassword = function(pwd, cb) {
   bcrypt.compare(pwd, this.password, function(err, isMatch) {

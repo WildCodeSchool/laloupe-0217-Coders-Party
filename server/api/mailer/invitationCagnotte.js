@@ -1,6 +1,4 @@
 import moment from 'moment';
-import hbs from 'nodemailer-express-handlebars';
-
 
 module.exports = {
   options: {
