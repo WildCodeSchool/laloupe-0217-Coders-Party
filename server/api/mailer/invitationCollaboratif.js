@@ -12,7 +12,6 @@ module.exports = {
     extName: '.hbs'
   },
   mail: function (event, guest) {
-    console.log(guest);
     return {
       from: "codersparty@gmail.com",
       to: guest.email,
