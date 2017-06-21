@@ -10,6 +10,5 @@
 .sass-cache
 
 server/yarn.lock
-server/api/mailer/config.js
 yarn.lock
 npm-debug.log
