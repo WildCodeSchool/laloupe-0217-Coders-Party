@@ -6,8 +6,20 @@ import smtpTransport from 'nodemailer-smtp-transport';
 import bcrypt from 'bcrypt';
 import token from '../token.js';
 import moment from 'moment';
+import sendInvitation from '../mailer/sendInvitation.js';
+import config from '../mailer/config.js';
+
+import invitationMailer from '../mailer/invitation.js';
+import invitationCollaboratifMailer from '../mailer/invitationCollaboratif.js';
+import invitationCancelMailer from '../mailer/invitationCancel.js';
+import invitationCagnotteMailer from '../mailer/invitationCagnotte.js';
+
 moment.locale('fr');
 
+var mailer = config();
+var mailerCollaboratif = config();
+var mailerCancel = config();
+var mailerCagnotte = config();
 
 const hashCode = (s) => s.split("").reduce((a, b) => {
   a = ((a << 5) - a) + b.charCodeAt(0);
@@ -88,20 +100,6 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-import sendInvitation from '../mailer/sendInvitation.js';
-import config from '../mailer/config.js';
-
-import invitationMailer from '../mailer/invitation.js';
-import invitationCollaboratifMailer from '../mailer/invitationCollaboratif.js';
-import invitationCancelMailer from '../mailer/invitationCancel.js';
-import invitationCagnotteMailer from '../mailer/invitationCagnotte.js';
-
-var mailer = config();
-var mailerCollaboratif = config();
-var mailerCancel = config();
-var mailerCagnotte = config();
-
-
 mailerCagnotte.use('compile', hbs(invitationCagnotteMailer.options));
 mailerCollaboratif.use('compile', hbs(invitationCollaboratifMailer.options));
 mailerCancel.use('compile', hbs(invitationCancelMailer.options));
@@ -144,7 +142,6 @@ export default class Event {
         }
       });
   }
-
 
   findById(req, res) {
     model.findById(req.params.id, {
