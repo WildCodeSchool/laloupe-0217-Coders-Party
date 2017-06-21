@@ -39,14 +39,14 @@
                 <a class="card_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
             </div>
         </div>
-        <div ng-show="isAuthor()" class="center-align">
-            <a class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
+        <div  class="center-align">
+            <a ng-show="isAuthor()" class="waves-effect waves-light btn button_bring" data-target='bringedModal' modal>Ce que les invités apportent</a>
+            <a ng*-show="author()" class="col s6 waves-effect waves-light btn button_bring" ng-click="deleteEvent()">Annuler l'évenement</a>
         </div>
         <div ng-show="isParticipant()" class="center-align">
             <a class="waves-effect waves-light btn button_bring" data-target='iBringModal' modal>Ce que tu apportes</a>
         </div>
         <div ng-show="isTresorier()" class="center-align">
-          <a class="col s6 waves-effect waves-light btn button_bring" ng-show="author()" ng-click="deleteEvent()">Annuler l'évenement</a>
           <a class="col s6 waves-effect waves-light btn button_bring" data-target='moneyModal' modal>Cagnotte des participants</a>
         </div>
     </div>
