@@ -7,7 +7,7 @@ module.exports = () => {
     port: 465,
     secure: true,
     auth: {
-      user: "coderparty@gmail.com",
+      user: "codersparty@gmail.com",
       pass: "c0d3r5p4rty"
     }
   }));
