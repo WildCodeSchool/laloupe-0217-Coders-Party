@@ -25,7 +25,7 @@ module.exports = {
         variable5: 'Adresse : ' + event.adresse,
         variable6: 'http://localhost:8000/#!/user/event/id/' + event.id,
         variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
-        variable8: 'C\'est un évènement de type cagnotte, une participation financiére est demandé aux participants. Le montant est de ' + event.budget + '€ par personne, le tresorier chargé de la cagnotte est : ' + event.tresorier.name
+        variable10: 'C\'est un évènement de type cagnotte, une participation financiére est demandé aux participants. Le montant est de ' + event.budget + '€ par personne, le tresorier chargé de la cagnotte est : ' + event.tresorier.name
       }
     };
   }

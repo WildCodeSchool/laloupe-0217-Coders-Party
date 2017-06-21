@@ -1,12 +1,13 @@
 import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
 
-module.exports = nodemailer.createTransport(smtpTransport ({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: "codersparty@gmail.com",
-    pass: "c0d3r5p4rty"
-  }
-}));
+module.exports = () => {
+  return nodemailer.createTransport(smtpTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
+    auth: {
+      user: "66e1f962f78743",
+      pass: "a44fac6378fd80"
+    }
+  }));
+};

@@ -89,23 +89,31 @@ const eventSchema = new mongoose.Schema({
 });
 
 import sendInvitation from '../mailer/sendInvitation.js';
-import mailer from '../mailer/config.js';
+import config from '../mailer/config.js';
 
 import invitationMailer from '../mailer/invitation.js';
 import invitationCollaboratifMailer from '../mailer/invitationCollaboratif.js';
 import invitationCancelMailer from '../mailer/invitationCancel.js';
 import invitationCagnotteMailer from '../mailer/invitationCagnotte.js';
 
-var mailerCollaboratif = mailer;
-var mailerCancel = mailer;
-var mailerCagnotte = mailer;
+var mailer = config();
+var mailerCollaboratif = config();
+var mailerCancel = config();
+var mailerCagnotte = config();
 
-var today = moment().startOf('day');
 
-mailer.use('compile', hbs(invitationMailer.options));
+mailerCagnotte.use('compile', hbs(invitationCagnotteMailer.options));
 mailerCollaboratif.use('compile', hbs(invitationCollaboratifMailer.options));
 mailerCancel.use('compile', hbs(invitationCancelMailer.options));
-mailerCagnotte.use('compile', hbs(invitationCagnotteMailer.options));
+mailer.use('compile', hbs(invitationMailer.options));
+
+mailer.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take our messages');
+  }
+});
 
 eventSchema.methods.comparePassword = function(pwd, cb) {
   bcrypt.compare(pwd, this.password, function(err, isMatch) {
@@ -113,6 +121,8 @@ eventSchema.methods.comparePassword = function(pwd, cb) {
     cb(null, isMatch);
   });
 };
+
+var today = moment().startOf('day');
 
 let model = mongoose.model('Event', eventSchema);
 
