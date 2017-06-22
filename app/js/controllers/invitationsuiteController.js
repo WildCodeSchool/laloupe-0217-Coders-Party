@@ -13,6 +13,7 @@ angular.module('app')
                 $scope.valider = function() {
                     for (var i = 0; i < $scope.users.length; i++) {
                         if ($scope.users[i].selected === true) {
+                          console.log($scope.event);
                             $scope.event.invitations.push($scope.users[i]);
                         }
                     }
