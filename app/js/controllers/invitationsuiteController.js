@@ -8,6 +8,12 @@ angular.module('app')
             $scope.event = res.data;
             UserService.getAll().then(function(res) {
                 $scope.users = res.data;
+                console.log($scope.users);
+                for (i = 0; i < $scope.users.length; i++) {
+                    if ($scope.users[i]._id === CurrentUser.user()._id) {
+                        $scope.users.splice(i, 1);
+                    }
+                }
                 $scope.event.invitations = [];
 
                 $scope.valider = function() {
