@@ -147,7 +147,10 @@ export default class Event {
     model.findById(req.params.id, {
         password: 0
       })
-      .populate('author', 'name')
+      .populate({
+        path: 'author',
+        select: 'name groupe email'
+      })
       .exec((err, event) => {
         if (err || !event) {
           res.sendStatus(403);
@@ -191,46 +194,63 @@ export default class Event {
   }
 
   sendInvitation(req, res) {
-    model.findById(req.params.id, (err, event) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else if (!event) {
-        res.status(404);
-      } else {
-        sendInvitation(event, 0, mailer, invitationMailer.mail);
-        res.json({
-          success: true
-        });
-      }
-    });
+    model.findById(req.params.id)
+      .populate({
+        path: 'author',
+        select: 'name groupe email'
+      })
+      .exec((err, event) => {
+        if (err) {
+          res.status(500).send(err.message);
+        } else if (!event) {
+          res.status(404);
+        } else {
+          sendInvitation(event, 0, mailer, invitationMailer.mail);
+          res.json({
+            success: true
+          });
+        }
+      });
   }
+
   sendInvitationCollaboratif(req, res) {
-    model.findById(req.params.id, (err, event) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else if (!event) {
-        res.status(404);
-      } else {
-        sendInvitation(event, 0, mailerCollaboratif, invitationCollaboratifMailer.mail);
-        res.json({
-          success: true
-        });
-      }
-    });
+    model.findById(req.params.id)
+      .populate({
+        path: 'author',
+        select: 'name groupe email'
+      })
+      .exec((err, event) => {
+        if (err) {
+          res.status(500).send(err.message);
+        } else if (!event) {
+          res.status(404);
+        } else {
+          sendInvitation(event, 0, mailerCollaboratif, invitationCollaboratifMailer.mail);
+          res.json({
+            success: true
+          });
+        }
+      });
   }
+
   sendInvitationCagnotte(req, res) {
-    model.findById(req.params.id, (err, event) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else if (!event) {
-        res.status(404);
-      } else {
-        sendInvitation(event, 0, mailerCagnotte, invitationCagnotteMailer.mail);
-        res.json({
-          success: true
-        });
-      }
-    });
+    model.findById(req.params.id)
+      .populate({
+        path: 'author',
+        select: 'name groupe email'
+      })
+      .exec((err, event) => {
+        if (err) {
+          res.status(500).send(err.message);
+        } else if (!event) {
+          res.status(404);
+        } else {
+          sendInvitation(event, 0, mailerCagnotte, invitationCagnotteMailer.mail);
+          res.json({
+            success: true
+          });
+        }
+      });
   }
 
   sendAnnulation(req, res) {

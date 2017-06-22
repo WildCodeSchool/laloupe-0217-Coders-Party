@@ -16,8 +16,19 @@ let sendInvitation = (event, index, mailer, mail) => {
         sendInvitation(event, index + 1, mailer, mail);
       },
       10 * 1000);
-  } else {
-    console.log("Tous les messages ont été envoyé avec succés");
+  }
+   else {
+     mailer.sendMail(mail(event,event.author),
+     function(error, response) {
+       if (error) {
+         console.log("Erreur lors de l'envoie du mail!", event.author.email);
+         console.log(error);
+       } else {
+         console.log("Mail envoyé avec succès a ", event.author.email);
+         console.log("Tous les messages ont été envoyé avec succés");
+       }
+       mailer.close();
+     });
   }
 };
 
