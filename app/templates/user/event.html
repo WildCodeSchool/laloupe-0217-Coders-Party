@@ -34,7 +34,7 @@
                     <div ng-if="event.style == 'Cagnotte'">Trésorier : {{event.tresorier.name}}</div>
                 </div>
             </div>
-            <div class="card-action">
+            <div class="card-action" ng-hide='author()'>
                 <a class="card_ticket toogle" ng-hide="hideGreen()" ng-click="doGo()">J'y vais</a>
                 <a class="card_ticket_red toogle" ng-show="showRed()" ng-click="dontGo()">Annuler la participation</a>
             </div>
