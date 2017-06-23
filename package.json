@@ -31,7 +31,8 @@
     "ng-emoticons": "^2.1.0",
     "nodemailer": "^4.0.1",
     "nodemailer-express-handlebars": "^2.0.0",
-    "nodemailer-smtp-transport": "^2.7.4"
+    "nodemailer-smtp-transport": "^2.7.4",
+    "xoauth2": "^1.2.0"
   },
   "devDependencies": {
     "mocha": "^3.4.2",
