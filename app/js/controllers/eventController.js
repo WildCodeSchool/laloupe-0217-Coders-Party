@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('EventController', function($scope, CurrentUser, $state, LocalService, UserService, EventService, $stateParams, CommentService) {
+    .controller('EventController', function($scope, CurrentUser, $interval, $state, LocalService, UserService, EventService, $stateParams, CommentService) {
         UserService.getOne(CurrentUser.user()._id).then(function(res) {
             $scope.user = res.data;
             EventService.getOne($stateParams.id).then(function(res) {
@@ -13,6 +13,8 @@ angular.module('app')
                         $state.go('user.home');
                     });
                 };
+
+
                 $scope.hasPayed = function() {
                     var count = 0;
                     for (var i = 0; i < $scope.event.participations.length; i++) {
@@ -275,6 +277,11 @@ angular.module('app')
                         dismissible: false
                     });
                 });
+
+                function callAtInterval() {
+                    $scope.getComments();
+                }
+                $interval(callAtInterval, 5000);
             });
         });
     });
