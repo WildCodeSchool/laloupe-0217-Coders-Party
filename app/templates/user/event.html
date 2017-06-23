@@ -62,7 +62,7 @@
     </form>
   <div class="col s12 offset-m2 m8 offset-l3 l6">
     <ul class="collection">
-      <li class="collection-item" ng-repeat="comment in comments track by $index">
+      <li class="collection-item" ng-repeat="comment in comments | orderBy: '-date'">
         <strong class="title"><img class="image_profil_comment" src="https://avatars.githubusercontent.com/{{comment.author_odyssey}}?s=460" alt="image_profil_comment">{{comment.author.name}}<br></strong>
         <small>{{comment.date | date:' dd/MM/yyyy, \à HH:mm'}}</small>
         <p class="body_comment"><q ng-bind-html="comment.body | emoticons:{'linkTarget':'_blank','newLine':true}"></q></p>
