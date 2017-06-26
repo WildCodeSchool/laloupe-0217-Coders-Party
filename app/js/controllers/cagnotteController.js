@@ -2,13 +2,12 @@ angular.module('app')
     .controller('CagnotteController', function($scope, $state, UserService, EventService, LocalService) {
         var id = LocalService.get('eventId');
 
-        UserService.getAll().then(function(res) {
-            $scope.users = res.data;
+        EventService.getOne(id).then(function(res) {
+            $scope.users = res.data.invitations;
             var datas = [];
             var names = {
                 data: {}
             };
-
             $scope.tresorier = {
                 name: "",
             };
