@@ -1,23 +1,27 @@
 <div class="row">
-  <h1 class="title_home center-align">MES EVENEMENTS</h1>
-  <div class="row center-align" ng-show="showingMessage()" ng-model="myValue">
-    <p>Tu n'as pas encore d'évènements</p>
-    <p><a ui-sref="user.createevent">Crées</a> ou <a ui-sref="user.agenda">rejoins</a> des évènements pour les voir s'afficher sur cette page.</p>
-    <hr>
-  </div>
-  <div class="row">
-    <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
-  </div>
-  <div class="container">
-    <ul class="collection event_newagenda hoverable" ng-click="moveToEvent(myEvent._id)" ng-repeat="myEvent in myEvents | orderBy:'startDate' track by $index">
-      <li class="collection-item avatar">
-        <img src="/../img/{{myEvent.categorie}}.png" alt="" class="circle">
-        <span class="title">{{myEvent.name | uppercase}}</span>
-        <p>{{myEvent.startDate | date:' dd/MM/yyyy'}} - {{myEvent.startTime | date:' HH:mm' }}</p>
-        <p>{{myEvent.adresse}}</p>
-        <p>{{myEvent.description}}</p>
-        <a class="secondary-content"><i class="material-icons">info_outline</i></a>
-      </li>
-    </ul>
-  </div>
+    <h1 class="title_home center-align">MES EVENEMENTS</h1>
+    <div class="row center-align" ng-show="showingMessage()" ng-model="myValue">
+        <p>Tu n'as pas encore d'évènements</p>
+        <p><a ui-sref="user.createevent">Crées</a> ou <a ui-sref="user.agenda">rejoins</a> des évènements pour les voir s'afficher sur cette page.</p>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col offset-s4 s4 offset-m5 m2 offset-l5 l2 divider_title "></div>
+    </div>
+    <div class="container">
+        <ul class="collection event_newagenda hoverable" ng-click="moveToEvent(myEvent._id)" ng-repeat="myEvent in myEvents | orderBy:'startDate' track by $index">
+            <li class="collection-item avatar">
+                <img src="/../img/{{myEvent.categorie}}.png" alt="" class="circle">
+                <span class="title">{{myEvent.name | uppercase}}</span>
+                <p>{{myEvent.startDate | date:' dd/MM/yyyy'}} - {{myEvent.startTime | date:' HH:mm' }}</p>
+                <p>{{myEvent.adresse}}</p>
+                <p>{{myEvent.description}}</p>
+                <a class="secondary-content" ng-show="isTresorier.includes(myEvent._id)"><i class="material-icons material-icons-tresorier right" >info_outline</i></br><span>Trésorier</span></a>
+
+                <a class="secondary-content" ng-show="iGo.includes(myEvent._id) && !isTresorier.includes(myEvent._id)"><i class="material-icons material-icons-include right" >info_outline</i></br><span>j'y vais</span></a>
+                <a class="secondary-content" ng-show="isAuthor.includes(myEvent._id)"><i class="material-icons material-icons-author right">info_outline</i></br><span>j'organise</span></a>
+                <a class="secondary-content" ng-hide="iGo.includes(myEvent._id)||isAuthor.includes(myEvent._id)||isTresorier.includes(myEvent._id)"><i class="material-icons" >info_outline</i></a>
+            </li>
+        </ul>
+    </div>
 </div>

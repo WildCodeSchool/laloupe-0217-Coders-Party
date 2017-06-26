@@ -1,6 +1,7 @@
-.messages{
-  font-size: 11px;
+.messages {
+    font-size: 11px;
 }
+
 
 /*NAVBAR*/
 
@@ -505,7 +506,24 @@ label.img_nogroup {
 }
 
 .event_newagenda {
+    background-color: lightgreen;
     box-shadow: 2px 5px lightgrey;
+}
+
+.material-icons-include {
+    background-color: lightgreen !important;
+    border-radius: 50%;
+    color: white !important;
+}
+.material-icons-author {
+    background-color: darkblue !important;
+    border-radius: 50%;
+    color: white !important;
+}
+.material-icons-tresorier {
+    background-color: orange !important;
+    border-radius: 50%;
+    color: white !important;
 }
 
 .circle {
@@ -516,18 +534,19 @@ label.img_nogroup {
     color: grey !important;
 }
 
+
 /* COMMENTS */
 
 .image_profil_comment {
-  margin-right: 1%;
-  width: 10%;
-  float: left;
+    margin-right: 1%;
+    width: 10%;
+    float: left;
 }
 
-.comment{
-  line-height: 0.5em;
+.comment {
+    line-height: 0.5em;
 }
 
-.body_comment{
-  margin-bottom: 0px !important;
+.body_comment {
+    margin-bottom: 0px !important;
 }
