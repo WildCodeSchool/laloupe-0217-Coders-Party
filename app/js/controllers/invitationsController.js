@@ -16,6 +16,7 @@ angular.module('app')
                         }
                     }
                 };
+
                 $scope.valider = function() {
                     $scope.validate = true;
                     if ($scope.groupok() === true) {
@@ -23,9 +24,12 @@ angular.module('app')
                         for (var i = 0; i < $scope.groups.length; i++) {
                             if ($scope.groups[i].selected === true) {
                                 for (var g = 0; g < $scope.groups[i].members.length; g++) {
-                                    $scope.event.invitations.push($scope.groups[i].members[g]);
+                                    if ($scope.groups[i].members[g].email !== CurrentUser.user().email) {
+                                        $scope.event.invitations.push($scope.groups[i].members[g]);
+                                    }
                                 }
                             }
+
                         }
                         EventService.update(id, $scope.event).then(function() {
                             if ($scope.event.style === 'Collaboratif') {
