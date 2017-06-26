@@ -7,7 +7,7 @@ angular.module('app')
             $scope.allEvents = res.data;
             $scope.myEvents = [];
             for (i = 0; i < $scope.allEvents.length; i++) {
-                if ($scope.allEvents[i].author === CurrentUser.user()._id) {
+                if ($scope.allEvents[i].author._id === CurrentUser.user()._id) {
                     $scope.myEvents.push($scope.allEvents[i]);
                 }
                 for (var g = 0; g < $scope.allEvents[i].invitations.length; g++) {
