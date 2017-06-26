@@ -15,11 +15,6 @@ angular.module('app')
                         $scope.myEvents.push($scope.allEvents[i]);
                     }
                 }
-                for (var h = 0; h < $scope.allEvents[i].participations.length; h++) {
-                    if ($scope.allEvents[i].participations[h].email === CurrentUser.user().email) {
-                        $scope.myEvents.push($scope.allEvents[i]);
-                    }
-                }
             }
             $scope.moveToEvent = function(value) {
                 $location.path('/user/event/id/' + value);
