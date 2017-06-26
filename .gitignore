@@ -8,7 +8,6 @@
 /generated
 
 .sass-cache
-server/api/mailer/config.js
 server/api/mailer/invitation.js
 server/api/mailer/invitationCagnotte.js
 server/api/mailer/invitationCollaboratif.js
