@@ -8,11 +8,11 @@ module.exports = () => {
     secure: true,
     auth: {
         xoauth2: xoauth2.createXOAuth2Generator({
-            user: '',
-            clientId: '',
-            clientSecret: '',
-            refreshToken: '',
-            accessToken: ''
+            user: process.env.USER_MAIL,
+            clientId: process.env.CLIENT_ID,
+            clientSecret: process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
+            accessToken: process.env.ACCESS_TOKEN
         })
     }
   }));
