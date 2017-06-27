@@ -12,7 +12,6 @@ module.exports = function(lineman) {
             vendor: [
                 "vendor/js/jquery.js",
                 "vendor/js/moment.js",
-                // "vendor/js/angular-sanitize.js",
                 "vendor/js/materialize.js",
                 "vendor/js/angular.js",
                 "vendor/js/angular-messages.js",

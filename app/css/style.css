@@ -413,7 +413,6 @@ label.img_nogroup {
     }
 }
 
-
 /* EVENT */
 
 .image_event {
@@ -549,4 +548,12 @@ label.img_nogroup {
 
 .body_comment {
     margin-bottom: 0px !important;
+}
+
+audio {
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -khtml-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
 }
