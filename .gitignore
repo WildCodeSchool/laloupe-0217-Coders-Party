@@ -15,3 +15,4 @@ server/api/mailer/invitationCollaboratif.js
 server/yarn.lock
 yarn.lock
 npm-debug.log
+.env

@@ -19,6 +19,7 @@
     "bcrypt": "",
     "body-parser": "",
     "cors": "",
+    "dotenv": "^4.0.0",
     "express": "",
     "jsonwebtoken": "",
     "lineman": "~0.37.0",
