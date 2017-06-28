@@ -7,6 +7,7 @@
     </title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js' type='text/javascript'></script>
 </head>
 
 <body>
