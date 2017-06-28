@@ -1,4 +1,5 @@
 div.examples {
+    border: none !important;
     width: 100%;
     overflow: visible!important;
 }
@@ -19,7 +20,6 @@ div.examples {
   height: 18px;
   padding: 9px;
   border: 1px solid #dcdcdc;
-  border-radius:3px;
   overflow: hidden;
   background: white;
   position: relative;
