@@ -54,8 +54,8 @@
 <div class="row">
     <form>
         <div class="col s12 offset-m2 m8 offset-l3 l6">
-            <div class="collection">
-                <textarea name="name" ng-model="commentBody" rows="8" cols="80" placeholder="Entrez votre commentaire"></textarea>
+            <div class="collection examples">
+                <textarea spellcheck="false" class="mention"name="textarea" ng-model="commentBody" rows="8" cols="80" placeholder="Entrez votre commentaire"></textarea>
             </div>
             <a class="btn btn-success pull-right" type="submit" ng-click="addComment()">Post</a>
         </div>
@@ -209,5 +209,3 @@
     </div>
 
 </div>
-
-<!-- Ajouter une ligne avec l author et ce qu il apporte : A peut etre stocker en base event--->
