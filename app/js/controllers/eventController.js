@@ -5,7 +5,6 @@ angular.module('app')
             EventService.getOne($stateParams.id).then(function(res) {
                 $scope.event = res.data;
                 $scope.class = "image_event_img";
-                console.log($scope.event);
                 var id = ($stateParams.id);
                 $scope.deleteEvent = function() {
                     EventService.sendAnnulation(id).then(function() {
@@ -13,6 +12,39 @@ angular.module('app')
                         $state.go('user.home');
                     });
                 };
+                UserService.getAll().then(function(res) {
+                    $scope.users = res.data;
+                    $('textarea.mention').mentionsInput({
+                        onDataRequest: function(mode, query, callback) {
+                            var data = [];
+                            $scope.users.forEach(function(element) {
+                                data.push({
+                                    id: element._id,
+                                    name: element.name,
+                                    'avatar': "https://avatars.githubusercontent.com/" + element.odyssey + "?s=460",
+                                    type: 'contact'
+                                });
+                            });
+                            data = _.filter(data, function(item) {
+                                return item.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
+                            });
+
+                            callback.call(this, data);
+                        }
+                    });
+
+                    $('.get-syntax-text').click(function() {
+                        $('textarea.mention').mentionsInput('val', function(text) {
+                            alert(text);
+                        });
+                    });
+
+                    $('.get-mentions').click(function() {
+                        $('textarea.mention').mentionsInput('getMentions', function(data) {
+                            alert(JSON.stringify(data));
+                        });
+                    });
+                });
 
 
                 $scope.hasPayed = function() {
