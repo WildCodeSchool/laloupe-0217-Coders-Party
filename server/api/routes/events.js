@@ -24,6 +24,10 @@ module.exports = (app) => {
 
     router.get('/sendcollaboratif/:id', Auth.hasAuthorization, event.sendInvitationCollaboratif);
 
+    router.get('/sendpendingrequest/:id', Auth.hasAuthorization, event.sendPendingRequest);
+
+    router.get('/sendpendingvalidate/:id', Auth.hasAuthorization, event.sendPendingValidate);
+
     router.get('/sendcancel/:id', Auth.hasAuthorization, event.sendAnnulation);
 
     router.put('/:id', Auth.hasAuthorization, event.update);

@@ -28,6 +28,12 @@ angular.module('app')
             },
             sendAnnulation: function(id) {
               return $http.get('/events/sendcancel/' + id);
+            },
+            sendPendingRequest: function(id, user) {
+              return $http.get('/events/sendpendingrequest/' + id, user);
+            },
+            sendPendingValidate: function(id, user) {
+              return $http.get('/events/sendpendingvalidate/' + id, user);
             }
         };
     });
