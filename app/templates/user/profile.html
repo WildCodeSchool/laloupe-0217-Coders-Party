@@ -21,4 +21,22 @@
           <button class="btn btn-large waves-effect waves-light orange validate_profil" type="submit" name="action" ui-sref="user.home">Accueil</button>
       </p>
   </div>
+  <div class="col s12 m12">
+      <p class="center-align">
+          <a data-target="modal2">Changer mon mot de passe</a>
+      </p>
+  </div>
 </div>
+
+<div id="modal2" class="modal">
+   <div class="modal-content">
+     <h4>Changement de mot de passe</h4>
+     <div class="input-field">
+       <label for="password">Entrez votre nouveau mot de passe</label>
+       <input id="password" type="text" ng-model="password">
+     </div>
+   </div>
+   <div class="modal-footer">
+     <a ng-click="validate()" class="modal-action modal-close waves-effect waves-green btn-flat">Valider</a>
+   </div>
+ </div>

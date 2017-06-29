@@ -8,5 +8,16 @@ angular.module('app')
             if ($scope.user.odyssey === "ùmlmkm") {
                 $scope.user.odyssey = "Aucun compte";
             }
+
+            $scope.validate = function() {
+              console.log($scope.password);
+                UserService.update(CurrentUser.user()._id, {
+                    password: $scope.password
+                });
+            };
+
+
+
+
         });
     });
