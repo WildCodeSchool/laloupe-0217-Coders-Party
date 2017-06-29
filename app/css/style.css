@@ -121,7 +121,9 @@
     height: 60px;
     font-size: xx-large;
 }
-
+.mail_profil_pic {
+  text-decoration: none;
+}
 .github_logo {
     width: 25px;
     margin-left: 3px;
@@ -197,6 +199,12 @@ html {
         font-size: 20px !important;
         cursor: pointer;
         text-decoration: none;
+    }
+    .description_profil {
+        font-size: 1.5em;
+    }
+    .image_profil {
+      width: 77px !important;
     }
 }
 
