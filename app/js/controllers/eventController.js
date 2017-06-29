@@ -85,6 +85,12 @@ angular.module('app')
                         }
                     }
                 };
+
+                $scope.pendCount = function(){
+                  if($scope.event.pending.length>0){
+                    return true;
+                  }
+                };
                 // initialize a front array to manage img color :
 
                 $scope.members = [];
