@@ -179,6 +179,7 @@ angular.module('app')
                         }
                     }
                     EventService.update($stateParams.id, $scope.event);
+                    EventService.sendPendingValidate(id, $scope.user);
                 };
                 $scope.doGo = function() {
                     $('.ticket-in').addClass('active');
@@ -211,6 +212,7 @@ angular.module('app')
                         groupe: $scope.user.groupe
                     });
                     EventService.update($stateParams.id, $scope.event);
+                    EventService.sendPendingRequest(id, $scope.user);
                 };
 
                 function removeQty() {

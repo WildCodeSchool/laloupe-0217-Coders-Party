@@ -550,6 +550,11 @@ label.img_nogroup {
     width: 10%;
     float: left;
 }
+.image_profil_pending {
+    margin-right: 1%;
+    width: 5%;
+    float: left;
+}
 
 .comment {
     line-height: 0.5em;

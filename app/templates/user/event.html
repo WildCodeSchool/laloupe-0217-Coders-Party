@@ -219,14 +219,14 @@
                 <ul class="collection">
                     <li class="collection-item" ng-repeat="pend in event.pending track by $index">
                         <div>
-                            <span>{{pend.name}}</span><span ng-show="pend.coming"> sera invité</span>
+                            <strong class="title"><img class="image_profil_pending" src="https://avatars.githubusercontent.com/{{pend.odyssey}}?s=460" alt="image_profil_comment">{{pend.name}}<span ng-show="pend.coming"> sera invité</span></strong>
                             <span class="switch right">
                               <label><input ng-model="pend.coming" type="checkbox"><span class="lever"></span></label>
                             </span>
                         </div>
                     </li>
                 </ul>
-                <button class="btn waves-effect waves-light modal-action modal-close right" ng-click="validatePend($index)" name="action">Valider <i class="material-icons right">send</i></button>
+                <button class="btn waves-effect waves-light modal-action modal-close right" ng-click="validatePend($index)" name="action">Valider<i class="material-icons right">send</i></button>
             </form>
         </div>
     </div>
