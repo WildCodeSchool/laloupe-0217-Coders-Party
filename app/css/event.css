@@ -237,6 +237,37 @@
     background-color: grey;
     cursor: pointer;
 }
+.card_ticket_blue {
+    display: block;
+    color: white !important;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: blue;
+    cursor: pointer;
+}
+.card_ticket_orange {
+    display: block;
+    color: white !important;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    padding: 0;
+    line-height: 58px;
+    text-align: center;
+    border-radius: 0;
+    background-color: #ffcc80;
+}
 
 .card_ticket_remove {
     display: block;
@@ -262,6 +293,24 @@
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 10px solid grey;
+}
+.card_ticket_blue::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid blue;
+}
+.card_ticket_orange::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 20px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid #ffcc80;
 }
 
 .ribbon-color:before, .ribbon-color:after {
