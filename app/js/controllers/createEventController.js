@@ -28,7 +28,8 @@ angular.module('app')
                     lieu: '',
                     description: '',
                     place_url: '',
-                    private: $scope.private
+                    private: $scope.private,
+                    pending:[]
                 };
                 EventService.create(event).then(function(res) {
                     LocalService.set('eventId', res.data.event._id);

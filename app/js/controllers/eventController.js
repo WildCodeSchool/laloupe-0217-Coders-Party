@@ -164,6 +164,16 @@ angular.module('app')
                 $scope.validateMoney = function() {
                     EventService.update($stateParams.id, $scope.event);
                 };
+                $scope.validatePend = function() {
+                    console.log($scope.event.pending);
+                    for (var i = 0; i < $scope.event.pending.length; i++) {
+                        if ($scope.event.pending[i].coming === true) {
+                            $scope.event.invitations.push($scope.event.pending[i]);
+                            $scope.event.pending.splice(i, 1);
+                        }
+                    }
+                    EventService.update($stateParams.id, $scope.event);
+                };
                 $scope.doGo = function() {
                     $('.ticket-in').addClass('active');
                     $('.card-event').addClass('active');
@@ -185,6 +195,16 @@ angular.module('app')
                             addMembers();
                         });
                     });
+                };
+                $scope.pendingGo = function() {
+                    $scope.event.pending.push({
+                        name: $scope.user.name,
+                        email: $scope.user.email,
+                        odyssey: $scope.user.odyssey,
+                        _id: $scope.user._id,
+                        groupe: $scope.user.groupe
+                    });
+                    EventService.update($stateParams.id, $scope.event);
                 };
 
                 function removeQty() {
@@ -263,13 +283,32 @@ angular.module('app')
                     return false;
                 }
 
-                $scope.hideGreen = function() {
-                    if (isParticipating() === true || isInvitated() === false) {
+                function isPending() {
+                    for (var i = 0; i < $scope.event.pending.length; i++) {
+                        if ($scope.event.pending[i].email === $scope.user.email) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                $scope.showGreen = function() {
+                    if (isParticipating() === false && isInvitated() === true) {
                         return true;
                     }
                 };
                 $scope.showGrey = function() {
                     if (isParticipating() === false && isInvitated() === true) {
+                        return true;
+                    }
+                };
+                $scope.showBlue = function() {
+                    if (isInvitated() === false && isPending() === false) {
+                        return true;
+                    }
+                };
+                $scope.showOrange = function() {
+                    if (isPending() === true) {
                         return true;
                     }
                 };
