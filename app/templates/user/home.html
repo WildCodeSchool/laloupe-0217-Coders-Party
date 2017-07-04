@@ -11,7 +11,7 @@
 <div class="row home-container" ng-show="!spinner">
   <div class="col s12 ">
     <div class="carousel carousel-container">
-      <div class="carousel-item carousel-home" ng-model="item" ng-repeat="event in events | orderBy:'-startDate' | limitTo:5 track by $index">
+      <div class="carousel-item carousel-home" ng-model="item" ng-repeat="event in events | orderBy:'startDate' | limitTo:5 track by $index">
           <img class="gif" src="../../img/images/{{event.categorie}}.gif">
           <img class="jpeg" src="../../img/images/{{event.categorie}}.jpg">
           <div class="carousel-title center-align">
