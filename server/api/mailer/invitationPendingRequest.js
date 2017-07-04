@@ -18,7 +18,7 @@ module.exports = {
       subject: "Coders Party",
       template: 'email.body',
       context: {
-        variable1: 'Bonjour ' + guest.name + ' !',
+        variable1: 'Bonjour ' + event.author.name + ' !',
         variable2: 'Pour l\'évènement ' + event.name + ' l\'utilisateur ' + event.pending[event.pending.length - 1].name + ' souhaite rejoindre la fête !',
         variable3: 'Tu peux consulter l\'évènement ici : ',
         variable4: event.place_url,
