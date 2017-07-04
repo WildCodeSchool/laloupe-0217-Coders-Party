@@ -9,7 +9,8 @@
     "test": "lineman spec-ci",
     "production": "lineman clean build && cd server && babel-node index.js",
     "server": "cd server && babel-node index.js",
-    "createAdmin": "cd server && babel-node ./api/userCreation.js"
+    "createAdmin": "cd server && babel-node ./api/userCreation.js",
+    "createGroup": "cd server && babel-node ./api/groupCreation.js"
   },
   "dependencies": {
     "angular-messages": "^1.6.4",
