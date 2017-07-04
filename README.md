@@ -15,8 +15,8 @@
 #### Installation
 
 ```bash
-git clone git@github.com:JbPasquier/mean-lineman.git
-cd mean-lineman
+git clone git@github.com:WildCodeSchool/laloupe-0217-Coders-Party.git
+cd laloupe-0217-Coders-Party
 npm install
 ```
 
