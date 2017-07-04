@@ -43,6 +43,13 @@ angular.module('app')
                         controller: 'RegisterController'
                     }
                 }
+            })
+            .state('anon.notfound', {
+                url: '/404',
+                views: {
+                    'content@': {
+                        templateUrl: 'anon/404.html'                    }
+                }
             });
         $stateProvider
             .state('user', {
@@ -170,5 +177,5 @@ angular.module('app')
                     }
                 }
             });
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/404');
     });
