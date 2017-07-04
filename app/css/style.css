@@ -563,3 +563,34 @@ label.img_nogroup {
 .body_comment {
     margin-bottom: 0px !important;
 }
+.catcentcat {
+background-color: #E19A2E;
+margin-left: -20%;
+margin-right: -20%;
+padding-top: 10%;
+padding-bottom: 15%;
+}
+
+.catwalk {
+position: relative;
+-webkit-animation: myfirst 15s infinite;
+-webkit-animation-direction: left;
+animation: myfirst 15s infinite;
+animation-direction: left;
+}
+
+@-webkit-keyframes myfirst {
+0% {
+    margin-left: 80%;
+    100% {
+        right: -30%;
+    }
+}
+@keyframes myfirst {
+    0% {
+        margin-left: 80%;
+    }
+    100% {
+        margin-left: -30%;
+    }
+}
