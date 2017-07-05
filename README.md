@@ -1,7 +1,5 @@
 ![Lineman build](https://travis-ci.org/JbPasquier/mean-lineman.svg?branch=master)
 
-# [CODERS PARTY]
-
 # [MEAN](http://mean.io/) Starter with [Lineman](http://linemanjs.com/)
 
 ## Angular
