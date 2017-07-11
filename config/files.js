@@ -12,7 +12,6 @@ module.exports = function(lineman) {
             vendor: [
                 "vendor/js/jquery.js",
                 "vendor/js/moment.js",
-                // "vendor/js/angular-sanitize.js",
                 "vendor/js/materialize.js",
                 "vendor/js/angular.js",
                 "vendor/js/angular-messages.js",
@@ -20,6 +19,7 @@ module.exports = function(lineman) {
             ],
             app: [
                 "app/js/app.js",
+                "app/js/config/date.js",
                 "app/js/consts/*.js",
                 "app/js/directives/*.js",
                 "app/js/factories/*.js",

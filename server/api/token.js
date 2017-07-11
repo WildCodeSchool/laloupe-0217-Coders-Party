@@ -1,1 +1,1 @@
-export default process.env.SECRET_TOKEN || "secretToken";
+export default process.env.SECRET_TOKEN;
