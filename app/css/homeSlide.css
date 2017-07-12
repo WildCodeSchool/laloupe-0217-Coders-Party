@@ -108,6 +108,13 @@
                   width: 40%;
                 border-radius: 5%;
                 }
+                .spinnerMail {
+                margin-top:30px;
+                }
+                .spinnerMail img{
+                  width: 40%;
+                border-radius: 5%;
+                }
                 .carousel-container {
                     height: 470px !important;
                 }
