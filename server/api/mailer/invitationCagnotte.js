@@ -23,7 +23,7 @@ module.exports = {
         variable3: 'Description évènement : ' + event.description,
         variable4: event.place_url,
         variable5: 'Adresse : ' + event.adresse,
-        variable6: process.env.ADRESSE_HEROKU + event.id,
+        variable6: process.env.ADRESSE_VPS + event.id,
         variable7: 'L\'évènement aura lieu le ' + moment(event.startDate).format('dddd D MMMM YYYY') + ' à ' + moment(event.startTime).format('HH:mm'),
         variable10: 'C\'est un évènement de type cagnotte, une participation financiére est demandé aux participants. Le montant est de ' + event.budget + '€ par personne, le tresorier chargé de la cagnotte est : ' + event.tresorier.name
       }
